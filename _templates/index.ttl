@@ -5,6 +5,3 @@
   <head>
   <body>
     ${ page.articles[0][1] if page.articles else '' }
-
-    <a "hello-world"> Hello world
-    
