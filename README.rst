@@ -1,4 +1,4 @@
-Layout created using `pagd <http://pythonhosted.org/pluggdapps>`_ tool,
+Layout created using `pagd <http://pythonhosted.org/pagd>`_ tool,
 something similar to jekyll, to generate my pages. Plugin used to generate this
 site is called ``pagd.myblog``.
 
