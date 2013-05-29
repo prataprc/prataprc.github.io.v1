@@ -1,8 +1,9 @@
-Using `pagd` tool, something similar to jekyll, to generate my pages. Using
-`pagd.myblog` plugin for my blog layout.
+Layout created using `pagd <http://pythonhosted.org/pluggdapps>`_ tool,
+something similar to jekyll, to generate my pages. Plugin used to generate this
+site is called ``pagd.myblog``.
 
-Follow the github-pages or articles like
-`this <http://xlson.com/2010/11/09/getting-started-with-github-pages.html>`_,
+Follow help text from github-pages or articles like
+`this <http://xlson.com/2010/11/09/getting-started-with-github-pages.html>`_
 to learn about publishing static pages with github.
 
 .. code-block:: bash
@@ -29,5 +30,3 @@ Publish site.
     $ git commit
     $ git remote add origin https://github.com/prataprc/prataprc.github.io.git
     $ git push -u origin master
-
-Refer to package documentation directory to learn more about `pagd`.
