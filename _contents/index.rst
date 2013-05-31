@@ -1,9 +1,6 @@
 Articles
 ========
 
-* `Sudoku in erlang <hello-world.html>`_
-* `Pathological case sudoku <hello-world.html>`_
-* `Erlang - solving sudoku with swarm algorithm <hello-world.html>`_
 * `C - spartan among languages <C-spartan-among-languages.html>`_
 * `ideas are inter-connected <ideas-are-inter-connected.html>`_
 * `hello word <hello-world.html>`_
