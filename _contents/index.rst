@@ -10,11 +10,19 @@ Projects
 
 * pluggdapps_: a component system in python.
 * tayra_: create concise, beautiful and highly re-usable HTML templates.
-* tayrakit_: widget toolkit tayra.
-* pagd_: static site generator.
+* tayrakit_: widget toolkit using tayra.
+* pagd_: static site generator, this site was generated using it.
 * netscale_: a collection of distributed apps in erlang.
 * sudoku_: sudoku puzzle generator and solver in erlang.
 * textmode_: erlang + ncurses, terminal server for erlang applications.
+
+Project documentations
+======================
+
+* `pluggdapps documentation <http://pythonhosted.org/pluggdapps>`_ hosted in
+  python cheese shop.
+* `tayra documentation <http://pythonhosted.org/tayra>`_ hosted in python
+  cheese shop.
 
 .. _pluggdapps: http://github.com/prataprc/pluggdapps
 .. _tayra: http://github.com/prataprc/tayra
