@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html >
+  <head > <link  rel="stylesheet" type="text/css" href="media/myblog.css">
+</link><link  rel="stylesheet" type="text/css" href="media/pygments.css">
+</link><link  type="text/css" href="http://fonts.googleapis.com/css?family=Inconsolata" type="rel='stylesheet'">
+</link><style   type="text/css">
+  body {
+      font-family: Inconsolata;
+  }
+</style>
+  </head><body >
+    <div  id="page">
+      <div  id="header"> <nav >
+  <a  href="index.html">home</a><a  href="http://in.linkedin.com/in/prataprc">linkedin</a><a  href="https://github.com/prataprc">github</a></nav></div>
+      <div  id="container">
+        
+          <article > <div  class="content"> <h1 class="title">C - spartan among languages</h1>
+<p>C as popularly called, is a spartan language that requires lot of self
+discipline to master it and make use of it. The obsolute freedom and the
+straight interaction with hardware demands lot of care, insight and discipline.</p>
+<div class="section" id="tread-with-care">
+<h1>Tread with care</h1>
+<p><em>Pointers</em>. C language directly relates to the design of modern
+micro-processor and its stored program architecture. Be it data-types,
+composite-types or functions and code-blocks, C language abstracts the
+building blocks of today's micro-processors and its pointer concept provide a
+powerful way to introspect everything that is stored.</p>
+<p><em>Lack of constructs</em>. This can also be called as lack-of-pretense. Many
+concepts and constructs that we observe in modern languages lack support
+from its hardware counter-part, there by, the compiler had to break them down
+so to run on today's hardware and loose some performance in doing so.
+Nevertheless, present constructs and concepts provided by C are simply not
+enough for building large programs.</p>
+<p><em>Preprocessors</em>. Pre-processors provide portability, they also provide
+macros and in some cases they enable programmer to control how the program
+gets compiled. But for those who maintain a code base in C, they had to parse
+two languages in his mind and very many architectures along with that.</p>
+<p><em>Portability</em>. A programmer in 1980s would have made portability as a
+winning advantage for C language, but the wheel of history have turned the
+table around. Faster processors, mature virtual machines, dynamic
+translation have made languages Python, Haskell, Java and Erlang as reasonable
+options for programmers. There is a section which cover some of the “features”
+in C language that makes it less portable ;).</p>
+<p><em>Undefined features</em>. If you get a chance, compile and run the following code
+snippet on Irix, GCC and sparc machines. You will know what &quot;Undefine feature&quot;
+means.</p>
+<div class="highlight"><pre><span class="kt">void</span> <span class="nf">myfunc</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d %d %d %d %x &quot;</span><span class="p">,</span> <span class="n">i</span><span class="o">++</span><span class="p">,</span> <span class="o">--</span><span class="n">i</span><span class="p">,</span> <span class="o">++</span><span class="n">i</span><span class="p">,</span> <span class="o">++</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="o">++</span> <span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+<p>And, there are quite a few &quot;features&quot; like this.</p>
+</div>
+<div class="section" id="still-ticking-around">
+<h1>Still ticking around !</h1>
+<p>No better language to do system programming (kernel, drivers) across a variety
+of computer architecture. And if an attempt is made to create a new language
+for this domain - it will more or less look like C.</p>
+<p><em>Performance</em>. C language directly maps down to stored program architecture
+and hence a popular choice for microprocessor vendors to tune their processor's
+performance tradeoffs. Since most of the CPU intensive algorithms are
+available in C, it becomes another reason for processor engineers to use C
+algorithms to measure their design trade-offs.</p>
+<p><em>Popularity</em>. A good example how a language with right mix of abstraction,
+power and portability can capture programmers imagination.</p>
+<p><em>Ecosystem</em>. The toolchain, debugger, IDE, editors are best available for C.
+Probably Java programmer could also make that claim, but I dont know any
+other language which could measure up in providing that sort of
+developer/development ecosystem.</p>
+</div>
+<div class="section" id="is-c-portable">
+<h1>Is C Portable ?</h1>
+<p>Not when you compare it with Python or Haskell.</p>
+<p><em>Endianess</em>. Yes, for reasons that dates back to antiquity, C-programmers must
+worry whether their data is stored in big endian or little endian.</p>
+<p><em>Size of datatypes</em>. The program/programmer cannot make assumptions on the
+size of the basic data types like int, shot, long, char, pointer etc…</p>
+<p><em>Memory alignment</em>. Some processors require that the half-word, word, dword
+memory access are aligned. That is a half-word (2 byte) memory access
+should be only through address which are multiples of 2, a word (4
+byte) memory access should be only through address which are multiples of
+4 and so on.</p>
+<p><em>Structure packing</em>. Based on memory alignments and packing directives, the way
+structure members are packed and padded can vary.</p>
+<p><em>Pointer arithmetic</em>. This can break anything.</p>
+<p><em>Compiler extensions</em>. Fortunately or unfortunately C was allowed to evolve
+through multiple vendors. And not two compilers play the same music. So a
+program can be non-portable across compilers even on the same architecture.
+Yep! so much for portability !!</p>
+<p><em>Binary and binary files</em>. Another spartan feature of C program is the
+control the compiler/language can provide, on where to store sections of
+data and code. A C programmer is not yet a complete C programmer without
+learning linker scripts and the ELF file format. Knowing them can lead to as
+much pain as not knowing them.</p>
+<p><em>Application Binary Interface</em>. The problem is C language does not have one,
+and it is left to the compiler to decide on that. So it is better to know
+how function calls are made and return values passed back for specific
+compiler tool chains that the programmer uses.</p>
+<p>And there is a non-exhausting list of portability problems.</p>
+<p>All said, C cannot be replaced and the claims like C has outlived its need are
+false. We can choose other languages if they suit better, but on any day, I
+would want one language which gives enough power to the programmer. Like C.
+Let us just make ourselves more spartan like.</p>
+</div></div>
+
+  <div  class="lastmodified"> last modified: Fri May 31, 2013</div></article></div></div>
+
+    <hr ></hr>
+    <div  id="footer"> <div  id="footer">
+  &copy; 2013 Pratap Chakravarthy.</div></div></body>
+
+
+
+
+</html>

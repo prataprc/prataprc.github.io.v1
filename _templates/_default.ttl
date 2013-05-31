@@ -1,7 +1,20 @@
 @doctype html
-
-<html>
-  <head>
-  <body>
-    ${ page.articles[0][1] if page.articles else '' }
+@include ./_head.ttl
+@include ./_header.ttl
+@include ./_footer.ttl
     
+<html>
+  <head> ${ _head.body() }
+  <body>
+    <div #page>
+      <div #header> ${ _header.body() }
+      <div #container>
+        @for fpath, htmltext  in page.articles :
+          <article> ${ article(fpath, htmltext) }
+    <hr>
+    <div #footer> ${ _footer.body() }
+
+
+@def article(fpath, htmltext) :
+  <div .content> ${ htmltext }
+  <div .lastmodified> last modified: ${last_modified}

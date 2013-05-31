@@ -1,0 +1,7 @@
+<link text/css "media/myblog.css" rel="stylesheet">
+<link text/css "media/pygments.css" rel="stylesheet">
+<link text/css "${ google_webfonts['src'] }" rel='stylesheet'>
+<style text/css>
+  body {
+      font-family: ${ google_webfonts['name'] };
+  }
