@@ -1,5 +1,7 @@
-C - spartan among languages
-===========================
+:title: C - spartan among languages
+:author: prataprc
+:date: Mon Dec 17, 2007
+
 
 C as popularly called, is a spartan language that requires lot of self
 discipline to master it and make use of it. The obsolute freedom and the
@@ -76,7 +78,7 @@ Not when you compare it with Python or Haskell.
 worry whether their data is stored in big endian or little endian.
 
 *Size of datatypes*. The program/programmer cannot make assumptions on the
-size of the basic data types like int, shot, long, char, pointer etc…
+size of the basic data types like int, shot, long, char, pointer etc ...
 
 *Memory alignment*. Some processors require that the half-word, word, dword
 memory access are aligned. That is a half-word (2 byte) memory access

@@ -1,5 +1,7 @@
-Ideas are inter-connected
-=========================
+:title: Ideas are inter-connected
+:author: prataprc
+:date: Thu Jul 29, 2010
+
 
 That was the time, we were growing out of DOS and BASIC systems - into the
 fabulous world of Graphics and Multi-media. And for most of our teeming minds

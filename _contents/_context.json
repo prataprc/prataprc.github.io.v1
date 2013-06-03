@@ -1,7 +1,9 @@
 { "layout" : "pagd.myblog",
    "IContent" : "pagd.native",
-   "google_webfonts" : {
-       "name" : "Inconsolata",
+   "style" : {
+       "fontFamily" : "Inconsolata"
+   },
+   "google_webfonts" : [{
        "src" : "http://fonts.googleapis.com/css?family=Inconsolata"
-   }
+   }]
 }

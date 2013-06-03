@@ -52,6 +52,8 @@ body {
     min-width : 640px;
     margin : 0px auto;
     background-color : white;
+    word-spacing: 3px;
+    line-height: 1.4em;
 }
 
 h1, h2 {
@@ -68,20 +70,29 @@ p {
     margin : 20px 0px;
 }
 
+img {
+    margin: 10px 10px;
+}
+
 em {
     font-style : italic;
 }
 
-h1.title {
+div.title {
     margin : 40px 0px 20px 0px;
     font-weight : bold;
     font-size : larger;
 }
 
-div.lastmodified {
-    color: gray;
-    margin-top : 10px;
+div.pagemeta {
+    margin-top : -25px;
     font-size : smaller;
+}
+span.author {
+    color: green;
+}
+span.lastmodified {
+    color: gray;
 }
 
 div.highlight {
@@ -95,7 +106,6 @@ div#page {
     border-left : 1px dashed gray;
     border-right : 1px dashed gray;
     padding : 10px 20px;
-    line-height: 1.4em;
 }
 
 div#header {

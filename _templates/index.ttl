@@ -8,7 +8,7 @@
   <body>
     <div #page>
       <div #header> ${ _header.body() }
-      <div #container> ${ page.articles[0][1] if page.articles else '' }
+      <div #container> ${ page.articles[0][2] if page.articles else '' }
     <hr>
     <div #footer> ${ _footer.body() }
 
