@@ -1,7 +1,6 @@
 @doctype html
 @include ./_head.ttl
 @include ./_header.ttl
-@include ./_disqus.ttl
 @include ./_footer.ttl
     
 <html>
@@ -12,8 +11,8 @@
       <div #container>
         @for fpath, metadata, htmltext  in page.articles :
           <article> ${ article(fpath, htmltext) }
-      @if disqus :
-        <div #myblog_disqus> ${ _disqus.body() }
+      @if site.siteconfig['disqus'] :
+        <div #myblog_disqus> ${ disqus_html | n }
     <hr>
     <div #footer> ${ _footer.body() }
 
