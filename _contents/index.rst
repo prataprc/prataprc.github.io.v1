@@ -1,3 +1,5 @@
+:title: prataprc - blogs, articles, projects, slides.
+
 Articles
 ========
 
@@ -23,6 +25,7 @@ Project documentations
 
 * `pluggdapps documentation`_ hosted in python cheese shop.
 * `tayra documentation`_ hosted in python cheese shop.
+* `pagd documentation`_ hosted in python cheese shop.
 
 .. _pluggdapps: http://github.com/prataprc/pluggdapps
 .. _tayra: http://github.com/prataprc/tayra
@@ -34,3 +37,4 @@ Project documentations
 
 .. _pluggdapps documentation: http://pythonhosted.org/pluggdapps
 .. _tayra documentation: http://pythonhosted.org/tayra
+.. _pagd documentation: http://pythonhosted.org/pagd
