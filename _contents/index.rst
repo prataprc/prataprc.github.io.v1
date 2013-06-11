@@ -1,8 +1,10 @@
 Articles
 ========
 
-* `C - spartan among languages <C-spartan-among-languages.html>`_
+* `sudoku, erlang and concurrency <sudoku-in-erlang.html>`_
+* `setting up dual monitors in Ubuntu <dual-monitors.html>`_
 * `ideas are inter-connected <ideas-are-inter-connected.html>`_
+* `C - spartan among languages <C-spartan-among-languages.html>`_
 * `hello word <hello-world.html>`_
 
 Projects
@@ -19,10 +21,8 @@ Projects
 Project documentations
 ======================
 
-* `pluggdapps documentation <http://pythonhosted.org/pluggdapps>`_ hosted in
-  python cheese shop.
-* `tayra documentation <http://pythonhosted.org/tayra>`_ hosted in python
-  cheese shop.
+* `pluggdapps documentation`_ hosted in python cheese shop.
+* `tayra documentation`_ hosted in python cheese shop.
 
 .. _pluggdapps: http://github.com/prataprc/pluggdapps
 .. _tayra: http://github.com/prataprc/tayra
@@ -31,3 +31,6 @@ Project documentations
 .. _sudoku: http://github.com/prataprc/sudoku
 .. _textmode: http://github.com/prataprc/textmode
 .. _netscale: http://github.com/prataprc/netscale
+
+.. _pluggdapps documentation: http://pythonhosted.org/pluggdapps
+.. _tayra documentation: http://pythonhosted.org/tayra
