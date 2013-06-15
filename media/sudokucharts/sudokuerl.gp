@@ -2,7 +2,7 @@ set key left top
 set title "simple puzzles using sequential algorithm"
 set xlabel "No. of puzzles"
 set ylabel "uS"
-set ytics "10"
+set ytics 50000
 
 plot "till94.dat" using 1 title "no. of puzzles" with lines
 plot "till94.dat" using 2 title "Sequential" with lines, \
@@ -23,7 +23,7 @@ set key left top
 set title "with pathological, using sequential algorithm"
 set xlabel "No. of puzzles"
 set ylabel "uS"
-set ytics "10"
+set ytics 500000
 
 plot "till100.dat" using 1 title "no. of puzzles" with lines
 plot "till100.dat" using 2 title "Sequential" with lines, \
@@ -41,10 +41,10 @@ reset
 
 
 set key left top
-set title "concurrent runs"
+set title "simple puzzles with sequential/concurrent algorithm"
 set xlabel "No. of puzzles"
 set ylabel "uS"
-set ytics "10"
+set ytics 50000
 
 plot "till94c.dat" using 1 title "no. of puzzles" with lines
 plot "till94.dat" using 2 title "Sequential:1" with lines, \
@@ -62,10 +62,10 @@ reset
 
 
 set key left top
-set title "with pathological, Sequential Vs concurrent algorithm, in smp"
+set title "puzzled with combination, Sequential Vs concurrent algorithm"
 set xlabel "No. of puzzles"
 set ylabel "uS"
-set ytics "10"
+set ytics 500000
 
 plot "till100c.dat" using 1 title "no. of puzzles" with lines
 plot "till100.dat" using 2 title "Sequential:1" with lines, \
