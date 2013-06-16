@@ -13,6 +13,9 @@ them to set the `TERM` environment variable. Most of the terminal application
 will be using this variable to setup its color scheme. Now add the following
 line in your shell's `rc` file, eg., $HOME/.zshrc
 
+TODO:
+    <Add C code gist based on ncurses to check colors available>
+
 .. code-block:: bash
     
     export TERM=xterm-256color
@@ -49,6 +52,7 @@ solarized_, jellybeans_, ir_black_, hemisu_ are some good color schemes, there
 is also a `collection of themes <https://github.com/tomasr/dotfiles/>`_
 available from github.
 
+.. _zsh: www.zsh.org
 .. _solarized: https://github.com/altercation/solarized
 .. _jellybeans: https://github.com/nanotech/jellybeans.vim
 .. _ir_black:
