@@ -1,6 +1,6 @@
 :title: Sudoku on erlang
 :author: prataprc
-:date: Mon Aug 16, 2010
+:createdon: Mon Aug 16, 2010
 
 For past three decades semiconductor industry promised to double the speed
 of microprocessor every two years, and they did keep to their promise. Now, it

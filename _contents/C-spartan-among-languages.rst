@@ -1,6 +1,6 @@
 :title: C - spartan among languages
 :author: prataprc
-:date: Mon Dec 17, 2007
+:createdon: Mon Dec 17, 2007
 
 
 C as popularly called, is a spartan language that requires lot of self

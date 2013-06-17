@@ -1,6 +1,6 @@
 :title: Ideas are inter-connected
 :author: prataprc
-:date: Thu Jul 29, 2010
+:createdon: Thu Jul 29, 2010
 
 
 That was the time, we were growing out of DOS and BASIC systems - into the

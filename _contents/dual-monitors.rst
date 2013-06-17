@@ -1,6 +1,6 @@
 :title: Setting up dual monitors in Ubuntu
 :author: prataprc
-:date: Mon Feb 1, 2009
+:createdon: Mon Feb 1, 2009
 
 
 For programming purpose, I find that square monitors are more impressive than
