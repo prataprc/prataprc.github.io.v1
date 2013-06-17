@@ -8,19 +8,55 @@
   <link  type="text/css" href="http://fonts.googleapis.com/css?family=Inconsolata" type="rel='stylesheet'">
 
 </link><style   type="text/css">
-  body {
-    font-family: Inconsolata;
-  }
+  body { font-family:Inconsolata }
 </style>
   </head><body >
     <div  id="page">
       <div  id="header"> <nav >
   <a  href="index.html">home</a><a  href="http://in.linkedin.com/in/prataprc">linkedin</a><a  href="https://github.com/prataprc">github</a></nav></div>
-      <div  id="container"></div></div>
-        
-          <hr ></hr>
+      <div  id="container">
+        <article >
+    <div  class="title"> erlang-metric
+      <div  class="metaa">
+        <span  class="author"> by Pratap Chakravarthy;</span>
+        <span  class="date"> 39 hours ago</span></div></div>
+
+    <div  class="content"> <p>Wanted to measure the overhead of booting an erlang virtual machine, do
+nothing and shut it down.</p>
+<p>These measurements are on <strong>2Ghz Core-2 Duo desktop machine running ubuntu
+12.04 LTS</strong>.</p>
+<div class="highlight"><pre><span class="nv">$ </span>/usr/bin/time -p erl -noinput -noshell -s init stop
+real 1.13
+user 0.14
+sys 0.01
+</pre></div>
+<p>Looks like it takes about 1.130 Seconds - this includes both booting and shutdown
+times. <tt class="docutils literal">init:stop/0</tt> is the proper way to shutdown erlang virtual machine
+and we don't really know whether most of the time went, whether in booting the
+VM or to shutdown the VM. To figure this out let us try is using another method,</p>
+<div class="highlight"><pre><span class="nv">$ </span>/usr/bin/time -p erl -noinput -noshell -s erlang halt
+real 0.14
+user 0.13
+sys 0.01
+</pre></div>
+<p><tt class="docutils literal">erlang:halt/0</tt> abruptly shutdowns the VM, the above numbers give us an idea
+on how-long it takes to boot Erlang-Virtual-Machine.</p></div>
+
+
+    <div  class="metaz">
+      <span  class="last_modified"> last modified - 39 hours ago;</span>
+      <span  id="myblog_social">
+          share with</span></div></article></div></div> 
+
+
+
+
+
+
+
+      <hr ></hr>
     <div  id="footer"> <div  id="footer">
-  <div  id="copyright"> &copy; 2013 Pratap Chakravarthy.</div>
+  <div  id="copyright"> &copy; 2013 Pratap Chakravarthy</div>
   <div  id="pagd"> generated using <a  href="https://github.com/prataprc/pagd">pagd</a></div></div></div></body>
 
 

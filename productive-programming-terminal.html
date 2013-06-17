@@ -8,19 +8,73 @@
   <link  type="text/css" href="http://fonts.googleapis.com/css?family=Inconsolata" type="rel='stylesheet'">
 
 </link><style   type="text/css">
-  body {
-    font-family: Inconsolata;
-  }
+  body { font-family:Inconsolata }
 </style>
   </head><body >
     <div  id="page">
       <div  id="header"> <nav >
   <a  href="index.html">home</a><a  href="http://in.linkedin.com/in/prataprc">linkedin</a><a  href="https://github.com/prataprc">github</a></nav></div>
-      <div  id="container"></div></div>
-        
-          <hr ></hr>
+      <div  id="container">
+        <article >
+    <div  class="title"> productive-programming-terminal
+      <div  class="metaa">
+        <span  class="author"> by Pratap Chakravarthy;</span>
+        <span  class="date"> 39 hours ago</span></div></div>
+
+    <div  class="content"> <div class="section" id="enabling-256-colors-for-your-terminal-applications">
+<h1>Enabling 256 colors for your terminal applications</h1>
+<p>Check whether your terminal supports 256 colors,</p>
+<div class="highlight"><pre>tput colors
+</pre></div>
+<p>You can check available terminal database under /lib/terminfo/ subdirectory.
+If you could find a database file suffixed with <cite>256color</cite>, then you can use
+them to set the <cite>TERM</cite> environment variable. Most of the terminal application
+will be using this variable to setup its color scheme. Now add the following
+line in your shell's <cite>rc</cite> file, eg., $HOME/.zshrc</p>
+<dl class="docutils">
+<dt>TODO:</dt>
+<dd>&lt;Add C code gist based on ncurses to check colors available&gt;</dd>
+</dl>
+<div class="highlight"><pre><span class="nb">export </span><span class="nv">TERM</span><span class="o">=</span>xterm-256color
+</pre></div>
+<p>If you are an <a class="reference external" href="www.zsh.org">zsh</a> user, then you have to setup keyboard mapping for the
+terminal as well. You can choose to ignore this short cut and redo the mapping
+manually when you start the zsh shell next time.</p>
+<div class="highlight"><pre><span class="nb">cd</span> ~/.zkbd
+cp xterm-pc-linux-gnu xterm-256color-pc-linux-gnu
+</pre></div>
+</div>
+<div class="section" id="setup-color-scheme-for-vim">
+<h1>setup color scheme for Vim</h1>
+<p>There are many good schemes available for vim. Download / checkout links are
+available from bottom of this page, download and copy them to your
+<cite>$HOME/.vim/colors/</cite> directory and add the following line in <cite>$HOME/.vimrc</cite>
+file,</p>
+<div class="highlight"><pre><span class="k">color</span> jellybeans
+</pre></div>
+<p>Inside Vim, you can change the colors on the fly by doing,</p>
+<div class="highlight"><pre><span class="p">:</span><span class="k">color</span> solarized
+</pre></div>
+<p><a class="reference external" href="https://github.com/altercation/solarized">solarized</a>, <a class="reference external" href="https://github.com/nanotech/jellybeans.vim">jellybeans</a>, <a class="reference external" href="https://github.com/noahfrederick/Hemisu">ir_black</a>, <a class="reference external" href="https://github.com/noahfrederick/Hemisu">hemisu</a> are some good color schemes, there
+is also a <a class="reference external" href="https://github.com/tomasr/dotfiles/">collection of themes</a>
+available from github.</p>
+</div></div>
+
+
+    <div  class="metaz">
+      <span  class="last_modified"> last modified - 23 hours ago;</span>
+      <span  id="myblog_social">
+          share with</span></div></article></div></div> 
+
+
+
+
+
+
+
+      <hr ></hr>
     <div  id="footer"> <div  id="footer">
-  <div  id="copyright"> &copy; 2013 Pratap Chakravarthy.</div>
+  <div  id="copyright"> &copy; 2013 Pratap Chakravarthy</div>
   <div  id="pagd"> generated using <a  href="https://github.com/prataprc/pagd">pagd</a></div></div></div></body>
 
 
