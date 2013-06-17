@@ -139,6 +139,7 @@ article {
     position: relative;
     list-style: none;
     display: inline;
+    margin-right: 20px;
 }
 div.metaz #myblog_disqus {
 }
