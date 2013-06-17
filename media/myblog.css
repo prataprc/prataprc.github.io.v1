@@ -115,11 +115,30 @@ div.metaa .date, div.metaz .last_modified {
     color: gray;
 }
 div.content {
-    padding-bottom: 20px;
+    padding-bottom: 10px;
 }
 div.metaz .email {
 }
-div.metaz #myblog_social {
+article {
+    position: relative;
+    padding-bottom: 32px;
+}
+#myblog_social {
+    height: 32px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+#myblog_social ul {
+    float: left;
+    margin: 0px;
+    padding: 0px;
+}
+#myblog_social ul li {
+    float: left;
+    position: relative;
+    list-style: none;
+    display: inline;
 }
 div.metaz #myblog_disqus {
 }

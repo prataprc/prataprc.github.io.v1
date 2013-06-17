@@ -2,7 +2,8 @@
 <html >
   <head > <link  rel="stylesheet" type="text/css" href="media/myblog.css">
 </link><link  rel="stylesheet" type="text/css" href="media/pygments.css">
-</link><title > Ideas are inter-connected</title>
+</link><script  src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js">
+</script><title > Ideas are inter-connected</title>
 
 
   <link  type="text/css" href="http://fonts.googleapis.com/css?family=Inconsolata" type="rel='stylesheet'">
@@ -67,15 +68,16 @@ benefits.</p>
 
 
     <div  class="metaz">
-      <span  class="last_modified"> last modified - 2 weeks ago;</span>
-      <span  id="myblog_social">
-          share with <a href="https://twitter.com/share" class="twitter-share-button"
-    data-via="prataprc">Tweet</a>
+      <span  class="last_modified"> last modified - 2 weeks ago;</span></div>
+      <div  id="myblog_social">
+        <ul >
+  <li > <a href="https://twitter.com/share" class="twitter-share-button"
+    data-via="prataprc" data-count="none">Tweet</a>
 <script>!function(d,s,id){var
     js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document,
 'script', 'twitter-wjs');</script>
 
-<!-- Place this tag where you want the +1 button to render. -->
+  </li><li > <!-- Place this tag where you want the +1 button to render. -->
 <div class="g-plusone" data-size="small"></div>
 
 <!-- Place this tag after the last +1 button tag. -->
@@ -89,7 +91,7 @@ benefits.</p>
   })();
 </script>
 
-<!-- Auto-detect URL of current page and title if necessary -->
+  </li><li > <!-- Auto-detect URL of current page and title if necessary -->
 <a href="http://news.ycombinator.com/submit" class="hn-share-button">Vote on
     HN</a>
 <script>
@@ -101,13 +103,13 @@ benefits.</p>
     }(document, 'script'));
 </script>
 
-<script src="//platform.linkedin.com/in.js" type="text/javascript">
+  </li><li > <script src="//platform.linkedin.com/in.js" type="text/javascript">
      lang: en_US
 </script>
 <script type="IN/Share" data-counter="right"></script>
 
-
-<div id="fb-root"></div>
+  </li><li > 
+  </li><li > <div id="fb-root"></div>
 <script>(function(d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) return;
@@ -117,11 +119,22 @@ benefits.</p>
       }(document, 'script', 'facebook-jssdk'));
 </script>
 <div class="fb-like" data-send="false" data-layout="button_count"
-data-width="450" data-show-faces="true"></div></span></div></article></div></div>
+data-width="450" data-show-faces="true"></div>
 
 
+  </li><li > hello
+</li></ul></div>
+      <script >
+        $(document).ready( function() {
+          $("#myblog_social li").each( function(idx, element) {
+            var h = $(element).height();
+            value = (32 - h) > 0 ? (32-h)/2 + 'px 0px' : '0px 0px';
+            $(element).css('padding', value);
+          });
+        });
 
-
+    
+</script></article></div></div>
       <hr ></hr>
     <div  id="footer"> <div  id="footer">
   <div  id="copyright"> &copy; 2013 Pratap Chakravarthy</div>
