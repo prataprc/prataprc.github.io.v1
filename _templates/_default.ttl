@@ -38,13 +38,13 @@
     @if site.siteconfig['social_sharing'] :
       <div #myblog_social>
         ${ _social.body() }
-      <script>
-        $(document).ready( function() {
-          $("#myblog_social li").each( function(idx, element) {
-            var h = $(element).height();
-            value = (32 - h) > 0 ? (32-h)/2 + 'px 0px' : '0px 0px';
-            $(element).css('padding', value);
-          });
-        });
+      ##<script>
+      ##  $(document).ready( function() {
+      ##    $("#myblog_social li").each( function(idx, element) {
+      ##      var h = $(element).height();
+      ##      value = (32 - h) > 0 ? (32-h)/2 + 'px 0px' : '0px 0px';
+      ##      $(element).css('padding', value);
+      ##    });
+      ##  });
 
     

@@ -12,4 +12,3 @@
     <li> ${ h.readfile( h.ospath.join('_social', 'reddit.html') ) }
   @if 'facebook' in shares or 'fb' in shares :
     <li> ${ h.readfile( h.ospath.join('_social', 'facebook.html') ) }
-  <li> hello
