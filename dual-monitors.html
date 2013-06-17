@@ -16,68 +16,9 @@
     <div  id="page">
       <div  id="header"> <nav >
   <a  href="index.html">home</a><a  href="http://in.linkedin.com/in/prataprc">linkedin</a><a  href="https://github.com/prataprc">github</a></nav></div>
-      <div  id="container">
+      <div  id="container"></div></div>
         
-          <article > <div  class="title"> Setting up dual monitors in Ubuntu</div>
-  <div  class="pagemeta">
-    <span  class="author"> by prataprc -</span>
-    <span  class="date"> Mon Feb 1, 2009;</span></div>
-
-  <div  class="content"> <p>For programming purpose, I find that square monitors are more impressive than
-the wide-screen, but they are slightly costlier than the equivalent widescreen
-monitors. If you are buying both the monitors at the same time, then it is
-easy to buy the same model. But if you are adding another monitor to the
-current one. Then stick with same specification, like 17&quot; 1280x1024
-resolution.</p>
-<p>Normally Graphics card come with DVI output, forcing you to buy monitors
-with DVI connectivity. Since we are buying for programming purpose, it is
-better to stick with VGA (thus saving some money) and buy a DVI-VGA adaptor.
-But if you are a multimedia geek, then you might want to use DVI monitors.</p>
-<div class="section" id="graphics-card">
-<h1>Graphics Card</h1>
-<p>If the purpose of the Video Card is only to provide dual monitor support then,
-I would suggest a basic model from Nvidia, 8400 GS. But these days Nvidia is
-promoting lots of high perfromance computing on it GPU and being a programmer
-it is only natural to buy one which supports CUDA. In any case, the driver
-support from Nvidia is amazing. And that brings us to installing the driver
-for our new Graphics Card.</p>
-</div>
-<div class="section" id="linux-drivers">
-<h1>Linux Drivers</h1>
-<p>Drivers can be installed via the distributions package manager, like for
-debian, <cite>nvidia-glx</cite> or <cite>nvidia-glx-new</cite> can be installed
-or the drivers can be installed from
-<a class="reference external" href="http://nvidia.com/page/drivers.html">Nvidia Site</a>.
-Download the appropriate driver installation file, (which normally ends with
-'.run') and execute them</p>
-<div class="highlight"><pre><span class="nv">$ </span>sudo sh &lt;nvidia-driver-installation-file&gt;.run
-</pre></div>
-<p>Follow the instruction and install the driver. Restart the system. And you
-will find that when X server is loaded NVIDIA splash screen will be displayed.</p>
-<p>But before that you will need to resolve the 'primary graphics card' in your
-BIOS settings.</p>
-</div>
-<div class="section" id="bios-setting">
-<h1>BIOS setting</h1>
-<p>Verify with your BIOS manual (motherboard vendor manual) to configure Primary
-Graphics Card. Normally the configuration will be similar to the configuration
-for Primary Boot Device.</p>
-<p>Once the Primary Graphics Card configuration is done successfully, you will
-be able to see the Graphics Card's BIOS splash as the first screen while
-system booting.</p>
-</div>
-<div class="section" id="enabling-dual-monitors">
-<h1>Enabling Dual monitors</h1>
-<p>After rebooting and logging in, goto,</p>
-<pre class="literal-block">
-system -&gt; Nvidia X Server Setting
-</pre>
-<p>and configure for dual monitor by Enabling <cite>TwinView</cite> in 'X server Display
-configuration'</p>
-</div></div></article></div></div>
-
-
-      <hr ></hr>
+          <hr ></hr>
     <div  id="footer"> <div  id="footer">
   <div  id="copyright"> &copy; 2013 Pratap Chakravarthy.</div>
   <div  id="pagd"> generated using <a  href="https://github.com/prataprc/pagd">pagd</a></div></div></div></body>
