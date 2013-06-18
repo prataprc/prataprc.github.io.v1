@@ -52,6 +52,14 @@ solarized_, jellybeans_, ir_black_, hemisu_ are some good color schemes, there
 is also a `collection of themes <https://github.com/tomasr/dotfiles/>`_
 available from github.
 
+configuring readline for vi or emacs mode
+-----------------------------------------
+
+most terminal applications that does not require full-screen rendering will be
+using the readline library to control the terminal output. To interact with
+such applications using vim or emacs key-binding, there is a global
+configuration for that,
+
 .. _zsh: www.zsh.org
 .. _solarized: https://github.com/altercation/solarized
 .. _jellybeans: https://github.com/nanotech/jellybeans.vim

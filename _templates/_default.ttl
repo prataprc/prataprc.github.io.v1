@@ -33,7 +33,7 @@
     <div .metaz>
       @if last_modified :
         <span .last_modified> last modified - ${last_modified};
-      @if site.siteconfig['show_email']  and  'email' in _context :
+      @if site.siteconfig['show_email'] and email :
         <a .email href="mailto:${email}"!> contact-author
         ;
     @if site.siteconfig['social_sharing'] :
