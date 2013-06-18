@@ -27,8 +27,8 @@
         <article >
     <div  class="article-title"> hang-drum
       <div  class="metaa">
-        <span  class="author"> by ;</span>
-        <span  class="date"> None</span></div></div>
+        <span  class="author"> by Pratap Chakravarthy;</span>
+        <span  class="date"> 12 minutes ago</span></div></div>
 
     <div  class="content"> <p>Came across this video by accident. Initially intrigued by its tune, then
 amazed at the simplicity of this instruments. Or is it really simple ?</p>
@@ -40,8 +40,8 @@ amazed at the simplicity of this instruments. Or is it really simple ?</p>
 
 
     <div  class="metaz">
-      <span  class="last_modified"> last modified - ;</span>
-      <a  class="email" href="mailto:">contact-author</a>;</div>
+      <span  class="last_modified"> last modified - 12 minutes ago;</span>
+      <a  class="email" href="mailto:prataprc@gmail.com">contact-author</a>;</div>
     <div  id="myblog_social">
         <ul >
   
@@ -101,20 +101,25 @@ data-width="450" data-show-faces="true"></div>
       <hr ></hr>
     <div  id="footer"> <div  id="footer">
   <div  id="copyright"> &copy; 2013 Pratap Chakravarthy</div>
-  <div  id="pagd"> generated using <a  href="https://github.com/prataprc/pagd">pagd</a></div>
+  <div  id="pagd"> generated using <a  href="https://github.com/prataprc/pagd">pagd</a></div></div>
 
-  <script  type="text/javascript">
-    // Snippet to load rst gallery if available.
-    $(document).ready( function() {
-      $('.rst-gallery').each( function(idx, element) {
-          $(element).magnificPopup({
-            delegate: 'a',
-            type: 'image'
-          });
-      });
+<script  type="text/javascript">
+  // Snippet to load rst gallery if available.
+  $(document).ready( function() {
+    $('.rst-gallery').each( function(idx, element) {
+        $(element).magnificPopup({
+          delegate: 'a',
+          type: 'image',
+          gallery: {
+            enabled: true, // set to true to enable gallery
+            preload: [0,1], // load next item
+            navigateByImgClick: true,
+          }
+        });
     });
+  });
 
-</script></div></div></body>
+</script></div></body>
 
 
 </html>
