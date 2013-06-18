@@ -44,7 +44,7 @@ table {
     border-spacing: 0;
 }
 
-/* myblog styles */
+/* standard styling, not specific to any tag-element */
 body {
     font-family: "Courier New", Courier, monospace;
     font-size: 18px;
@@ -96,33 +96,61 @@ em {
     font-style : italic;
 }
 
-div.title {
+/* Sytling specific to blog articles */
+
+div#page {                              /* Entire page */
+    border-left : 1px dashed gray;
+    border-right : 1px dashed gray;
+    padding : 10px 20px;
+}
+
+div#header {                            /* Header / navigation */
+    font-weight : bold;
+    font-size : larger;
+}
+div#header nav {
+    border-bottom : 1px dashed gray;
+    padding : 5px 0px;
+    color : gray
+}
+div#header a {
+    padding-right : 40px;
+    text-decoration : none;
+}
+
+div#container {                     /* container for blog article */
+    margin-top : 40px;
+}
+article {                           /* article */
+    position: relative;
+    padding-bottom: 32px;
+}
+div.title {                         /* article title */
     margin : 40px 0px 20px 0px;
     font-weight : bold;
     font-size : larger;
 }
-
-div.metaa, div.metaz {
+div.metaa, div.metaz {              /* meta-data for article */
     font-family: "Courier New", Courier, monospace;
     font-weight : normal;
     font-size : small;
     color : gray;
+    padding : 2px 0px; 
 }
-div.metaa .author {
+div.metaa .author {                 /* article author */
     color: green;
 }
-div.metaa .date, div.metaz .last_modified {
+div.metaa .date,                    /* article dates */
+div.metaz .last_modified {
     color: gray;
 }
-div.content {
+div.content {                       /* article main content */
     padding-bottom: 10px;
 }
-div.metaz .email {
+div.metaz .email {                  /* author email-id */
 }
-article {
-    position: relative;
-    padding-bottom: 32px;
-}
+
+/* Social sharing with twitter, hackernews, facebook, etc ...*/
 #myblog_social {
     height: 32px;
     position: absolute;
@@ -139,53 +167,33 @@ article {
     position: relative;
     list-style: none;
     display: inline;
-    margin-right: 20px;
 }
+#myblog_social ul li.twitter {}
+#myblog_social ul li.fb { margin-right: 20px; }
+#myblog_social ul li.hn { margin-right: 10px; }
+#myblog_social ul li.linkedin { margin-right: 20px; }
+#myblog_social ul li.gplus {}
+
+/* Commenting and social sharing with disqus plugin */
 div.metaz #myblog_disqus {
 }
 
-
-div.highlight {
-    background-color: #EEE;
-    width : 95%;
-    margin : 0px auto;
-    padding : 5px;
-}
-
-div#page {
-    border-left : 1px dashed gray;
-    border-right : 1px dashed gray;
-    padding : 10px 20px;
-}
-
-div#header {
-    font-weight : bold;
-    font-size : larger;
-}
-
-div#header nav {
-    border-bottom : 1px dashed gray;
-    padding : 5px 0px;
-    color : gray
-}
-
-div#header a {
-    padding-right : 40px;
-    text-decoration : none;
-}
-
-div#container {
-    margin-top : 40px;
-}
-
+/* Page footer, contains references, copyright notice etc ...*/
 div#footer {
     font-size : smaller;
     color : gray;
     margin-bottom : 50px;
 }
-
 div#copyright {
     text-align : right;
     float: right;
+}
+
+/* Styling for rst sourcode directive */
+div.highlight {
+    background-color: #EEE;
+    width : 95%;
+    margin : 0px auto;
+    padding : 5px;
 }
 
