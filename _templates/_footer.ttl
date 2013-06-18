@@ -2,3 +2,14 @@
   <div #copyright> ${site.siteconfig['copyright']}
   <div #pagd> generated using <a "https://github.com/prataprc/pagd">pagd
 
+  <script text/javascript>
+    // Snippet to load rst gallery if available.
+    $(document).ready( function() {
+      $('.rst-gallery').each( function(idx, element) {
+          $(element).magnificPopup({
+            delegate: 'a',
+            type: 'image'
+          });
+      });
+    });
+

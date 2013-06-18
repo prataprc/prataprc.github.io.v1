@@ -304,6 +304,12 @@ That is how a language can affect our creativity, be it for programming or for
 poetry. And it is those simple and un-assuming things that changes one's
 perspective. 
 
+.. gallery:: Browse all charts
+    media/sudokucharts/chart94.png
+    media/sudokucharts/chart100.png
+    media/sudokucharts/chart94c.png
+    media/sudokucharts/chart100.png
+
 .. _sudoku: http://en.wikipedia.org/wiki/Sudoku
 .. _gnuplot: www.gnuplot.info
 

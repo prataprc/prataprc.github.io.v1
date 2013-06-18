@@ -1,8 +1,16 @@
 <!DOCTYPE html>
 <html >
-  <head > <link  rel="stylesheet" type="text/css" href="media/myblog.css">
+  <head > <!-- jQuery -->
+<script  src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js">
+
+</script><!-- local media files -->
+<link  rel="stylesheet" type="text/css" href="media/myblog.css">
 </link><link  rel="stylesheet" type="text/css" href="media/pygments.css">
-</link><script  src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js">
+</link><!-- Magnific Popup core CSS file -->
+<link  rel="stylesheet" type="text/css" href="media/magnific-popup/magnific-popup.css"> 
+</link><!-- Magnific Popup core JS file -->
+<script  src="media/magnific-popup/jquery.magnific-popup.min.js">
+
 </script><title > c-proposal</title>
 
 
@@ -17,10 +25,10 @@
   <a  href="index.html">home</a><a  href="http://in.linkedin.com/in/prataprc">linkedin</a><a  href="https://github.com/prataprc">github</a></nav></div>
       <div  id="container">
         <article >
-    <div  class="title"> c-proposal
+    <div  class="article-title"> c-proposal
       <div  class="metaa">
         <span  class="author"> by Pratap Chakravarthy;</span>
-        <span  class="date"> 22 hours ago</span></div></div>
+        <span  class="date"> 24 hours ago</span></div></div>
 
     <div  class="content"> <p>The following is a collection of proposal,</p>
 <ul class="simple">
@@ -35,7 +43,7 @@ into consistent module/package definitions.</li>
 
 
     <div  class="metaz">
-      <span  class="last_modified"> last modified - 22 hours ago;</span>
+      <span  class="last_modified"> last modified - 24 hours ago;</span>
       <a  class="email" href="mailto:prataprc@gmail.com">contact-author</a>;</div>
     <div  id="myblog_social">
         <ul >
@@ -96,9 +104,20 @@ data-width="450" data-show-faces="true"></div>
       <hr ></hr>
     <div  id="footer"> <div  id="footer">
   <div  id="copyright"> &copy; 2013 Pratap Chakravarthy</div>
-  <div  id="pagd"> generated using <a  href="https://github.com/prataprc/pagd">pagd</a></div></div></div></body>
+  <div  id="pagd"> generated using <a  href="https://github.com/prataprc/pagd">pagd</a></div>
 
+  <script  type="text/javascript">
+    // Snippet to load rst gallery if available.
+    $(document).ready( function() {
+      $('.rst-gallery').each( function(idx, element) {
+          $(element).magnificPopup({
+            delegate: 'a',
+            type: 'image'
+          });
+      });
+    });
 
+</script></div></div></body>
 
 
 </html>

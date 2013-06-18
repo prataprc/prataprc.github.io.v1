@@ -21,7 +21,7 @@
 
 @def article(fpath, htmltext) :
   <article>
-    <div .title> ${title}
+    <div .article-title> ${title}
       <div .metaa>
         @if 'author' in _context :
           <span .author> by ${author};
