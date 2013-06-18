@@ -11,7 +11,7 @@
 </link><!-- Magnific Popup core JS file -->
 <script  src="media/magnific-popup/jquery.magnific-popup.min.js">
 
-</script><title > c-proposal</title>
+</script><title > editor</title>
 
 
   <link  type="text/css" href="http://fonts.googleapis.com/css?family=Inconsolata" type="rel='stylesheet'">
@@ -25,27 +25,35 @@
   <a  href="index.html">home</a><a  href="http://in.linkedin.com/in/prataprc">linkedin</a><a  href="https://github.com/prataprc">github</a></nav></div>
       <div  id="container">
         <article >
-    <div  class="article-title"> c-proposal
-      <div  class="metaa">
-        <span  class="author"> by Pratap Chakravarthy;</span>
-        <span  class="date"> 28 hours ago</span></div></div>
+    <div  class="article-title"> editor
+      <div  class="metaa"></div></div>
+        <div  class="content"> <div class="section" id="saving-your-editor-session">
+<h1>Saving your editor session</h1>
+<p>As we work with projects we tend to open a large number of files, with vim
+features like tabbed-open, split-view etc ... If you want to take a break and
+return back to the same environment later, you can do so by saving the vim
+session as,</p>
+<div class="highlight"><pre><span class="p">:</span><span class="k">mksession</span><span class="p">!</span> .vimsession
+</pre></div>
+<p>current vim session is saved under file <tt class="docutils literal">.vimsession</tt> - overwriting if it
+already exists.</p>
+</div>
+<div class="section" id="some-common-problems-with-vim">
+<h1>Some common problems with vim</h1>
+<p>If you cannot open a file at the same line number you closed it at last time,
+add the following in your <cite>.vimrc</cite> file.</p>
+<div class="highlight"><pre><span class="c">&quot; Vim jump to the last position when reopening a file</span>
+<span class="k">if</span> has<span class="p">(</span><span class="s2">&quot;autocmd&quot;</span><span class="p">)</span>
+  <span class="k">au</span> <span class="nb">BufReadPost</span> * <span class="k">if</span> line<span class="p">(</span><span class="s2">&quot;&#39;\&quot;&quot;</span><span class="p">)</span> <span class="p">&gt;</span> <span class="m">0</span> &amp;&amp; line<span class="p">(</span><span class="s2">&quot;&#39;\&quot;&quot;</span><span class="p">)</span> <span class="p">&lt;=</span> line<span class="p">(</span><span class="s2">&quot;$&quot;</span><span class="p">)</span>
+      \<span class="p">|</span> exe <span class="s2">&quot;normal! g&#39;\&quot;&quot;</span> <span class="p">|</span> <span class="k">endif</span>
+<span class="k">endif</span>
+</pre></div>
+<p>also make sure that $HOME/.viminfo has read/write permissions enabled.</p>
+</div></div>
 
-    <div  class="content"> <p>The following is a collection of proposal,</p>
-<ul class="simple">
-<li>to fix that we have learned to be bad features in C.</li>
-<li>to make it truely portable, inspite of having pointer features.</li>
-<li>improve the language with modern compiler ideas.</li>
-</ul>
-<ul class="simple">
-<li>header files and library files are two different things in C, merge them
-into consistent module/package definitions.</li>
-</ul></div>
 
-
-    <div  class="metaz">
-      <span  class="last_modified"> last modified - 28 hours ago;</span>
-      <a  class="email" href="mailto:prataprc@gmail.com">contact-author</a>;</div>
-    <div  id="myblog_social">
+    <div  class="metaz"></div>
+      <div  id="myblog_social">
         <ul >
   
     <li  class="twitter"> <a href="https://twitter.com/share" class="twitter-share-button"

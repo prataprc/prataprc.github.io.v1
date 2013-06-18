@@ -34,4 +34,11 @@ copyright
 `pagd.myblog` layout should be improved continuously with new features, to
 learn please do post your questions and comments to the mailing-list_.
 
+
+Integrating with github repository
+----------------------------------
+
+Integrating your disqus commenting board with pagd
+--------------------------------------------------
+
 .. _mailing-list: http://groups.google.com/group/pluggdapps
