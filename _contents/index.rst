@@ -3,8 +3,8 @@
 Articles
 ========
 
-- `blog with pagd, markdown and github <blog-with-pagd.rst>`_.
 - `sudoku, erlang and concurrency <sudoku-in-erlang.html>`_.
+- `sudoku, backtracking and pathological situation <sudoku-pathological.html>`_.
 - `setting up dual monitors in Ubuntu <dual-monitors.html>`_.
 - `ideas are inter-connected <ideas-are-inter-connected.html>`_.
 - `C - spartan among languages <C-spartan-among-languages.html>`_.

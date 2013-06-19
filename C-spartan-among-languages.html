@@ -86,13 +86,13 @@ developer/development ecosystem.</p>
 <div class="section" id="is-c-portable">
 <h1>Is C Portable ?</h1>
 <p>Not when you compare it with Python or Haskell.</p>
-<p><em>Endianess</em>. Yes, for reasons that dates back to antiquity, C-programmers must
+<p><em>Endianness</em>. Yes, for reasons that dates back to antiquity, C-programmers must
 worry whether their data is stored in big endian or little endian.</p>
-<p><em>Size of datatypes</em>. The program/programmer cannot make assumptions on the
-size of the basic data types like int, shot, long, char, pointer etc...</p>
-<p><em>Memory alignment</em>. Some processors require that the half-word, word, dword
-memory access are aligned. That is a half-word (2 byte) memory access
-should be only through address which are multiples of 2, a word (4
+<p><em>Size of data-types</em>. The program/programmer cannot make assumptions on the
+size of the basic data types like int, short, long, char, pointer etc...</p>
+<p><em>Memory alignment</em>. Some processors require that half-word, word, dword
+memory are accessed with aligned address. That is a half-word (2 byte) memory
+access should be only through address which are multiples of 2, a word (4
 byte) memory access should be only through address which are multiples of
 4 and so on.</p>
 <p><em>Structure packing</em>. Based on memory alignments and packing directives, the way
@@ -103,14 +103,13 @@ through multiple vendors. And not two compilers play the same music. So a
 program can be non-portable across compilers even on the same architecture.
 Yep! so much for portability !!</p>
 <p><em>Binary and binary files</em>. Another spartan feature of C program is the
-control the compiler/language can provide, on where to store sections of
-data and code. A C programmer is not yet a complete C programmer without
-learning linker scripts and the ELF file format. Knowing them can lead to as
-much pain as not knowing them.</p>
+control it can provide - on where to store sections of data and code. A C
+programmer is not yet a complete C programmer without learning linker scripts
+and the ELF file format.</p>
 <p><em>Application Binary Interface</em>. The problem is C language does not have one,
 and it is left to the compiler to decide on that. So it is better to know
 how function calls are made and return values passed back for specific
-compiler tool chains that the programmer uses.</p>
+compiler tool chains.</p>
 <p>And there is a non-exhausting list of portability problems.</p>
 <p>All said, C cannot be replaced and the claims like C has outlived its need are
 false. We can choose other languages if they suit better, but on any day, I
@@ -120,7 +119,7 @@ Let us just make ourselves more spartan like.</p>
 
 
     <div  class="metaz">
-      <span  class="last_modified"> last modified - 17 hours ago;</span>
+      <span  class="last_modified"> last modified - 20 hours ago;</span>
       <a  class="email" href="mailto:prataprc@gmail.com">contact-author</a>;</div>
     <div  id="myblog_social">
         <ul >

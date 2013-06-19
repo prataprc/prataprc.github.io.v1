@@ -99,8 +99,8 @@ em {
 /* Sytling specific to blog articles */
 
 div#page {                              /* Entire page */
-    border-left : 1px dashed gray;
-    border-right : 1px dashed gray;
+    border-left : 1px dashed black;
+    border-right : 1px dashed black;
     padding : 10px 20px;
 }
 
@@ -111,11 +111,12 @@ div#header {                            /* Header / navigation */
 div#header nav {
     border-bottom : 1px dashed gray;
     padding : 5px 0px;
-    color : gray
+    color : gray;
 }
 div#header a {
     padding-right : 40px;
     text-decoration : none;
+    color : gray;
 }
 
 div#container {                     /* container for blog article */

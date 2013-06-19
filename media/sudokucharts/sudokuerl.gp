@@ -1,81 +1,72 @@
 set key left top
-set title "simple puzzles using sequential algorithm"
+set title "Without SMP"
 set xlabel "No. of puzzles"
 set ylabel "uS"
-set ytics 50000
-
-plot "till94.dat" using 1 title "no. of puzzles" with lines
-plot "till94.dat" using 2 title "Sequential" with lines, \
-     "till94.dat" using 3 title "Parallel" with lines, \
-     "till94.dat" using 4 title "Sequential (smp:4)" with lines, \
-     "till94.dat" using 5 title "Parallel (smp:2)" with lines, \
-     "till94.dat" using 6 title "Parallel (smp:4)" with lines
-
+set ytics 20000
+plot "nosmp.dat" using 1 title "no. of puzzles" with lines
+plot "nosmp.dat" using 2 title "Sequential" with lines, \
+     "nosmp.dat" using 3 title "Parallel" with lines, \
+     "nosmp.dat" using 4 title "Sequential-concurrent" with lines, \
+     "nosmp.dat" using 5 title "Parallel-concurrent" with lines
 set terminal png size 560,400 enhanced font "Helvetica,10"
-set output "chart94.png"
+set output "nosmp.png"
 replot
-
 reset
 
-
-
 set key left top
-set title "with pathological, using sequential algorithm"
+set title "With SMP, 2 cores"
 set xlabel "No. of puzzles"
 set ylabel "uS"
-set ytics 500000
-
-plot "till100.dat" using 1 title "no. of puzzles" with lines
-plot "till100.dat" using 2 title "Sequential" with lines, \
-     "till100.dat" using 3 title "Parallel" with lines, \
-     "till100.dat" using 4 title "Sequential (smp:4)" with lines, \
-     "till100.dat" using 5 title "Parallel (smp:2)" with lines, \
-     "till100.dat" using 6 title "Parallel (smp:4)" with lines
-
+set ytics 20000
+plot "smp2.dat" using 1 title "no. of puzzles" with lines
+plot "smp2.dat" using 2 title "Sequential" with lines, \
+     "smp2.dat" using 3 title "Parallel" with lines, \
+     "smp2.dat" using 4 title "Sequential-concurrent" with lines, \
+     "smp2.dat" using 5 title "Parallel-concurrent" with lines
 set terminal png size 560,400 enhanced font "Helvetica,10"
-set output "chart100.png"
+set output "smp2.png"
 replot
-
 reset
 
-
-
 set key left top
-set title "simple puzzles with sequential/concurrent algorithm"
+set title "With SMP, 4 cores"
 set xlabel "No. of puzzles"
 set ylabel "uS"
-set ytics 50000
-
-plot "till94c.dat" using 1 title "no. of puzzles" with lines
-plot "till94.dat" using 2 title "Sequential:1" with lines, \
-     "till94c.dat" using 2 title "Concurrent:1" with lines, \
-     "till94c.dat" using 3 title "Conc-Parallel:1" with lines, \
-     "till94c.dat" using 5 title "Conc-Parallel:2" with lines, \
-     "till94c.dat" using 6 title "Conc-Parallel:4" with lines
-
+set ytics 20000
+plot "smp4.dat" using 1 title "no. of puzzles" with lines
+plot "smp4.dat" using 2 title "Sequential" with lines, \
+     "smp4.dat" using 3 title "Parallel" with lines, \
+     "smp4.dat" using 4 title "Sequential-concurrent" with lines, \
+     "smp4.dat" using 5 title "Parallel-concurrent" with lines
 set terminal png size 560,400 enhanced font "Helvetica,10"
-set output "chart94c.png"
+set output "smp4.png"
 replot
-
 reset
 
-
-
 set key left top
-set title "puzzled with combination, Sequential Vs concurrent algorithm"
+set title "Comparing parallel execution on different core count"
 set xlabel "No. of puzzles"
 set ylabel "uS"
-set ytics 500000
-
-plot "till100c.dat" using 1 title "no. of puzzles" with lines
-plot "till100.dat" using 2 title "Sequential:1" with lines, \
-     "till100c.dat" using 2 title "Concurrent:1" with lines, \
-     "till100c.dat" using 3 title "Conc-parallel:1" with lines, \
-     "till100c.dat" using 5 title "Conc-parallel:2" with lines, \
-     "till100c.dat" using 6 title "Conc-parallel:4" with lines
-
+set ytics 20000
+plot "nosmp.dat" using 1 title "no. of puzzles" with lines
+plot "nosmp.dat" using 3 title "Single core" with lines, \
+     "smp2.dat" using 3 title "SMP, 2 core" with lines, \
+     "smp4.dat" using 3 title "SMP, 4 core" with lines
 set terminal png size 560,400 enhanced font "Helvetica,10"
-set output "chart100c.png"
+set output "par.png"
 replot
+reset
 
+set key left top
+set title "Comparing concurrent version on different core count"
+set xlabel "No. of puzzles"
+set ylabel "uS"
+set ytics 20000
+plot "nosmp.dat" using 1 title "no. of puzzles" with lines
+plot "nosmp.dat" using 4 title "Single core" with lines, \
+     "smp2.dat" using 4 title "SMP, 2 core" with lines, \
+     "smp4.dat" using 4 title "SMP, 4 core" with lines
+set terminal png size 560,400 enhanced font "Helvetica,10"
+set output "conc.png"
+replot
 reset

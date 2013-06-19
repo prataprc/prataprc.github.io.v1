@@ -4,7 +4,7 @@
 
 
 For programming purpose, I find that square monitors are more impressive than
-the wide-screen, but they are slightly costlier than the equivalent widescreen
+the wide-screen, but they are slightly costlier than the equivalent wide-screen
 monitors. If you are buying both the monitors at the same time, then it is
 easy to buy the same model. But if you are adding another monitor to the
 current one. Then stick with same specification, like 17" 1280x1024
@@ -20,7 +20,7 @@ Graphics Card
 
 If the purpose of the Video Card is only to provide dual monitor support then,
 I would suggest a basic model from Nvidia, 8400 GS. But these days Nvidia is
-promoting lots of high perfromance computing on it GPU and being a programmer
+promoting lots of high performance computing on it GPU and being a programmer
 it is only natural to buy one which supports CUDA. In any case, the driver
 support from Nvidia is amazing. And that brings us to installing the driver
 for our new Graphics Card.
@@ -35,7 +35,7 @@ or the drivers can be installed from
 Download the appropriate driver installation file, (which normally ends with
 '.run') and execute them
 
-.. sourcecode:: bash
+.. code-block:: bash
 
     $ sudo sh <nvidia-driver-installation-file>.run
 

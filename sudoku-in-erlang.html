@@ -39,50 +39,27 @@ algorithms to run parallel. Enter concurrent programming. Erlang is one such
 language that encourages concurrency.</p>
 <p>Concurrent programming is a paradigm of writing computer programs that can
 execute in parallel. Three decades of structured programming concepts
-popularized by languages like C and Java have made the entire eco-system of
+popularized by languages like C and Java have made the entire ecosystem of
 computer applications optimized for sequential programming. Now, even when we
 are ready to redesign our algorithms for concurrency, its implementation,
 testing and deployment are making life difficult for us. The general focus on
 Erlang here is that it may save us from some of those difficulties. Let us
-experiment couple of scenarios using <a class="reference external" href="http://en.wikipedia.org/wiki/Sudoku">sudoku</a>.</p>
-<div class="section" id="to-the-algorithm">
-<h1>To the algorithm</h1>
-<p>The backtracking algorithm that solves sudoku puzzle has exponential
-complexity, and suffers from pathological combinations that can throw the
-algorithm into a for-ever-loop. By tweaking the input combination and few
-other parameters we can adjust the complexity of the problem and study the
-behavior of Erlang and its run-time.</p>
-<p>The algorithm works on an unsolved sudoku puzzle, with N elements
-pre-populated - which is the measure of difficulty. That is, say for a 9x9
-table of numbers, may be just 10 can be pre-populated. The number of elements
-that are pre-populated can also be supplied as <cite>difficulty</cite> parameter. The
-algorithm itself uses a double recursive backtracking logic to find the right
-combination of numbers satisfying the game rules. So, for a 9x9 table with 10
-pre-populated elements, the program must fill the remaining 71 slots and for
-each slot there are 9 choices ([1,2,3,4,5,6,7,8,9]).</p>
-<p>The first recursion logic moves from one slot to the next, column-wise and
-then row-wise. At every step, it tries to reduce the available choices for an
-unfilled slot. There are 6 intelligent functors that applies primitive human
-logic to reduce the choices. It then detects whether it has taken the right
-path by checking with the game rules. If it detects that it has taken a bad
-path it backtracks.</p>
-<p>The second recursion logic kicks in when the first recursive function detects
-that it has taken the right path (so far), and finds that the current slot has
-more than one choice left un-reducible. The logic will recur over each of the
-available choices and calling back to first recursion logic. So on and so
-forth ...</p>
-<p>Let us have some hands on with the code now,</p>
+experiment couple of scenarios using <a class="reference external" href="http://en.wikipedia.org/wiki/Sudoku">sudoku</a>. There is a separate <a class="reference external" href="sudoku-pathological.html">article</a> describing the algorithm and why it will make
+sense in this context. Source code for the same can be found in
+<a class="reference external" href="https://github.com/prataprc/sudoku">github</a>. You can find more details on
+how to use the sudoku script there, that we will using it here.</p>
+<p>Now, let us have some fun.</p>
 <div class="highlight"><pre><span class="c"># solve a single sudoku puzzle of complexity 3 (9x9) and difficulty 40%</span>
 <span class="nv">$ </span>bin/sudoku -c 3 -d 40 -s 1123
 complexity:3 count:1 difficulty:40 seed:1123
 Time taken to evaluate 6329uS
 </pre></div>
 <p>Above, sudoku script generates a 9x9 puzzle, populating 40% of the slots. And it
-took 6.3 milli-seconds to solve the puzzle. The <cite>-s</cite> option provides seed
+took 6.3 milliseconds to solve the puzzle. The <cite>-s</cite> option provides seed
 value to the random-generator - so that same set of puzzles will be generated
 for the same seed value. Note that the puzzle is solved using a sequential
 backtracking algorithm explained above.</p>
-<p><cite>All measurements are taken with my 2Ghz Core-2 Quad desktop</cite>.</p>
+<p><cite>All measurements are taken with my 2GHz Core-2 Quad desktop</cite>.</p>
 <p>Using the same parameters but solving 100 puzzles - <cite>sequentially</cite>,</p>
 <div class="highlight"><pre><span class="c"># solve a single sudoku puzzle of complexity 3 (9x9) and difficulty 40%</span>
 <span class="nv">$ </span>bin/sudoku -c 3 -d 40 -s 1123 -n 100
@@ -90,46 +67,46 @@ complexity:3 count:100 difficulty:40 seed:1123
 Time taken to evaluate 1182004uS
 </pre></div>
 <p>took about 1.2 seconds ! On an average, this algorithm takes about 12
-milli-seconds to solve a puzzle. Note that we used a pure-sequential version
+milliseconds to solve a puzzle. Note that we used a pure-sequential version
 of the algorithm for this measurements.</p>
-<p>This type of algorithm is necessary to check how friendly is Erlang in
-designing complex algorithms with concurrency.  And of course its performance.
-But before that we will see how easy and efficient it is to get started with
-concurrent programming in Erlang.</p>
-</div>
 <div class="section" id="simple-concurrency-with-erlang">
 <h1>simple concurrency with erlang</h1>
 <p>Before we transform the algorithm into a concurrent one, we will try
 to measure how simple-concurrency, like what we see with web-servers serving
 simultaneous requests, fair with erlang. The objective here is to solve large
-number of puzzles - first, sequentially one after the other - next, parallely
-spawning one process for each puzzle. Thus we measure its scalability and
-efficiency.</p>
+number of puzzles - first, sequentially one after the other - next,
+simultaneously spawning one process for each puzzle. Thus we measure its
+scalability and efficiency.</p>
 <p>For the sake of clarity let us define the terms - sequential, parallel and
 concurrent, used in this article.</p>
 <dl class="docutils">
 <dt>sequential,</dt>
-<dd>sequential version of algorithm that uses a single core, even if more
-than one core is available.</dd>
+<dd>sequential version of algorithm that uses single core, even if more than
+one core is available.</dd>
 <dt>parallel,</dt>
 <dd>sequential version of algorithm used to solve more than one puzzle
 simultaneously. Although each puzzle will utilize single core, more number
-of puzzles can be solved parallely thus utilizing all the available cores.</dd>
+of puzzles can be solved simultaneously thus utilizing all the available
+cores.</dd>
 <dt>concurrent,</dt>
 <dd>concurrent version of algorithm where each puzzle utilizes all the
 available cores.</dd>
 </dl>
-<p>We will run the same script with few more switches,</p>
-<div class="highlight"><pre><span class="nv">$ </span>bin/sudoku -c 3 -n 94 -d 60 -s 1123 -benchmark <span class="c"># SMP disabled</span>
+<p>We will run the same script with few more switches, and SMP disabled.</p>
+<div class="highlight"><pre><span class="nv">$ </span>bin/sudoku -c 3 -n 100 -d 40 -s 1123 -benchmark <span class="c"># SMP disabled</span>
 </pre></div>
-<p>Above command generates puzzles of complexity 3, 9x9 sudoku table, populating
-60% of the slots. Same seed value will generate same set of tables. The script
-outputs three columns,</p>
+<p>Above command generates 100 puzzles of complexity 3, 9x9 sudoku table,
+populating 40% of the slots. Same seed value will generate same set of tables.
+The script outputs five columns,</p>
 <ul class="simple">
-<li><cite>first column</cite>, no. of puzzles solved.</li>
-<li><cite>second-column</cite> time taken to solve sequentially.</li>
-<li><cite>third-column</cite> time taken to solve parallel, one erlang-process for each
-puzzle.</li>
+<li><cite>1st column</cite>, no. of puzzles solved.</li>
+<li><cite>2nd column</cite> time taken to solve sequentially.</li>
+<li><cite>3rd column</cite> time taken to solve puzzles simultaneously, one erlang-process
+for each puzzle.</li>
+<li><cite>4th column</cite> same as 2nd column, except that concurrent version of algorithm
+is used.</li>
+<li><cite>5th column</cite> same as 3rd column, except that concurrent version of algorithm
+is used.</li>
 </ul>
 <p><cite>bin/sudoku</cite> was executed in SMP disabled mode by adding the following header
 in the beginning.</p>
@@ -137,151 +114,88 @@ in the beginning.</p>
 <span class="go">%% -*- erlang -*-</span>
 <span class="go">%%! -smp disable</span>
 </pre></div>
-<p>Then again, the same script is executed with same switches but with two cores
-enabled, by replacing <cite>-smp disable</cite> with <cite>+S 2:2</cite>.</p>
-<p>And again, the same script is executed with 4 cores enabled, that is, using
-the <cite>+S 4:4</cite> switch.</p>
-<p>Data from 3 different runs are aggregated and plotted using <a class="reference external" href="www.gnuplot.info">gnuplot</a>.</p>
-<img alt="media/sudokucharts/chart94.png" src="media/sudokucharts/chart94.png" />
-<p>We can observe that, simple-concurrency scales almost linearly with number of
-cores and at the same time efficient enough to give same performance without
-SMP.</p>
-<p>Now let us repeat the above exercise by increasing the number of puzzles from
-94 to 100.</p>
-<div class="highlight"><pre><span class="nv">$ </span>bin/sudoku -c 3 -n 100 -d 60 -s 1123 -benchmark <span class="c"># SMP disabled</span>
-</pre></div>
-<p>Again we will have to execute this script in three different modes, SMP
-disabled, SMP with 2 cores and SMP with 4 cores. When the aggregate data is
-plotted,</p>
-<img alt="media/sudokucharts/chart100.png" src="media/sudokucharts/chart100.png" />
-<p>Note that time taken to solve puzzles shoots up from 95th puzzle. Now, this a
-pathological combination for our algorithm and the combination looks like
-this</p>
-<pre class="literal-block">
-{{0,0,2,0,0,4,0,0,9},
- {0,0,0,0,0,9,0,0,0},
- {0,6,0,0,0,0,0,4,8},
- {0,3,5,0,0,0,0,0,0},
- {0,0,6,0,0,0,1,0,0},
- {0,9,0,0,0,5,0,0,4},
- {4,0,0,0,5,0,0,0,0},
- {6,0,0,0,0,2,0,0,0},
- {9,0,0,0,4,6,0,0,0}}.
-</pre>
-<p>When compared to this pathological combination, the performance improvements
-that we achieved due to simple concurrency is <cite>negligible</cite>.</p>
+<p>Let us now plot the data with <a class="reference external" href="www.gnuplot.info">gnuplot</a>,</p>
+<img alt="media/sudokucharts/nosmp.png" src="media/sudokucharts/nosmp.png" />
+<p>Again, the script is executed with same switches but with two cores enabled.
+Replace <cite>-smp disable</cite> with <cite>+S 2:2</cite> in the script header. A similar 5-column
+output is generated and plotted below,</p>
+<img alt="media/sudokucharts/smp2.png" src="media/sudokucharts/smp2.png" />
+<p>Once again, the script is executed with 4 cores enabled, that is, using
+the <cite>+S 4:4</cite> switch and plotted below,</p>
+<img alt="media/sudokucharts/smp4.png" src="media/sudokucharts/smp4.png" />
+<p>We can easily observe that,</p>
+<ul class="simple">
+<li>Whether simple concurrency or concurrent-backtracking version, there is
+virtually no overhead introduced because of concurrent execution.</li>
+<li>Both simple concurrency and concurrent-backtracking version can linearly
+scale with number of cores.</li>
+</ul>
+<p>When performance of parallel execution is plotted on single-core, 2-core, and
+4-core variants,</p>
+<img alt="media/sudokucharts/par.png" src="media/sudokucharts/par.png" />
+<p>we can observe that simple concurrency scales linearly with number of cores.</p>
+<p>When performance of concurrent algorithm, executed one after another in
+sequential mode, is plotted on single-core, 2-core, and 4-core variants,</p>
+<img alt="media/sudokucharts/conc.png" src="media/sudokucharts/conc.png" />
+<p>shows that there is no improvement of using a concurrent version of the
+algorithm and neither a overhead of using it.</p>
+<p>Let us now apply simple concurrency and concurrent backtracking algorithm for
+a pathological sudoku combination and measure its performance on different
+core-counts.</p>
 </div>
-<div class="section" id="pathological-case">
-<h1>pathological case</h1>
-<p>A pathological case is an input combinations that can make the puzzle solver to
-keep executing bad paths for a long time before finding the right path.</p>
-<p>Any backtracking algorithm, while executing, will have to make several
-choices&nbsp; before finding the right solution.&nbsp; We will take our Sudoku puzzle
-solver as an&nbsp; example and expound further -</p>
-<p>For a 9x9 puzzle, with 10 elements pre-populated,&nbsp; should leave 71 slots
-unfilled.&nbsp; And for each slot there are 9 choices to make
-[1,2,3,4,5,6,7,8,9]. If we are using a brute force backtracking algorithm, it
-will&nbsp; have to pass 71 steps (to fill each slot) and for each step it will have
-to make nine&nbsp; choices, making the number of
-possible paths to</p>
-<pre class="literal-block">
-56392087339601733413306017749077372989860250021295987473736382457209L,
-</pre>
-<p>(do not try to interpret, it is way beyond trillions)</p>
-<p>This is the worst case for a brute force backtracking algorithm before it
-succeeds or fails. But our implementation is not brute force ! It uses
-intelligent functors to reduce the choices for each slot.</p>
-<p>For the sake of argument, let us say that the functors are able to
-reduce the number of choices to 2 - all the time. Then our algorithm will have
-to pass 71 steps and for each step it will have to make 2 choices. This will
-reduce the number of possible paths to (in worst case)</p>
-<pre class="literal-block">
-2361183241434822606848L.
-</pre>
-<p>It will still take light years to exhaust all possible paths.</p>
-<p>So, let us add concurrency to our algorithm and measure how it fairs. Please
-note that we are making the algorithm itself concurrent to solve a single
-tough puzzle.</p>
-</div>
-<div class="section" id="concurrent-sudoku-puzzle-solver">
-<h1>concurrent sudoku puzzle solver</h1>
-<p>To explain how the concurrent algorithm works we are going to use the
-pathological combination as the example</p>
-<pre class="literal-block">
-{{0,0,2,0,0,4,0,0,9},
- {0,0,0,0,0,9,0,0,0},
- {0,6,0,0,0,0,0,4,8},
- {0,3,5,0,0,0,0,0,0},
- {0,0,6,0,0,0,1,0,0},
- {0,9,0,0,0,5,0,0,4},
- {4,0,0,0,5,0,0,0,0},
- {6,0,0,0,0,2,0,0,0},
- {9,0,0,0,4,6,0,0,0}}.
-</pre>
-<p>In above case, first slot is unfilled and our functors can reduce the choices
-to [1,3,5,7,8]. Once the algorithm knows that those are&nbsp; un-reducible choices,
-it will spawn 5 processes, picking a unique&nbsp; choice for each one of them.
-Each of those process will continue from the second slot and repeat the same
-logic all over again.</p>
-<p>Soon our algorithm is going to spawn millions and millions of processes only to
-find that it has taken a bad path. So we will add a cap on the maximum number
-of processes it can spawn, <strong>say 100</strong> !</p>
-<p>All I did was to change couple of lines in existing code and add another 40
-lines to implement the concurrent logic. With our algorithm re-designed,
-there are two configuration parameters that are worth mentioning,</p>
-<dl class="docutils">
-<dt>concurrent,</dt>
-<dd>boolean(), <cite>false</cite> to use sequential algorithm and <cite>true</cite> to a concurrent
-backtracking algorithm.</dd>
-<dt>procs,</dt>
-<dd>Integer(), while executing in concurrent mode, limits the number of
-spawn-able process.</dd>
-</dl>
-</div>
-<div class="section" id="concurrent-version">
-<h1>concurrent version</h1>
-<p>We will now run our script using the concurrent version, using
-<tt class="docutils literal"><span class="pre">-t</span></tt> switch, and measure performance for 94 puzzles (not including the
-pathological case).</p>
-<div class="highlight"><pre><span class="nv">$ </span>bin/sudoku -c 3 -n 94 -d 60 -s 1123 -t -benchmark     <span class="c"># SMP diabled</span>
+<div class="section" id="how-does-it-perform-for-pathological-cases">
+<h1>how does it perform for pathological cases ?</h1>
+<p>I have added two puzzle files priv/long3.term and long4.term, both having a
+pathological case.</p>
+<p>First we will first solve the pathological case with sequential version</p>
+<div class="highlight"><pre><span class="nv">$ </span>bin/sudoku -f priv/long3.term         <span class="c"># SMP disabled</span>
+Time taken to evaluate: 3988177uS       <span class="c"># 3.9 Seconds</span>
 </pre></div>
-<p>Then again, the same script is executed with same switches but SMP
-enabled with 2 cores and then with 4 cores..</p>
-<p>Data when plotted looks like</p>
-<img alt="media/sudokucharts/chart94c.png" src="media/sudokucharts/chart94c.png" />
-<p>We could see that our concurrent algorithm scales well with number of cores
-and clearly gives a better performance over sequential version of the
-algorithm. On the other hand there is a slight over-head when executing
-concurrent algorithm without SMP.</p>
-<p>Now we move on to the pathological case, and execute our script in three
-different modes,</p>
-<div class="highlight"><pre><span class="c"># SMP enabled</span>
-<span class="nv">$ </span>bin/sudoku -c 3 -n 100 -d 60 -s 1123 -t -benchmark
+<p>Then with concurrent version, on different number of cores.</p>
+<div class="highlight"><pre><span class="nv">$ </span>bin/sudoku -t -f priv/long3.term      <span class="c"># SMP with 4 cores</span>
+Time taken to evaluate: 195572uS        <span class="c"># 195 milliseconds</span>
+
+<span class="nv">$ </span>bin/sudoku -t -f priv/long3.term      <span class="c"># SMP with 2 cores</span>
+Time taken to evaluate: 415335uS        <span class="c"># 415 milliseconds</span>
+
+<span class="nv">$ </span>bin/sudoku -t -f priv/long3.term      <span class="c"># SMP disabled</span>
+Time taken to evaluate: 1078302uS       <span class="c"># 1 second</span>
 </pre></div>
-<p>and plot our aggregate data,</p>
-<img alt="media/sudokucharts/chart100c.png" src="media/sudokucharts/chart100c.png" />
-<p>If you notice there is something interesting going on here, for instance we
-get <strong>10x improvement</strong> for pathalogical combination. Not only
-that <strong>we get 2-3x improvement</strong> for pathological combination even
-when <strong>SMP is disabled !!</strong></p>
-<p><strong>welcome to swarm algorithms ;)</strong></p>
+<p><cite>-t</cite> switch enables the concurrent mode, we can see that between 4 cores and 2
+cores there is 2x improvement because the concurrent logic is making use of
+the extra cores. But what will surprise us is that,</p>
+<p><strong>concurrent version performs 4x better even on a single-core</strong>. And with 4
+cores, performance <strong>improves to 20x</strong>. How does that happen ? <strong>welcome to
+swarm algorithms !!</strong></p>
+</div>
+<div class="section" id="swarm-algorithm">
+<h1>swarm algorithm</h1>
+<p>A backtracking algorithm becomes a swarm algorithm when it explores as many
+path as possible simultaneously, thus it avoids spending time on bad bath. In
+many cases the number of steps in a backtracking algorithm is not more than
+couple of hundred, and we find that, given enough execution time for the good
+path it gets completed quick enough. Note that swarm algorithm does not
+remove the exponential complexity of backtracking logic - but it gives a great
+deal on performance.</p>
+<p>This experiment might also teach us that concurrent programming is not just
+about multiple cores.</p>
 <p>Long ago, I wrote a similar Sudoku puzzle solver in C / Linux, but the
-best part of writting it in Erlang is the way it prompted me to re-design the
+best part of writing it in Erlang is the way it prompted me to re-design the
 algorithm for concurrency. In C, I would have never thought of spawning a
 new process for every choice it makes, but here it was only natural.</p>
 <p>That is how a language can affect our creativity, be it for programming or for
-poetry. And it is those simple and un-assuming things that changes one's
+poetry. And it is those simple and unassuming things that changes one's
 perspective.</p>
 
 <div class="rst-gallery">
     <div class="gallery-title">Browse all charts</div>
-    <a href="media/sudokucharts/chart94.png" title=""><img src="media/sudokucharts/chart94.png"></img></a><a href="media/sudokucharts/chart100.png" title=""><img src="media/sudokucharts/chart100.png"></img></a><a href="media/sudokucharts/chart94c.png" title=""><img src="media/sudokucharts/chart94c.png"></img></a><a href="media/sudokucharts/chart100.png" title=""><img src="media/sudokucharts/chart100.png"></img></a>
+    <a href="media/sudokucharts/nosmp.png" title=""><img src="media/sudokucharts/nosmp.png"></img></a><a href="media/sudokucharts/smp2.png" title=""><img src="media/sudokucharts/smp2.png"></img></a><a href="media/sudokucharts/smp4.png" title=""><img src="media/sudokucharts/smp4.png"></img></a><a href="media/sudokucharts/par.png" title=""><img src="media/sudokucharts/par.png"></img></a><a href="media/sudokucharts/conc.png" title=""><img src="media/sudokucharts/conc.png"></img></a>
 </div>
 </div></div>
 
 
     <div  class="metaz">
-      <span  class="last_modified"> last modified - 4 hours ago;</span>
+      <span  class="last_modified"> last modified - 24 hours ago;</span>
       <a  class="email" href="mailto:prataprc@gmail.com">contact-author</a>;</div>
     <div  id="myblog_social">
         <ul >
