@@ -3,6 +3,7 @@
 Articles
 ========
 
+- `blog with pagd, github and your text-editor <blog-with-pagd.html>`_.
 - `sudoku, erlang and concurrency <sudoku-in-erlang.html>`_.
 - `sudoku, backtracking and pathological situation <sudoku-pathological.html>`_.
 - `setting up dual monitors in Ubuntu <dual-monitors.html>`_.
