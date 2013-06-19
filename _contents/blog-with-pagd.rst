@@ -110,7 +110,7 @@ Make sure that your run ``pagd gen`` command before adding / committing files
 into your github repository.
 
 If you have any queries regarding pagd_, pluggdapps_ or tayra_ templating
-language, you can post post your queries to their mailing-list_.
+language, you can post your queries to their mailing-list_.
 
 .. _pagd: https://github.com/prataprc/pagd
 .. _pluggdapps: https://github.com/prataprc/pluggdapps
