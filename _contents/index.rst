@@ -3,7 +3,11 @@
 Articles
 ========
 
-- `blog with pagd, github and your text-editor <blog-with-pagd.html>`_.
+- `blog with pagd, github and favorite text-editor <blog-with-pagd.html>`_.
+- `customizing your blog site with pagd <pagd-customizing.html>`_.
+- `social interfaces for your site - generated with pagd <pagd-social.html>`_.
+- `integrating pagd with git / mercurial repository
+  <pagd-repository-integration.html>`_.
 - `sudoku, erlang and concurrency <sudoku-in-erlang.html>`_.
 - `sudoku, backtracking and pathological situation <sudoku-pathological.html>`_.
 - `setting up dual monitors in Ubuntu <dual-monitors.html>`_.

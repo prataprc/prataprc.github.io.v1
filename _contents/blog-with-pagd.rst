@@ -79,7 +79,7 @@ added.
 
 Make sure that your ``_contents/`` directory have a file by name index.<format>
 which will be converted to index.html while generating the site.
-``index.html`` will be the main page for your static site.
+``index.html`` will be the main page for your web site.
 
 Once you have your articles, generate the site.
 
@@ -87,7 +87,7 @@ Once you have your articles, generate the site.
 
     (env)$ pagd gen
 
-this will generate the static site, translating your contents into html pages.
+this will generate the web site, translating your contents into html pages.
 Above command must be executed under the root-directory of your layout and
 unless ``-t`` switch, specifying a target directory, is passed on to the
 command, index.html and all the other pages will be placed relative to your
@@ -100,19 +100,20 @@ Add to github and publish your site
 
 github has certain `conventions <http://pages.github.com/>`_ on hosting a
 repository as personal blog site. Since that could change in future, I am not
-going explain them here, may be in a separate post.
+going to explain them here, may be in a separate post.
 
 Once you have your repository setup in github, like in my case
 ``prataprc.github.io``, you can start adding your files into the repository
-and commit them for every modifications.
+and commit them after every modifications.
 
-Make sure that your run ``pagd gen`` command before adding / committing files
+Make sure that you run ``pagd gen`` command before adding / committing files
 into your github repository.
 
-If you have any queries regarding pagd_, pluggdapps_ or tayra_ templating
-language, you can post your queries to their mailing-list_.
+To keep a tab on pagd_ - follow the
+`project at github <https://github.com/prataprc/pagd>`_ and post your queries
+to their mailing-list_.
 
-.. _pagd: https://github.com/prataprc/pagd
+.. _pagd: http://pythonhosted.org/pagd
 .. _pluggdapps: https://github.com/prataprc/pluggdapps
 .. _tayra: https://github.com/prataprc/tayra
 .. _blogspot: www.blogger.com

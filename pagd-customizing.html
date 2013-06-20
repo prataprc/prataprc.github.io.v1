@@ -11,7 +11,7 @@
 </link><!-- Magnific Popup core JS file -->
 <script  src="media/magnific-popup/jquery.magnific-popup.min.js">
 
-</script><title > pagd-customizing</title>
+</script><title > Customizing your blog site with pagd</title>
 
 
   <link  type="text/css" href="http://fonts.googleapis.com/css?family=Inconsolata" type="rel='stylesheet'">
@@ -20,58 +20,120 @@
   body { font-family:Inconsolata }
 </style>
   </head><body >
-    <div  id="page">
-      <div  id="header"> <nav >
+    <div  id="myblog-page">
+      <div  id="myblog-header"> <nav >
   <a  href="index.html">home</a><a  href="http://in.linkedin.com/in/prataprc">linkedin</a><a  href="https://github.com/prataprc">github</a></nav></div>
-      <div  id="container">
+      <div  id="myblog-container">
         <article >
-    <div  class="article-title"> pagd-customizing
+    <div  class="article-title"> Customizing your blog site with pagd
       <div  class="metaa">
-        <span  class="author"> by Pratap Chakravarthy;</span>
-        <span  class="date"> 11 minutes ago</span></div></div>
+        <span  class="author"> by prataprc;</span>
+        <span  class="date"> 17 hours ago</span></div></div>
 
-    <div  class="content"> <div class="section" id="adding-fonts-with-google-webfonts">
+    <div  class="content"> <p>Read this <a class="reference external" href="./blog-with-pagd.html">article</a> to know how to set up your blog
+site with <a class="reference external" href="http://pythonhosted.org/pagd">pagd</a> and host it using <a class="reference external" href="http://github.com">github</a>. Continue reading if you want to
+customize your site with pagd.</p>
+<div class="section" id="adding-fonts-with-google-webfonts">
 <h1>adding fonts with google-webfonts</h1>
-<p>import any number of fonts, configure site-level fonts with <tt class="docutils literal">style</tt>, while
-portions of page can have different fonts by adding/changing them in
-<cite>myblog.css</cite></p>
+<p>Pagd by default comes with inconsolata font from <a class="reference external" href="www.google.com/webfonts">google-webfonts</a>. Pagd
+templates will load all font references from <tt class="docutils literal">config.json</tt> file present under
+your layout's root directory. Just append the reference url to the list of
+<tt class="docutils literal">google_webfonts</tt>. To apply one of the loaded fonts to page's &lt;body&gt;
+element - set the <tt class="docutils literal"><span class="pre">font-family</span></tt> attribute in config.json.  The <tt class="docutils literal">style</tt>
+property object in config.json will be converted to a string of
+semi-colon separated list of CSS properties and applied to page's body element
+as its style attribute.</p>
+<div class="highlight"><pre>&quot;google_webfonts&quot; : [
+    &quot;http://fonts.googleapis.com/css?family=Inconsolata&quot;
+],
+&quot;style&quot; : {
+    &quot;font-family&quot; : &quot;Inconsolata&quot;
+}
+</pre></div>
+<p>Note that above settings are global to all pages in the site. If you want to
+customize the fonts for specific elements in the page, then you must customize
+them using <tt class="docutils literal">media/myblog.css</tt>.</p>
 </div>
-<div class="section" id="comments-and-social-sharing-with-disqus">
-<h1>comments and social sharing with disqus</h1>
+<div class="section" id="let-your-readers-mail-you-directly">
+<h1>let your readers mail you directly</h1>
+<p>Pagd can generate a <tt class="docutils literal">mailto:</tt> hyper-reference at the bottom of every blog
+article, if you provide <tt class="docutils literal">email</tt> meta-data for your pages. If you are
+managing your site with git or mercurial then, you can add your email-id as
+part of <tt class="docutils literal">.gitconfig</tt> or <tt class="docutils literal">.hgrc</tt> file. Otherwise, you can simply add your
+email id along with the page content as meta data, like,</p>
+<div class="highlight"><pre><span class="nc">:title:</span> <span class="nf">&lt;Page title for this blog article&gt;</span>
+<span class="nc">:author:</span> <span class="nf">prataprc</span>
+<span class="nc">:email:</span> <span class="nf">&lt;emailid&gt;</span>
+
+<span class="gh">...</span>
+<span class="gh">rest of the content</span>
+<span class="gh">...</span>
+</pre></div>
+<p>note if you are not providing your email id as part of repository meta-data,
+they you will have add it manually for every blog article that you are
+creating under <tt class="docutils literal">_contents</tt> sub-directory.</p>
 </div>
-<div class="section" id="easy-sharing-with-social-network">
-<h1>easy sharing with social network</h1>
+<div class="section" id="copyright">
+<h1>copyright</h1>
+<p>Add your copyright information in <tt class="docutils literal">config.json</tt> file placed under your site
+layout's root directory, for eg.,</p>
+<div class="highlight"><pre><span class="s2">&quot;copyright&quot;</span> <span class="err">:</span> <span class="s2">&quot;&amp;copy; 2013 Pratap Chakravarthy&quot;</span>
+</pre></div>
 </div>
-<div class="section" id="let-users-mail-your-directly">
-<h1>let users mail your directly</h1>
+<div class="section" id="advanced-customization">
+<h1>advanced customization</h1>
+<p>Once you are comfortable adding pages under <tt class="docutils literal">_contents/</tt> directory and
+managing your <tt class="docutils literal">config.json</tt>, you must go through <a class="reference external" href="http://pythonhosted.org/pagd">pagd</a> package documentation
+and learn now pagd.myblog layout is organized. Subsequently you can alter your
+site layout either using CSS or directly by changing the template files. This
+section gives a short introduction on them.</p>
 </div>
-<div class="section" id="getting-meta-data-from-git-mercurial-repository">
-<h1>getting meta data from git / mercurial repository</h1>
-<p>author,
-email,
-createdon,
-last_modified</p>
+<div class="section" id="customizing-with-css">
+<h1>customizing with CSS</h1>
+<p>Html elements generated by pagd.myblog template are selectable using CSS id
+and class names. Under your site-layout, <tt class="docutils literal">media/myblog.css</tt> file contains
+the necessary styling attributes for your pages. It is generally divided into,</p>
+<ul class="simple">
+<li>CSS reset declarations.</li>
+<li>standard element styling applicable to all pages.</li>
+<li>targeted styling for specific html elements.</li>
+</ul>
+<p>You can freely modify / add / remove CSS declaration as it suites your site.</p>
 </div>
-<div class="section" id="customizing">
-<h1>Customizing</h1>
-<p>Describe customizing <cite>pagd.myblog</cite> using prataprc.github.io.</p>
-<p>navigation items
-copyright</p>
-<p><cite>pagd.myblog</cite> layout should be improved continuously with new features, to
-learn please do post your questions and comments to the <a class="reference external" href="http://groups.google.com/group/pluggdapps">mailing-list</a>.</p>
-</div>
-<div class="section" id="integrating-with-github-repository">
-<h1>Integrating with github repository</h1>
-</div>
-<div class="section" id="integrating-your-disqus-commenting-board-with-pagd">
-<h1>Integrating your disqus commenting board with pagd</h1>
+<div class="section" id="customizing-with-templates">
+<h1>customizing with templates</h1>
+<p>All template files for <tt class="docutils literal">pagd.myblog</tt> layout can be found under
+<tt class="docutils literal">_templates/</tt> sub-directory and uses <a class="reference external" href="http://pythonhosted.org/tayra">tayra</a> templating language to describe
+them. Experimental support is available for mako and jinja2 templates, but use
+them only if you are well-versed with pagd-tool. Pages generated by
+<cite>pagd.myblog</cite> layout plugin is made up of three parts, header, container and
+footer.</p>
+<ul class="simple">
+<li><tt class="docutils literal">index.ttl</tt> directly maps to <tt class="docutils literal"><span class="pre">_contents/index.&lt;format&gt;</span></tt> file. This
+template is used only for the index-page.</li>
+<li><tt class="docutils literal">_default.ttl</tt> template will be used for all other pages, if a matching
+template is not found for a page under _contents/ sub-directory.</li>
+<li><tt class="docutils literal">_head.ttl</tt> will go under &lt;head&gt; element of the page. Both index.ttl and
+_default.ttl templates include them.</li>
+<li><tt class="docutils literal">_header.ttl</tt> constitute the header portion of site pages. You can add your
+site-wide navigation links inside this template file.</li>
+<li><tt class="docutils literal">_footer.ttl</tt> constitute the footer portion of site pages. You can add
+acknowledgments, copyright notice under this template.</li>
+<li><tt class="docutils literal">_social.ttl</tt> adds social sharing features for your site. Uses
+<cite>social_sharing</cite> configuration parameter from <cite>config.json</cite>.</li>
+<li><tt class="docutils literal">_social/</tt> add all html snippets that you obtain from disqus, twitter,
+facebook etc...  under this directory.</li>
+</ul>
+<p>To keep a tab on <a class="reference external" href="http://pythonhosted.org/pagd">pagd</a> - follow the
+<a class="reference external" href="https://github.com/prataprc/pagd">project at github</a> and post your queries
+to their <a class="reference external" href="http://groups.google.com/group/pluggdapps">mailing-list</a>.</p>
 </div></div>
 
 
     <div  class="metaz">
-      <span  class="last_modified"> last modified - 11 minutes ago;</span>
+      <span  class="last_modified"> last modified - 17 hours ago;</span>
       <a  class="email" href="mailto:prataprc@gmail.com">contact-author</a>;</div>
-    <div  id="myblog_social">
+    <div  id="myblog-social">
         <ul >
   
     <li  class="twitter"> <a href="https://twitter.com/share" class="twitter-share-button"
@@ -128,10 +190,8 @@ data-width="450" data-show-faces="true"></div>
     
 
       <hr ></hr>
-    <div  id="footer"> <div  id="footer">
-  <div  id="copyright"> &copy; 2013 Pratap Chakravarthy</div>
-  <div  id="pagd"> generated using <a  href="https://github.com/prataprc/pagd">pagd</a></div></div>
-
+    <div  id="myblog-footer"> <div  id="myblog-copyright"> &copy; 2013 Pratap Chakravarthy</div>
+<div  id="myblog-pagd"> generated using <a  href="https://github.com/prataprc/pagd">pagd</a></div>
 <script  type="text/javascript">
   // Snippet to load rst gallery if available.
   $(document).ready( function() {

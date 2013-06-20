@@ -20,15 +20,15 @@
   body { font-family:Inconsolata }
 </style>
   </head><body >
-    <div  id="page">
-      <div  id="header"> <nav >
+    <div  id="myblog-page">
+      <div  id="myblog-header"> <nav >
   <a  href="index.html">home</a><a  href="http://in.linkedin.com/in/prataprc">linkedin</a><a  href="https://github.com/prataprc">github</a></nav></div>
-      <div  id="container">
+      <div  id="myblog-container">
         <article >
     <div  class="article-title"> Blog with pagd, github and your text-editor
       <div  class="metaa">
         <span  class="author"> by prataprc;</span>
-        <span  class="date"> 26 hours ago</span></div></div>
+        <span  class="date"> 43 hours ago</span></div></div>
 
     <div  class="content"> <p>First time I started blogging it was with <a class="reference external" href="www.blogger.com">blogspot</a>, which was too cumbersome
 to me and eventually lost interest. Second time around, I started by listing
@@ -42,7 +42,7 @@ image url, etc ... are important.</li>
 <li>customizable layouts and templates.</li>
 </ul>
 <p>and found that github can address some of those. It can host static sites for
-me - even plain old HTML files, and <a class="reference external" href="https://github.com/prataprc/pagd">pagd</a> filled up the remaining
+me - even plain old HTML files, and <a class="reference external" href="http://pythonhosted.org/pagd">pagd</a> filled up the remaining
 requirements. Please note that techniques explained here are suitable for
 folks who are using a linux distribution and comfortable with shell interface.</p>
 <div class="section" id="how-do-i-setup-my-blog-site">
@@ -63,7 +63,7 @@ virtual environment to play with <tt class="docutils literal">pagd</tt>.</p>
 <span class="o">(</span>env<span class="o">)</span><span class="nv">$ </span>pip install pagd
 </pre></div>
 <p>note that we are explicitly using python3.2 version because <tt class="docutils literal">pagd</tt>
-works only with python-3.x. Installing <a class="reference external" href="https://github.com/prataprc/pagd">pagd</a> package will provide you
+works only with python-3.x. Installing <a class="reference external" href="http://pythonhosted.org/pagd">pagd</a> package will provide you
 <tt class="docutils literal">pagd</tt> command line script and as long as you are inside virtual environment
 the command will be available via <cite>$PATH</cite>.</p>
 <p><tt class="docutils literal">creating my blog layout</tt></p>
@@ -86,15 +86,15 @@ directories for you.</p>
 directories. Just add your articles under <tt class="docutils literal">_contents/</tt> directory in one of
 the supported formats - which are extensible by plugins - and as of
 this writing,  plain-text, reStructured-text, markdown and html formats are
-supported. Keep a tab on <a class="reference external" href="https://github.com/prataprc/pagd">pagd</a> project site to know what else is getting
+supported. Keep a tab on <a class="reference external" href="http://pythonhosted.org/pagd">pagd</a> project site to know what else is getting
 added.</p>
 <p>Make sure that your <tt class="docutils literal">_contents/</tt> directory have a file by name index.&lt;format&gt;
 which will be converted to index.html while generating the site.
-<tt class="docutils literal">index.html</tt> will be the main page for your static site.</p>
+<tt class="docutils literal">index.html</tt> will be the main page for your web site.</p>
 <p>Once you have your articles, generate the site.</p>
 <div class="highlight"><pre><span class="o">(</span>env<span class="o">)</span><span class="nv">$ </span>pagd gen
 </pre></div>
-<p>this will generate the static site, translating your contents into html pages.
+<p>this will generate the web site, translating your contents into html pages.
 Above command must be executed under the root-directory of your layout and
 unless <tt class="docutils literal"><span class="pre">-t</span></tt> switch, specifying a target directory, is passed on to the
 command, index.html and all the other pages will be placed relative to your
@@ -105,21 +105,22 @@ layout's root-directory.</p>
 <h1>Add to github and publish your site</h1>
 <p>github has certain <a class="reference external" href="http://pages.github.com/">conventions</a> on hosting a
 repository as personal blog site. Since that could change in future, I am not
-going explain them here, may be in a separate post.</p>
+going to explain them here, may be in a separate post.</p>
 <p>Once you have your repository setup in github, like in my case
 <tt class="docutils literal">prataprc.github.io</tt>, you can start adding your files into the repository
-and commit them for every modifications.</p>
-<p>Make sure that your run <tt class="docutils literal">pagd gen</tt> command before adding / committing files
+and commit them after every modifications.</p>
+<p>Make sure that you run <tt class="docutils literal">pagd gen</tt> command before adding / committing files
 into your github repository.</p>
-<p>If you have any queries regarding <a class="reference external" href="https://github.com/prataprc/pagd">pagd</a>, <a class="reference external" href="https://github.com/prataprc/pluggdapps">pluggdapps</a> or <a class="reference external" href="https://github.com/prataprc/tayra">tayra</a> templating
-language, you can post post your queries to their <a class="reference external" href="http://groups.google.com/group/pluggdapps">mailing-list</a>.</p>
+<p>To keep a tab on <a class="reference external" href="http://pythonhosted.org/pagd">pagd</a> - follow the
+<a class="reference external" href="https://github.com/prataprc/pagd">project at github</a> and post your queries
+to their <a class="reference external" href="http://groups.google.com/group/pluggdapps">mailing-list</a>.</p>
 </div></div>
 
 
     <div  class="metaz">
-      <span  class="last_modified"> last modified - 11 minutes ago;</span>
+      <span  class="last_modified"> last modified - 16 hours ago;</span>
       <a  class="email" href="mailto:prataprc@gmail.com">contact-author</a>;</div>
-    <div  id="myblog_social">
+    <div  id="myblog-social">
         <ul >
   
     <li  class="twitter"> <a href="https://twitter.com/share" class="twitter-share-button"
@@ -176,10 +177,8 @@ data-width="450" data-show-faces="true"></div>
     
 
       <hr ></hr>
-    <div  id="footer"> <div  id="footer">
-  <div  id="copyright"> &copy; 2013 Pratap Chakravarthy</div>
-  <div  id="pagd"> generated using <a  href="https://github.com/prataprc/pagd">pagd</a></div></div>
-
+    <div  id="myblog-footer"> <div  id="myblog-copyright"> &copy; 2013 Pratap Chakravarthy</div>
+<div  id="myblog-pagd"> generated using <a  href="https://github.com/prataprc/pagd">pagd</a></div>
 <script  type="text/javascript">
   // Snippet to load rst gallery if available.
   $(document).ready( function() {
