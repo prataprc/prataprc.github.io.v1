@@ -30,6 +30,20 @@ following information for each page,
 - createdon
 - last_modified
 
+There is an important ceveate in this. If you are relying on repository meta
+data for ``last_modified`` attribute, then you will have to do it like this,
+
+- create / update your blog articles.
+- once done, add them to your repository and make sure to commit the same.
+- then run ``pagd gen``.
+
+Even if you have executed ``pagd gen`` command before, you must make sure that
+you regenerate your modified pages after they are committed into the
+repository. Otherwise, last_modified date will not be accurate.
+
+You can then add the generated html pages, commit them and push them to
+github, or else-where.
+
 To keep a tab on pagd_ - follow the
 `project at github <https://github.com/prataprc/pagd>`_ and post your queries
 to their mailing-list_.
