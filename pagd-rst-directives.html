@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html >
+  <head > <!-- jQuery -->
+<script  src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js">
+
+</script><!-- local media files -->
+<link  rel="stylesheet" type="text/css" href="media/myblog.css">
+</link><link  rel="stylesheet" type="text/css" href="media/pygments.css">
+</link><!-- Magnific Popup core CSS file -->
+<link  rel="stylesheet" type="text/css" href="media/magnific-popup/magnific-popup.css"> 
+</link><!-- Magnific Popup core JS file -->
+<script  src="media/magnific-popup/jquery.magnific-popup.min.js">
+
+</script><title > Custom directive for restructured-text</title>
+
+
+  <link  type="text/css" href="http://fonts.googleapis.com/css?family=Inconsolata" type="rel='stylesheet'">
+
+</link><style   type="text/css">
+  body { font-family:Inconsolata }
+</style>
+  </head><body >
+    <div  id="myblog-page">
+      <div  id="myblog-header"> <nav >
+  <a  href="index.html">home</a><a  href="http://in.linkedin.com/in/prataprc">linkedin</a><a  href="https://github.com/prataprc">github</a></nav></div>
+      <div  id="myblog-container">
+        <article >
+    <div  class="article-title"> Custom directive for restructured-text
+      <div  class="metaa">
+        <span  class="author"> by prataprc;</span></div></div>
+        <div  class="content"> <p>Read this <a class="reference external" href="./blog-with-pagd.html">article</a> to know how to set up your blog
+site with <a class="reference external" href="http://pythonhosted.org/pagd">pagd</a> and host it using <a class="reference external" href="http://github.com">github</a>. Rest of the article explain couple
+of restructured directives that can be used while authoring articles and
+generating a site with pagd.</p>
+<div class="section" id="source-code-highlighting">
+<h1>source code highlighting</h1>
+<p>If you are a programmer or some-one who wants to author articles about
+programming and languages - it is likely that you will be including snippets of
+code in your article. In such cases wrap your code-snippets with
+<tt class="docutils literal"><span class="pre">code-block</span></tt> rst-directive, like,</p>
+<div class="highlight"><pre><span class="p">..</span> <span class="ow">code-block</span><span class="p">::</span> c
+
+    void myfunc(void) {
+        int i = 10;
+        printf(&quot;%d %d %d %d %x &quot;, i++, --i, ++i, ++i, i++ );
+    }
+</pre></div>
+<p>while generating your web site using <a class="reference external" href="http://pythonhosted.org/pagd">pagd</a>, above block of code will be
+rendered like,</p>
+<div class="highlight"><pre><span class="kt">void</span> <span class="nf">myfunc</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d %d %d %d %x &quot;</span><span class="p">,</span> <span class="n">i</span><span class="o">++</span><span class="p">,</span> <span class="o">--</span><span class="n">i</span><span class="p">,</span> <span class="o">++</span><span class="n">i</span><span class="p">,</span> <span class="o">++</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="o">++</span> <span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="section" id="youtube-directive">
+<h1>youtube directive</h1>
+<p>There were many occations we wanted to refer to you-tube links that can play
+with-in our page. For such occations,</p>
+<div class="highlight"><pre><span class="p">..</span> <span class="ow">youtube</span><span class="p">::</span> 7-qGKqveZaM
+</pre></div>
+<p>while generate the page with pagd,</p>
+<object class="rst-youtube" type="application/x-shockwave-flash"
+         data="http://www.youtube.com/v/7-qGKqveZaM">
+    <param name="movie" value="http://www.youtube.com/v/7-qGKqveZaM"></param>
+    <param name="wmode" value="transparent"></param> 
+</object>
+<p>You can also apply custom styling for youtube widgets in your site my
+modifying the CSS sytling for <tt class="docutils literal"><span class="pre">div.rst-youtube</span></tt> selectors inside
+<tt class="docutils literal">media/myblog.css</tt> file.</p>
+</div>
+<div class="section" id="gallery-directive">
+<h1>gallery directive</h1>
+<p>Let us say you have a bunch of charts that you would like to present them as
+image gallery to your readers,</p>
+<div class="highlight"><pre><span class="p">..</span> <span class="ow">gallery</span><span class="p">::</span> My collection of charts
+    media/sudokucharts/nosmp.png
+    media/sudokucharts/smp2.png
+    media/sudokucharts/smp4.png
+    media/sudokucharts/par.png
+    media/sudokucharts/conc.png
+</pre></div>
+<p>and the gallery looks like,</p>
+
+<div class="rst-gallery">
+    <div class="gallery-title">My collection of charts</div>
+    <a href="media/sudokucharts/nosmp.png" title=""><img src="media/sudokucharts/nosmp.png"></img></a><a href="media/sudokucharts/smp2.png" title=""><img src="media/sudokucharts/smp2.png"></img></a><a href="media/sudokucharts/smp4.png" title=""><img src="media/sudokucharts/smp4.png"></img></a><a href="media/sudokucharts/par.png" title=""><img src="media/sudokucharts/par.png"></img></a><a href="media/sudokucharts/conc.png" title=""><img src="media/sudokucharts/conc.png"></img></a>
+</div>
+<p><a class="reference external" href="http://pythonhosted.org/pagd">pagd</a> uses <a class="reference external" href="https://github.com/dimsemenov/Magnific-Popup">magnific-popup</a> jquery plugin to show image galleries within HTML
+pages. They have excellent documentation and there are many ways to customize
+the plugin - which you can learn from their project site. There is also a bunch
+of CSS selectors that are available in <tt class="docutils literal">media/myblog.css</tt> with which you can
+do some basic cusomization as well.</p>
+</div></div>
+
+
+    <div  class="metaz"></div>
+      <div  id="myblog-social">
+        <ul >
+  
+    <li  class="twitter"> <a href="https://twitter.com/share" class="twitter-share-button"
+    data-via="prataprc">Tweet</a>
+<script>!function(d,s,id){var
+    js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document,
+'script', 'twitter-wjs');</script>
+
+</li><li  class="fb"> <div id="fb-root"></div>
+<script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+      fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+</script>
+<div class="fb-like" data-send="false" data-layout="button_count"
+data-width="450" data-show-faces="true"></div>
+
+
+</li><li  class="hn"> <!-- Auto-detect URL of current page and title if necessary -->
+<a href="http://news.ycombinator.com/submit" class="hn-share-button">Vote on
+    HN</a>
+<script>
+    (function(d, t) {
+        var g = d.createElement(t),
+        s = d.getElementsByTagName(t)[0];
+        g.src = '//hnbutton.appspot.com/static/hn.min.js';
+        s.parentNode.insertBefore(g, s);
+    }(document, 'script'));
+</script>
+
+</li><li  class="linkedin"> <script src="//platform.linkedin.com/in.js" type="text/javascript">
+     lang: en_US
+</script>
+<script type="IN/Share" data-counter="right"></script>
+
+</li><li  class="gplus"> <!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-size="small"></div>
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  (function() {
+       var po = document.createElement('script'); po.type = 'text/javascript';
+       po.async = true;
+       po.src = 'https://apis.google.com/js/plusone.js';
+       var s = document.getElementsByTagName('script')[0];
+       s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+</li></ul></div></article></div></div>
+    
+
+      <hr ></hr>
+    <div  id="myblog-footer"> <div  id="myblog-copyright"> &copy; 2013 Pratap Chakravarthy</div>
+<div  id="myblog-pagd"> generated using <a  href="https://github.com/prataprc/pagd">pagd</a></div>
+<script  type="text/javascript">
+  // Snippet to load rst gallery if available.
+  $(document).ready( function() {
+    $('.rst-gallery').each( function(idx, element) {
+        $(element).magnificPopup({
+          delegate: 'a',
+          type: 'image',
+          gallery: {
+            enabled: true, // set to true to enable gallery
+            preload: [0,1], // load next item
+            navigateByImgClick: true,
+          }
+        });
+    });
+  });
+
+</script></div></body>
+
+
+</html>

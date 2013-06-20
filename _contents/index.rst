@@ -3,6 +3,7 @@
 Articles
 ========
 
+- `custom directive for reStructuredText <pagd-rst-directives.html>`_.
 - `blog with pagd, github and favorite text-editor <blog-with-pagd.html>`_.
 - `customizing your blog site with pagd <pagd-customizing.html>`_.
 - `social interfaces for your site - generated with pagd <pagd-social.html>`_.
