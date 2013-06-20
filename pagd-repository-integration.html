@@ -54,13 +54,25 @@ following information for each page,</p>
 <li>createdon</li>
 <li>last_modified</li>
 </ul>
+<p>There is an important ceveate in this. If you are relying on repository meta
+data for <tt class="docutils literal">last_modified</tt> attribute, then you will have to do it like this,</p>
+<ul class="simple">
+<li>create / update your blog articles.</li>
+<li>once done, add them to your repository and make sure to commit the same.</li>
+<li>then run <tt class="docutils literal">pagd gen</tt>.</li>
+</ul>
+<p>Even if you have executed <tt class="docutils literal">pagd gen</tt> command before, you must make sure that
+you regenerate your modified pages after they are committed into the
+repository. Otherwise, last_modified date will not be accurate.</p>
+<p>You can then add the generated html pages, commit them and push them to
+github, or else-where.</p>
 <p>To keep a tab on <a class="reference external" href="http://pythonhosted.org/pagd">pagd</a> - follow the
 <a class="reference external" href="https://github.com/prataprc/pagd">project at github</a> and post your queries
 to their <a class="reference external" href="http://groups.google.com/group/pluggdapps">mailing-list</a>.</p></div>
 
 
     <div  class="metaz">
-      <span  class="last_modified"> last modified - 78 seconds ago;</span>
+      <span  class="last_modified"> last modified - 14 seconds ago;</span>
       <a  class="email" href="mailto:prataprc@gmail.com">contact-author</a>;</div>
     <div  id="myblog-social">
         <ul >
