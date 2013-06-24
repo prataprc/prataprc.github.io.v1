@@ -8,7 +8,7 @@
        "font-family" : "Inconsolata"
    },
    "show_email" : true,
-   "social_sharing" : "twitter,fb,hn,linkedin,gplus",
+   "social_sharing" : "",
    "disqus" : false,
    "skip_context" : "",
    "copyright" : "&copy; 2013 Pratap Chakravarthy"

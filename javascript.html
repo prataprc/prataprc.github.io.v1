@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html >
+  <head > <!-- jQuery -->
+<script  src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js">
+
+</script><!-- local media files -->
+<link  rel="stylesheet" type="text/css" href="media/myblog.css"/><link  rel="stylesheet" type="text/css" href="media/pygments.css"/><!-- Magnific Popup core CSS file -->
+<link  rel="stylesheet" type="text/css" href="media/magnific-popup/magnific-popup.css"/><!-- Magnific Popup core JS file -->
+<script  src="media/magnific-popup/jquery.magnific-popup.min.js">
+
+</script><title > Javascript</title>
+
+
+  <link  type="text/css" href="http://fonts.googleapis.com/css?family=Inconsolata" type="rel='stylesheet'"/><style   type="text/css">
+  body { font-family:Inconsolata }
+</style>
+  </head><body >
+    <div  id="myblog-page">
+      <div  id="myblog-header"> <nav >
+  <a  href="index.html">home</a><a  href="http://in.linkedin.com/in/prataprc">linkedin</a><a  href="https://github.com/prataprc">github</a></nav></div>
+      <div  id="myblog-container">
+        <article >
+    <div  class="article-title"> Javascript
+      <div  class="metaa">
+        <span  class="author"> by prataprc;</span></div></div>
+        <div  class="content"> <p>I like languages that can be explained within few pages of a book. Besides C,
+Lua, Erlang - Javascript is one such language that have that simplicity. This
+post explains the language through examples, mostly through examples and all
+of them can be found at this <a class="reference external" href="https://gist.github.com/prataprc/5843946">gist</a>.</p>
+<div class="section" id="literals">
+<h1>literals</h1>
+<p>All languages are defined as collection of tokens and tokens are normally
+classified as literals, keywords, operators or identifiers. Literals are
+data-objects that are hard-coded in the program, they are baked into the
+language for sake of efficiency.</p>
+
+    <script src="https://gist.github.com/prataprc/5843946.js?file=literals.js"></script>
+</div>
+<div class="section" id="keywords">
+<h1>keywords</h1>
+<p>Keywords are special tokens that gives additional structure to the program.
+Following is a basic set of keywords in Javascript</p>
+
+    <script src="https://gist.github.com/prataprc/5843946.js?file=keywords.js"></script>
+<p>note that <tt class="docutils literal">typeof</tt> is un-reliable in most implementation of Javascript. It
+is better to use - <tt class="docutils literal">Object.prototype.toString(10)</tt> to retrieve the type of an
+object, although you will have to process the returned string to remove the
+prefix.</p>
+<p>To remove an attribute name from object a.k.a. property, use <tt class="docutils literal">delete</tt>
+instead of assigning <tt class="docutils literal">null</tt>.</p>
+<p>Keywords that add conditional structure,</p>
+
+    <script src="https://gist.github.com/prataprc/5843946.js?file=condblocks.js"></script>
+<p>only the ternary operator can be treated as expression rest every thing are
+statements.</p>
+<p>Keywords that add looping structure,</p>
+
+    <script src="https://gist.github.com/prataprc/5843946.js?file=loop.js"></script>
+<p>all keywords that add looping strucutre are to be treated as statements.</p>
+</div>
+<div class="section" id="arithmetic-operators">
+<h1>arithmetic-operators</h1>
+
+    <script src="https://gist.github.com/prataprc/5843946.js?file=ops_arith.js"></script>
+<p>keep in mind that Javascript does lot of implicit type-coersions.</p>
+</div>
+<div class="section" id="comparision-operators">
+<h1>comparision-operators</h1>
+
+    <script src="https://gist.github.com/prataprc/5843946.js?file=ops_comp.js"></script>
+<p>there is no real way to compare equality of non-primitive objects and in many
+cases it is better to stick with <tt class="docutils literal">===</tt> instead of <tt class="docutils literal">==</tt>. Former compares
+for both value and type, while the later compares only the value.</p>
+</div>
+<div class="section" id="logical-operators">
+<h1>logical-operators</h1>
+
+    <script src="https://gist.github.com/prataprc/5843946.js?file=ops_logic.js"></script>
+</div>
+<div class="section" id="bitwise-operators">
+<h1>bitwise-operators</h1>
+
+    <script src="https://gist.github.com/prataprc/5843946.js?file=ops_bitwise.js"></script>
+<p>comments on the right side explain the output by demonstrating the operation
+in binary-format. Conceptually, the bitwise logical operators work as follows:</p>
+<ul class="simple">
+<li>the operands are converted to 32-bit integers and expressed by a series of
+bits (zeros and ones).</li>
+<li>each bit in the first operand is paired with the corresponding bit in the
+second operand: first bit to first bit, second bit to second bit, and so on.</li>
+<li>the operator is applied to each pair of bits, and the result is constructed
+bitwise.</li>
+</ul>
+<p>If you are a C programmer, you might already be knowing the
+difference between between arithmetic <tt class="docutils literal">&gt;&gt;</tt> and logical <tt class="docutils literal">&gt;&gt;&gt;</tt> right shift.
+Otherwise, just remember the following points,</p>
+<ul class="simple">
+<li>right-shift matters only to negative numbers that can be represented in
+32-bit 2's complement.</li>
+<li>arithmetic right-shift preserves the sign while logical does-not.</li>
+<li>logical right-shift will stuff as many binary 0s on the left as that are
+shifted out on the right.</li>
+</ul>
+<p>Looks like bitwise operations on large integers are left undefined in
+Javascript.</p>
+</div>
+<div class="section" id="assignment-operators">
+<h1>assignment operators</h1>
+
+    <script src="https://gist.github.com/prataprc/5843946.js?file=ops_assign.js"></script>
+<p>normally assignments are statement in many languages. In Javascript an
+assignment is treated like an expression, and based on the scope of the
+expression, the context where the side effects are created varies. It is
+explained in a separate section below.</p>
+<p>There is also membership operator <tt class="docutils literal">.</tt> that can be used to access attributes
+and methods on objects.</p>
+</div>
+<div class="section" id="types">
+<h1>types</h1>
+<p>Javascript is weakly typed. Please note that values and objects in Javascript
+are strongly typed and values are always associted with same type. It is the
+reference to values that are weakly typed - in the sense that same variable name
+can refer to different value-types as the program is executed. It also means
+that programmers can interpret a variable as particular type which can be
+wrong and it is difficult to catch this problem by compiling the program.</p>
+
+    <script src="https://gist.github.com/prataprc/5843946.js?file=types.js"></script>
+<p>in the end of above gist, we demonstrate two other ways of creating a
+number-value 10 and <tt class="docutils literal">n === m</tt> give false because the former is number-type
+while the later is object-type.</p>
+</div>
+<div class="section" id="function-and-scope">
+<h1>function and scope</h1>
+<p>following gist will name resolution gymnastics with javascript functions.</p>
+
+    <script src="https://gist.github.com/prataprc/5843946.js?file=function.js"></script>
+<p>in javascript functions are the only means of code-abstraction and thereby
+only form of scoping available for programmers. By default every function act
+as a closure, making its local namespace available for enclosed function
+definitions. And only functions that are enclosed within the scope of an
+outer-function can access the outer function's local namespace.</p>
+<p>Make a note that parent function's namespaces are only refered by enclosed
+function, parent function's namespace is not copied to enclosed function's
+namespace.</p>
+<p>Function arguments can be access inside the function as,</p>
+
+    <script src="https://gist.github.com/prataprc/5843946.js?file=arguments.js"></script>
+<p>And some gymnastics with scope.</p>
+
+    <script src="https://gist.github.com/prataprc/5843946.js?file=scope.js"></script>
+<p>Javascript can hoists declarations, that is, both var statements and function
+declarations will be moved to the top of the enclosing scope.</p>
+<p>name resolution order,</p>
+<ul class="simple">
+<li>In case there is a var foo statement in the current scope, use that.</li>
+<li>If one of the function parameters is named foo, use that.</li>
+<li>If the function itself is called foo, use that.</li>
+<li>Go to the next outer scope, and start again.</li>
+</ul>
+<p>Another thing about scoping is that there is only one global namespace. That
+is Javascript does not have the notion of modules, hence everything is
+executed in the context of the same single global namespace.</p>
+</div>
+<div class="section" id="evaluation">
+<h1>evaluation</h1>
+<p>Since Javascript is byte-code interpreted language, program text can be parsed
+compiled to virtual-machine byte code and executed on the fly.</p>
+
+    <script src="https://gist.github.com/prataprc/5843946.js?file=eval.js"></script>
+<p>a curious aspect here is that even statements like <tt class="docutils literal">if</tt> blocks are executed
+as expression and value is returned. Note that it is not legal to do <tt class="docutils literal">a =
+if(true) {100} else {200}</tt> in your <cite>.js</cite> file or under <cite>&lt;script&gt;</cite> tag of html.</p>
+<p>Normally eval function will execute the script in the local-scope of the
+caller. However, it only executes in the local scope when called directly.</p>
+</div></div>
+
+
+    <div  class="metaz"></div></article></div></div>
+      
+      <hr/><div  id="myblog-footer"> <div  id="myblog-copyright"> &copy; 2013 Pratap Chakravarthy</div>
+<div  id="myblog-pagd"> generated using <a  href="https://github.com/prataprc/pagd">pagd</a></div>
+<script  type="text/javascript">
+  // Snippet to load rst gallery if available.
+  $(document).ready( function() {
+    $('.rst-gallery').each( function(idx, element) {
+        $(element).magnificPopup({
+          delegate: 'a',
+          type: 'image',
+          gallery: {
+            enabled: true, // set to true to enable gallery
+            preload: [0,1], // load next item
+            navigateByImgClick: true,
+          }
+        });
+    });
+  });
+
+</script></div></body>
+
+
+</html>

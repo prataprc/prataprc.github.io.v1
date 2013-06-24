@@ -14,7 +14,7 @@ Articles
 - `setting up dual monitors in Ubuntu <dual-monitors.html>`_.
 - `ideas are inter-connected <ideas-are-inter-connected.html>`_.
 - `C - spartan among languages <C-spartan-among-languages.html>`_.
-- `hello word <hello-world.html>`_.
+- `hello world <hello-world.html>`_.
 
 Projects
 ========

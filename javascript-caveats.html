@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html >
+  <head > <!-- jQuery -->
+<script  src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js">
+
+</script><!-- local media files -->
+<link  rel="stylesheet" type="text/css" href="media/myblog.css"/><link  rel="stylesheet" type="text/css" href="media/pygments.css"/><!-- Magnific Popup core CSS file -->
+<link  rel="stylesheet" type="text/css" href="media/magnific-popup/magnific-popup.css"/><!-- Magnific Popup core JS file -->
+<script  src="media/magnific-popup/jquery.magnific-popup.min.js">
+
+</script><title > Caveats while programming with Javascript.</title>
+
+
+  <link  type="text/css" href="http://fonts.googleapis.com/css?family=Inconsolata" type="rel='stylesheet'"/><style   type="text/css">
+  body { font-family:Inconsolata }
+</style>
+  </head><body >
+    <div  id="myblog-page">
+      <div  id="myblog-header"> <nav >
+  <a  href="index.html">home</a><a  href="http://in.linkedin.com/in/prataprc">linkedin</a><a  href="https://github.com/prataprc">github</a></nav></div>
+      <div  id="myblog-container">
+        <article >
+    <div  class="article-title"> Caveats while programming with Javascript.
+      <div  class="metaa">
+        <span  class="author"> by prataprc;</span></div></div>
+        <div  class="content"> <p>Every language has exceptional situations to common rules, that were originally
+explained as part of its specification, they end up as caveats in programmers
+mind.</p>
+<div class="section" id="interchanging-properties-as-objects-and-associative-array">
+<h1>interchanging properties as objects and associative array</h1>
+<p>Javascript objects are property-maps and property names can be accessed using the
+membership operator. Likewise, objects can be accessed like associative arrays
+passing in property name as index.</p>
+
+    <script src="https://gist.github.com/prataprc/5843946.js?file=caveat1.js"></script>
+<p>note that if accessed using membership operatory property name is constrained
+by identifier token rules.</p>
+</div>
+<div class="section" id="hasownproperty">
+<h1>hasOwnProperty</h1>
+<p>Any reference to JS object-property will follow the chain of prototypal
+inheritance, so the only way to figure out whether a property is directly
+attached to the object is by using <tt class="docutils literal">hasOwnProperty</tt> method call on the
+object. But what if the method is overriden accidentally ?</p>
+
+    <script src="https://gist.github.com/prataprc/5843946.js?file=caveat2.js"></script>
+</div>
+<div class="section" id="stacking-calls-with-setinterval">
+<h1>stacking Calls with setInterval</h1>
+<p><tt class="docutils literal">setInterval</tt> will execute the timeout function every X milliseconds, where X
+is the timeout value for the subscribed-handler. What happens if handler
+function takes more time to complete than the timeout-value ?</p>
+
+    <script src="https://gist.github.com/prataprc/5843946.js?file=caveat3.js"></script>
+<p>you can execute the above program to understand the behaviour of timeout
+handling in Javascript. But the fact is, it is bad programming to use setInterval
+a.k.a periodic-timeout if we doubt that the handler function is going to take
+more time than the next timeout. One possible solution is given in the above
+snippet itself.</p>
+</div>
+<div class="section" id="shadowing-undefined">
+<h1>shadowing undefined</h1>
+
+    <script src="https://gist.github.com/prataprc/5843946.js?file=caveat4.js"></script>
+<p>unfortunately, <tt class="docutils literal">undefined</tt> can also be used as identifier.</p>
+</div>
+<div class="section" id="semicolons-and-leading-paranthesis">
+<h1>semicolons and leading paranthesis</h1>
+
+    <script src="https://gist.github.com/prataprc/5843946.js?file=caveat5.js"></script>
+<p>the call to foo and bar are treated as single statement without a semicolon
+in-between, <tt class="docutils literal"><span class="pre">foo()(bar(10))</span></tt>.</p>
+</div>
+<div class="section" id="deleting-property-names">
+<h1>deleting property names</h1>
+<p>It is not possible to delete a name whose <tt class="docutils literal">DontDelete</tt> attribute is set.
+This <tt class="docutils literal">DontDelete</tt> attribute is a feature of javascript. Variables and
+function declarations in global and function code always create properties
+with DontDelete, and therefore cannot be deleted.</p>
+<p>But <tt class="docutils literal">delete</tt> works normal on property types, where names are added
+programmatically. This applies even to global <tt class="docutils literal">this</tt>, as demostrated by the
+last block of the following gist.</p>
+
+    <script src="https://gist.github.com/prataprc/5843946.js?file=caveat6.js"></script>
+</div>
+<div class="section" id="latebinding-of-this">
+<h1>latebinding of this</h1>
+<p><tt class="docutils literal">this</tt> name is bound late while making function calls.</p>
+
+    <script src="https://gist.github.com/prataprc/5843946.js?file=caveat7.js"></script>
+<p>in the above example, <tt class="docutils literal">this</tt> inside test function is not bound to <tt class="docutils literal">this</tt>
+of <tt class="docutils literal">new Foo()</tt> instance when its constructor is called. Instead it is bound
+to global object.</p>
+</div>
+<div class="section" id="closures-and-namespace-reference">
+<h1>closures and namespace reference</h1>
+<p>in closures, parent function's namespaces are only refered by enclosed
+function, they are not copied to enclosed function's namespace.</p>
+
+    <script src="https://gist.github.com/prataprc/5843946.js?file=caveat7.js"></script>
+<p>outputs 10, 10 times.</p>
+</div></div>
+
+
+    <div  class="metaz"></div></article></div></div>
+      
+      <hr/><div  id="myblog-footer"> <div  id="myblog-copyright"> &copy; 2013 Pratap Chakravarthy</div>
+<div  id="myblog-pagd"> generated using <a  href="https://github.com/prataprc/pagd">pagd</a></div>
+<script  type="text/javascript">
+  // Snippet to load rst gallery if available.
+  $(document).ready( function() {
+    $('.rst-gallery').each( function(idx, element) {
+        $(element).magnificPopup({
+          delegate: 'a',
+          type: 'image',
+          gallery: {
+            enabled: true, // set to true to enable gallery
+            preload: [0,1], // load next item
+            navigateByImgClick: true,
+          }
+        });
+    });
+  });
+
+</script></div></body>
+
+
+</html>

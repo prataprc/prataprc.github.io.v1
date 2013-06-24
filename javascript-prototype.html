@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html >
+  <head > <!-- jQuery -->
+<script  src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js">
+
+</script><!-- local media files -->
+<link  rel="stylesheet" type="text/css" href="media/myblog.css"/><link  rel="stylesheet" type="text/css" href="media/pygments.css"/><!-- Magnific Popup core CSS file -->
+<link  rel="stylesheet" type="text/css" href="media/magnific-popup/magnific-popup.css"/><!-- Magnific Popup core JS file -->
+<script  src="media/magnific-popup/jquery.magnific-popup.min.js">
+
+</script><title > Prototypal inheritance in Javascript</title>
+
+
+  <link  type="text/css" href="http://fonts.googleapis.com/css?family=Inconsolata" type="rel='stylesheet'"/><style   type="text/css">
+  body { font-family:Inconsolata }
+</style>
+  </head><body >
+    <div  id="myblog-page">
+      <div  id="myblog-header"> <nav >
+  <a  href="index.html">home</a><a  href="http://in.linkedin.com/in/prataprc">linkedin</a><a  href="https://github.com/prataprc">github</a></nav></div>
+      <div  id="myblog-container">
+        <article >
+    <div  class="article-title"> Prototypal inheritance in Javascript
+      <div  class="metaa">
+        <span  class="author"> by prataprc;</span></div></div>
+        <div  class="content"> <p>This post will discuss exclusively about Javascript's prototypal inheritance.
+Many JS frameworks leverage on prototypal inheritance to add that extra bit
+black-magic in their tool.</p>
+<div class="section" id="constructor">
+<h1>constructor</h1>
+<p>Any function call that is preceded by the new keyword acts as a constructor.</p>
+
+    <script src="https://gist.github.com/prataprc/5843946.js?file=constructor.js"></script>
+</div>
+<div class="section" id="prototypes">
+<h1>prototypes</h1>
+<p>Object orientedness in Javascript is achieved by using prototypal inheritance
+and late binding of this.</p>
+
+    <script src="https://gist.github.com/prataprc/5843946.js?file=prototype.js"></script>
+</div>
+<div class="section" id="this">
+<h1>this</h1>
+<p><tt class="docutils literal">this</tt> can be bound in five different ways,</p>
+<ul class="simple">
+<li>Global scope, here <tt class="docutils literal">this</tt> refers to the global object and any side affects
+on this object will affect global namespace and name-resolution.</li>
+<li>Function scope, inside functions <tt class="docutils literal">this</tt> will again refer to global object.</li>
+<li>Constructor scope, functions well called with <tt class="docutils literal">new</tt> specifier - will
+instantiate a new instance of <tt class="docutils literal">object</tt> and this will be bound to the
+object-instance.</li>
+<li>Method scope, are functions bound to object-instances. <tt class="docutils literal">this</tt> will always
+refer to the object-instance.</li>
+<li>Explicit setting, using apply and call methods from Function.prototype.</li>
+</ul>
+
+    <script src="https://gist.github.com/prataprc/5843946.js?file=function.js"></script>
+<p>In case of setTimeout and setInterval timeout-handlers, <tt class="docutils literal">this</tt> when used
+inside the handler function will refer to global object.</p>
+</div></div>
+
+
+    <div  class="metaz"></div></article></div></div>
+      
+      <hr/><div  id="myblog-footer"> <div  id="myblog-copyright"> &copy; 2013 Pratap Chakravarthy</div>
+<div  id="myblog-pagd"> generated using <a  href="https://github.com/prataprc/pagd">pagd</a></div>
+<script  type="text/javascript">
+  // Snippet to load rst gallery if available.
+  $(document).ready( function() {
+    $('.rst-gallery').each( function(idx, element) {
+        $(element).magnificPopup({
+          delegate: 'a',
+          type: 'image',
+          gallery: {
+            enabled: true, // set to true to enable gallery
+            preload: [0,1], // load next item
+            navigateByImgClick: true,
+          }
+        });
+    });
+  });
+
+</script></div></body>
+
+
+</html>
