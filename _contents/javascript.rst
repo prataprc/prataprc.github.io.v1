@@ -16,6 +16,10 @@ language for sake of efficiency.
 
 .. gist:: prataprc/5843946.js?file=literals.js
 
+other than primitive types - Number, String, Boolean, rest of them are
+javascript objects. Javascript object is the parent type for all user-defined
+type. Supports constructor pattern, prototype inheritance etc...
+
 keywords
 --------
 
@@ -24,13 +28,13 @@ Following is a basic set of keywords in Javascript
 
 .. gist:: prataprc/5843946.js?file=keywords.js
 
-note that ``typeof`` is un-reliable in most implementation of Javascript. It
+note that ``typeof`` is unreliable in most implementation of Javascript. It
 is better to use - ``Object.prototype.toString(10)`` to retrieve the type of an
 object, although you will have to process the returned string to remove the
 prefix.
 
-To remove an attribute name from object a.k.a. property, use ``delete``
-instead of assigning ``null``.
+To remove a property name from object, use ``delete`` instead of assigning
+``null``.
 
 Keywords that add conditional structure,
 
@@ -43,17 +47,17 @@ Keywords that add looping structure,
 
 .. gist:: prataprc/5843946.js?file=loop.js
 
-all keywords that add looping strucutre are to be treated as statements.
+all keywords that add looping structure are to be treated as statements.
 
 arithmetic-operators
 --------------------
 
 .. gist:: prataprc/5843946.js?file=ops_arith.js
 
-keep in mind that Javascript does lot of implicit type-coersions.
+keep in mind that Javascript does lot of implicit type-coercions.
 
-comparision-operators
----------------------
+comparison-operators
+--------------------
 
 .. gist:: prataprc/5843946.js?file=ops_comp.js
 
@@ -111,11 +115,11 @@ types
 -----
 
 Javascript is weakly typed. Please note that values and objects in Javascript
-are strongly typed and values are always associted with same type. It is the
+are strongly typed and values are always associated with same type. It is the
 reference to values that are weakly typed - in the sense that same variable name
-can refer to different value-types as the program is executed. It also means
-that programmers can interpret a variable as particular type which can be
-wrong and it is difficult to catch this problem by compiling the program.
+can refer to different types of value while the program is executing. It also
+means that programmers can interpret a variable as particular type which can be
+wrong and it is difficult to catch this problem at compile time.
 
 .. gist:: prataprc/5843946.js?file=types.js
 
@@ -126,21 +130,21 @@ while the later is object-type.
 function and scope
 ------------------
 
-following gist will name resolution gymnastics with javascript functions.
+following gist shows some name-resolution gymnastics with javascript functions.
 
 .. gist:: prataprc/5843946.js?file=function.js
 
 in javascript functions are the only means of code-abstraction and thereby
 only form of scoping available for programmers. By default every function act
 as a closure, making its local namespace available for enclosed function
-definitions. And only functions that are enclosed within the scope of an
+definitions. And only those functions that are enclosed within the scope of an
 outer-function can access the outer function's local namespace.
 
-Make a note that parent function's namespaces are only refered by enclosed
+Make a note that parent function's namespaces are only referred by enclosed
 function, parent function's namespace is not copied to enclosed function's
 namespace.
 
-Function arguments can be access inside the function as,
+Function arguments can be accessed within a function like,
 
 .. gist:: prataprc/5843946.js?file=arguments.js
 
@@ -148,8 +152,10 @@ And some gymnastics with scope.
 
 .. gist:: prataprc/5843946.js?file=scope.js
 
-Javascript can hoists declarations, that is, both var statements and function
-declarations will be moved to the top of the enclosing scope.
+it is always a good practice to declare variables with ``var``, so that it
+gets contained in the enclosing scope. Javascript can hoists declarations,
+that is, both var statements and function declarations will be moved to the
+top of the enclosing scope.
 
 name resolution order,
 

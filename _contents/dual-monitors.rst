@@ -1,4 +1,4 @@
-:title: Setting up dual monitors in Ubuntu
+:title: How to setup dual monitors in Ubuntu
 :author: prataprc
 :createdon: Mon Feb 1, 2009
 

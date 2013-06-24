@@ -34,8 +34,8 @@ black-magic in their tool.</p>
 </div>
 <div class="section" id="prototypes">
 <h1>prototypes</h1>
-<p>Object orientedness in Javascript is achieved by using prototypal inheritance
-and late binding of this.</p>
+<p>Object oriented-ness in Javascript is achieved by using prototypal inheritance
+and late binding of <tt class="docutils literal">this</tt>.</p>
 
     <script src="https://gist.github.com/prataprc/5843946.js?file=prototype.js"></script>
 </div>
@@ -46,15 +46,15 @@ and late binding of this.</p>
 <li>Global scope, here <tt class="docutils literal">this</tt> refers to the global object and any side affects
 on this object will affect global namespace and name-resolution.</li>
 <li>Function scope, inside functions <tt class="docutils literal">this</tt> will again refer to global object.</li>
-<li>Constructor scope, functions well called with <tt class="docutils literal">new</tt> specifier - will
-instantiate a new instance of <tt class="docutils literal">object</tt> and this will be bound to the
+<li>Constructor scope, functions when called with <tt class="docutils literal">new</tt> prefix - will
+instantiate a new instance of <tt class="docutils literal">object</tt> and this will be bound to that
 object-instance.</li>
 <li>Method scope, are functions bound to object-instances. <tt class="docutils literal">this</tt> will always
 refer to the object-instance.</li>
 <li>Explicit setting, using apply and call methods from Function.prototype.</li>
 </ul>
 
-    <script src="https://gist.github.com/prataprc/5843946.js?file=function.js"></script>
+    <script src="https://gist.github.com/prataprc/5843946.js?file=this.js"></script>
 <p>In case of setTimeout and setInterval timeout-handlers, <tt class="docutils literal">this</tt> when used
 inside the handler function will refer to global object.</p>
 </div></div>

@@ -3,6 +3,12 @@
 Articles
 ========
 
+- `javascript <javascript.html>`_.
+- `prototype inheritance in javascript <javascript-prototype.html>`_.
+- `caveats in javascript <javascript-caveats.html>`_.
+- `javascript <javascript.html>`_.
+- `custom directives for reStructuredText <pagd-rst-directives.html>`_.
+- `custom directives for reStructuredText <pagd-rst-directives.html>`_.
 - `custom directives for reStructuredText <pagd-rst-directives.html>`_.
 - `blog with pagd, github and favorite text-editor <blog-with-pagd.html>`_.
 - `customizing your blog site with pagd <pagd-customizing.html>`_.
@@ -11,7 +17,7 @@ Articles
   <pagd-repository-integration.html>`_.
 - `sudoku, erlang and concurrency <sudoku-in-erlang.html>`_.
 - `sudoku, backtracking and pathological situation <sudoku-pathological.html>`_.
-- `setting up dual monitors in Ubuntu <dual-monitors.html>`_.
+- `how to setup dual monitors in Ubuntu <dual-monitors.html>`_.
 - `ideas are inter-connected <ideas-are-inter-connected.html>`_.
 - `C - spartan among languages <C-spartan-among-languages.html>`_.
 - `hello world <hello-world.html>`_.

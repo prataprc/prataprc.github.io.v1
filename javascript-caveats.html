@@ -33,7 +33,7 @@ membership operator. Likewise, objects can be accessed like associative arrays
 passing in property name as index.</p>
 
     <script src="https://gist.github.com/prataprc/5843946.js?file=caveat1.js"></script>
-<p>note that if accessed using membership operatory property name is constrained
+<p>note that if accessed using membership operator, property name is constrained
 by identifier token rules.</p>
 </div>
 <div class="section" id="hasownproperty">
@@ -41,7 +41,7 @@ by identifier token rules.</p>
 <p>Any reference to JS object-property will follow the chain of prototypal
 inheritance, so the only way to figure out whether a property is directly
 attached to the object is by using <tt class="docutils literal">hasOwnProperty</tt> method call on the
-object. But what if the method is overriden accidentally ?</p>
+object. But what if the method is overridden accidentally ?</p>
 
     <script src="https://gist.github.com/prataprc/5843946.js?file=caveat2.js"></script>
 </div>
@@ -53,10 +53,10 @@ function takes more time to complete than the timeout-value ?</p>
 
     <script src="https://gist.github.com/prataprc/5843946.js?file=caveat3.js"></script>
 <p>you can execute the above program to understand the behaviour of timeout
-handling in Javascript. But the fact is, it is bad programming to use setInterval
-a.k.a periodic-timeout if we doubt that the handler function is going to take
-more time than the next timeout. One possible solution is given in the above
-snippet itself.</p>
+handling in Javascript. But the fact is, it is bad programming to use
+setInterval a.k.a periodic-timeout if we doubt that the handler function is
+going to take more time than the next timeout. One possible solution is given
+in the above snippet itself.</p>
 </div>
 <div class="section" id="shadowing-undefined">
 <h1>shadowing undefined</h1>
@@ -78,13 +78,13 @@ This <tt class="docutils literal">DontDelete</tt> attribute is a feature of java
 function declarations in global and function code always create properties
 with DontDelete, and therefore cannot be deleted.</p>
 <p>But <tt class="docutils literal">delete</tt> works normal on property types, where names are added
-programmatically. This applies even to global <tt class="docutils literal">this</tt>, as demostrated by the
+programmatically. This applies even to global <tt class="docutils literal">this</tt>, as demonstrated by the
 last block of the following gist.</p>
 
     <script src="https://gist.github.com/prataprc/5843946.js?file=caveat6.js"></script>
 </div>
-<div class="section" id="latebinding-of-this">
-<h1>latebinding of this</h1>
+<div class="section" id="late-binding-of-this">
+<h1>late-binding of this</h1>
 <p><tt class="docutils literal">this</tt> name is bound late while making function calls.</p>
 
     <script src="https://gist.github.com/prataprc/5843946.js?file=caveat7.js"></script>
@@ -94,7 +94,7 @@ to global object.</p>
 </div>
 <div class="section" id="closures-and-namespace-reference">
 <h1>closures and namespace reference</h1>
-<p>in closures, parent function's namespaces are only refered by enclosed
+<p>in closures, parent function's namespaces are only referred by enclosed
 function, they are not copied to enclosed function's namespace.</p>
 
     <script src="https://gist.github.com/prataprc/5843946.js?file=caveat7.js"></script>

@@ -15,8 +15,8 @@ Any function call that is preceded by the new keyword acts as a constructor.
 prototypes
 ----------
 
-Object orientedness in Javascript is achieved by using prototypal inheritance
-and late binding of this.
+Object oriented-ness in Javascript is achieved by using prototypal inheritance
+and late binding of ``this``.
 
 .. gist:: prataprc/5843946.js?file=prototype.js
 
@@ -31,8 +31,8 @@ this
 
 * Function scope, inside functions ``this`` will again refer to global object.
 
-* Constructor scope, functions well called with ``new`` specifier - will 
-  instantiate a new instance of ``object`` and this will be bound to the
+* Constructor scope, functions when called with ``new`` prefix - will 
+  instantiate a new instance of ``object`` and this will be bound to that
   object-instance.
 
 * Method scope, are functions bound to object-instances. ``this`` will always
@@ -40,7 +40,7 @@ this
 
 * Explicit setting, using apply and call methods from Function.prototype.
 
-.. gist:: prataprc/5843946.js?file=function.js
+.. gist:: prataprc/5843946.js?file=this.js
 
 In case of setTimeout and setInterval timeout-handlers, ``this`` when used
 inside the handler function will refer to global object.

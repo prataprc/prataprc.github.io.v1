@@ -35,6 +35,9 @@ data-objects that are hard-coded in the program, they are baked into the
 language for sake of efficiency.</p>
 
     <script src="https://gist.github.com/prataprc/5843946.js?file=literals.js"></script>
+<p>other than primitive types - Number, String, Boolean, rest of them are
+javascript objects. Javascript object is the parent type for all user-defined
+type. Supports constructor pattern, prototype inheritance etc...</p>
 </div>
 <div class="section" id="keywords">
 <h1>keywords</h1>
@@ -42,12 +45,12 @@ language for sake of efficiency.</p>
 Following is a basic set of keywords in Javascript</p>
 
     <script src="https://gist.github.com/prataprc/5843946.js?file=keywords.js"></script>
-<p>note that <tt class="docutils literal">typeof</tt> is un-reliable in most implementation of Javascript. It
+<p>note that <tt class="docutils literal">typeof</tt> is unreliable in most implementation of Javascript. It
 is better to use - <tt class="docutils literal">Object.prototype.toString(10)</tt> to retrieve the type of an
 object, although you will have to process the returned string to remove the
 prefix.</p>
-<p>To remove an attribute name from object a.k.a. property, use <tt class="docutils literal">delete</tt>
-instead of assigning <tt class="docutils literal">null</tt>.</p>
+<p>To remove a property name from object, use <tt class="docutils literal">delete</tt> instead of assigning
+<tt class="docutils literal">null</tt>.</p>
 <p>Keywords that add conditional structure,</p>
 
     <script src="https://gist.github.com/prataprc/5843946.js?file=condblocks.js"></script>
@@ -56,16 +59,16 @@ statements.</p>
 <p>Keywords that add looping structure,</p>
 
     <script src="https://gist.github.com/prataprc/5843946.js?file=loop.js"></script>
-<p>all keywords that add looping strucutre are to be treated as statements.</p>
+<p>all keywords that add looping structure are to be treated as statements.</p>
 </div>
 <div class="section" id="arithmetic-operators">
 <h1>arithmetic-operators</h1>
 
     <script src="https://gist.github.com/prataprc/5843946.js?file=ops_arith.js"></script>
-<p>keep in mind that Javascript does lot of implicit type-coersions.</p>
+<p>keep in mind that Javascript does lot of implicit type-coercions.</p>
 </div>
-<div class="section" id="comparision-operators">
-<h1>comparision-operators</h1>
+<div class="section" id="comparison-operators">
+<h1>comparison-operators</h1>
 
     <script src="https://gist.github.com/prataprc/5843946.js?file=ops_comp.js"></script>
 <p>there is no real way to compare equality of non-primitive objects and in many
@@ -118,11 +121,11 @@ and methods on objects.</p>
 <div class="section" id="types">
 <h1>types</h1>
 <p>Javascript is weakly typed. Please note that values and objects in Javascript
-are strongly typed and values are always associted with same type. It is the
+are strongly typed and values are always associated with same type. It is the
 reference to values that are weakly typed - in the sense that same variable name
-can refer to different value-types as the program is executed. It also means
-that programmers can interpret a variable as particular type which can be
-wrong and it is difficult to catch this problem by compiling the program.</p>
+can refer to different types of value while the program is executing. It also
+means that programmers can interpret a variable as particular type which can be
+wrong and it is difficult to catch this problem at compile time.</p>
 
     <script src="https://gist.github.com/prataprc/5843946.js?file=types.js"></script>
 <p>in the end of above gist, we demonstrate two other ways of creating a
@@ -131,25 +134,27 @@ while the later is object-type.</p>
 </div>
 <div class="section" id="function-and-scope">
 <h1>function and scope</h1>
-<p>following gist will name resolution gymnastics with javascript functions.</p>
+<p>following gist shows some name-resolution gymnastics with javascript functions.</p>
 
     <script src="https://gist.github.com/prataprc/5843946.js?file=function.js"></script>
 <p>in javascript functions are the only means of code-abstraction and thereby
 only form of scoping available for programmers. By default every function act
 as a closure, making its local namespace available for enclosed function
-definitions. And only functions that are enclosed within the scope of an
+definitions. And only those functions that are enclosed within the scope of an
 outer-function can access the outer function's local namespace.</p>
-<p>Make a note that parent function's namespaces are only refered by enclosed
+<p>Make a note that parent function's namespaces are only referred by enclosed
 function, parent function's namespace is not copied to enclosed function's
 namespace.</p>
-<p>Function arguments can be access inside the function as,</p>
+<p>Function arguments can be accessed within a function like,</p>
 
     <script src="https://gist.github.com/prataprc/5843946.js?file=arguments.js"></script>
 <p>And some gymnastics with scope.</p>
 
     <script src="https://gist.github.com/prataprc/5843946.js?file=scope.js"></script>
-<p>Javascript can hoists declarations, that is, both var statements and function
-declarations will be moved to the top of the enclosing scope.</p>
+<p>it is always a good practice to declare variables with <tt class="docutils literal">var</tt>, so that it
+gets contained in the enclosing scope. Javascript can hoists declarations,
+that is, both var statements and function declarations will be moved to the
+top of the enclosing scope.</p>
 <p>name resolution order,</p>
 <ul class="simple">
 <li>In case there is a var foo statement in the current scope, use that.</li>
