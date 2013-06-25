@@ -86,11 +86,79 @@ pages. They have excellent documentation and there are many ways to customize
 the plugin - which you can learn from their project site. There is also a bunch
 of CSS selectors that are available in <tt class="docutils literal">media/myblog.css</tt> with which you can
 do some basic cusomization as well.</p>
+</div>
+<div class="section" id="gist-directive">
+<h1>gist directive</h1>
+<p>If you have code gist in github and you want to embed them inside your
+article, use the following directive,</p>
+<div class="highlight"><pre><span class="p">..</span> <span class="ow">gist</span><span class="p">::</span> prataprc/5843946.js
+</pre></div>
+<p>where <tt class="docutils literal">prataprc</tt> is the user-name and it will expand to full url -
+<a class="reference external" href="https://gist.github.com/prataprc/5843946.js">https://gist.github.com/prataprc/5843946.js</a>.</p>
+<p>To include a specific file from the gist,</p>
+<div class="highlight"><pre><span class="p">..</span> <span class="ow">gist</span><span class="p">::</span> prataprc/5843946.js?file=caveat7.js
+</pre></div>
+<p>This will embed only <tt class="docutils literal">caveat7.js</tt> file inside your article.</p>
 </div></div>
 
 
-    <div  class="metaz"></div></article></div></div>
-      
+    <div  class="metaz"></div>
+      <div  id="myblog-social">
+        <ul >
+  
+    <li  class="twitter"> <a href="https://twitter.com/share" class="twitter-share-button"
+    data-via="prataprc">Tweet</a>
+<script>!function(d,s,id){var
+    js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document,
+'script', 'twitter-wjs');</script>
+
+</li><li  class="fb"> <div id="fb-root"></div>
+<script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+      fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+</script>
+<div class="fb-like" data-send="false" data-layout="button_count"
+data-width="450" data-show-faces="true"></div>
+
+
+</li><li  class="hn"> <!-- Auto-detect URL of current page and title if necessary -->
+<a href="http://news.ycombinator.com/submit" class="hn-share-button">Vote on
+    HN</a>
+<script>
+    (function(d, t) {
+        var g = d.createElement(t),
+        s = d.getElementsByTagName(t)[0];
+        g.src = '//hnbutton.appspot.com/static/hn.min.js';
+        s.parentNode.insertBefore(g, s);
+    }(document, 'script'));
+</script>
+
+</li><li  class="linkedin"> <script src="//platform.linkedin.com/in.js" type="text/javascript">
+     lang: en_US
+</script>
+<script type="IN/Share" data-counter="right"></script>
+
+</li><li  class="gplus"> <!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-size="small"></div>
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  (function() {
+       var po = document.createElement('script'); po.type = 'text/javascript';
+       po.async = true;
+       po.src = 'https://apis.google.com/js/plusone.js';
+       var s = document.getElementsByTagName('script')[0];
+       s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+</li></ul></div></article></div></div>
+    
+
       <hr/><div  id="myblog-footer"> <div  id="myblog-copyright"> &copy; 2013 Pratap Chakravarthy</div>
 <div  id="myblog-pagd"> generated using <a  href="https://github.com/prataprc/pagd">pagd</a></div>
 <script  type="text/javascript">

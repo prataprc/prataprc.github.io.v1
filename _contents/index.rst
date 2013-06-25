@@ -3,12 +3,9 @@
 Articles
 ========
 
-- `javascript <javascript.html>`_.
+- `javascript in a nutshell <javascript.html>`_.
 - `prototype inheritance in javascript <javascript-prototype.html>`_.
 - `caveats in javascript <javascript-caveats.html>`_.
-- `javascript <javascript.html>`_.
-- `custom directives for reStructuredText <pagd-rst-directives.html>`_.
-- `custom directives for reStructuredText <pagd-rst-directives.html>`_.
 - `custom directives for reStructuredText <pagd-rst-directives.html>`_.
 - `blog with pagd, github and favorite text-editor <blog-with-pagd.html>`_.
 - `customizing your blog site with pagd <pagd-customizing.html>`_.

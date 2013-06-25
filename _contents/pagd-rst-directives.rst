@@ -82,6 +82,27 @@ the plugin - which you can learn from their project site. There is also a bunch
 of CSS selectors that are available in ``media/myblog.css`` with which you can
 do some basic cusomization as well.
 
+gist directive
+--------------
+
+If you have code gist in github and you want to embed them inside your
+article, use the following directive,
+
+.. code-block:: rst
+
+    .. gist:: prataprc/5843946.js
+
+where ``prataprc`` is the user-name and it will expand to full url - 
+https://gist.github.com/prataprc/5843946.js.
+
+To include a specific file from the gist,
+
+.. code-block:: rst
+
+    .. gist:: prataprc/5843946.js?file=caveat7.js
+
+This will embed only ``caveat7.js`` file inside your article.
+
 .. _pagd: http://pythonhosted.org/pagd
 .. _tayra: http://pythonhosted.org/tayra
 .. _github: http://github.com

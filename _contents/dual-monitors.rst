@@ -2,13 +2,14 @@
 :author: prataprc
 :createdon: Mon Feb 1, 2009
 
-
-For programming purpose, I find that square monitors are more impressive than
-the wide-screen, but they are slightly costlier than the equivalent wide-screen
-monitors. If you are buying both the monitors at the same time, then it is
-easy to buy the same model. But if you are adding another monitor to the
-current one. Then stick with same specification, like 17" 1280x1024
-resolution.
+Your productivity can substantially increase with dual monitors connected to
+a single machine. Given below is a do-it-yourself for setting dual monitors in
+Ubuntu using Nvidia driver. For programming purpose, I find that square
+monitors are more impressive than the wide-screen, but they are slightly
+costlier than the equivalent wide-screen monitors. If you are buying both the
+monitors at the same time, then it is easy to buy the same model. But if you
+are adding another monitor to the current one. Then stick with same
+specification, like 17" 1280x1024 resolution.
 
 Normally Graphics card come with DVI output, forcing you to buy monitors
 with DVI connectivity. Since we are buying for programming purpose, it is

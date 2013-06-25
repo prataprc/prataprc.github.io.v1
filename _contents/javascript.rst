@@ -1,10 +1,12 @@
-:title: Javascript
+:title: Javascript in a nutshell
+:abstract: programmers cookbook for using javascript
 :author: prataprc
 
 I like languages that can be explained within few pages of a book. Besides C,
 Lua, Erlang - Javascript is one such language that have that simplicity. This
-post explains the language through examples, mostly through examples and all
-of them can be found at this `gist <https://gist.github.com/prataprc/5843946>`_.
+post is a quick reference guide to javascript highlighted through examples,
+all of them can be found at this
+`gist <https://gist.github.com/prataprc/5843946>`_.
 
 literals
 --------
