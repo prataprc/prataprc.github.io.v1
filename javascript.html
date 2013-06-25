@@ -21,11 +21,25 @@
       <div  id="myblog-container">
         <article >
     <div  class="article-title"> Javascript in a nutshell
+      <div  class="article-summary"> programmers cookbook for using javascript</div>
       <div  class="metaa">
-        <span  class="author"> by prataprc;</span></div></div>
-        <div  class="content"> <div class="abstract topic">
-<p class="topic-title first">Abstract</p>
-<p>programmers cookbook for using javascript</p>
+        <span  class="author"> by prataprc;</span>
+        <span  class="date"> Mon Jun 24, 2013</span></div></div>
+
+    <div  class="content"> <div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#literals" id="id1">literals</a></li>
+<li><a class="reference internal" href="#keywords" id="id2">keywords</a></li>
+<li><a class="reference internal" href="#arithmetic-operators" id="id3">arithmetic-operators</a></li>
+<li><a class="reference internal" href="#comparison-operators" id="id4">comparison-operators</a></li>
+<li><a class="reference internal" href="#logical-operators" id="id5">logical-operators</a></li>
+<li><a class="reference internal" href="#bitwise-operators" id="id6">bitwise-operators</a></li>
+<li><a class="reference internal" href="#assignment-operators" id="id7">assignment operators</a></li>
+<li><a class="reference internal" href="#types" id="id8">types</a></li>
+<li><a class="reference internal" href="#function-and-scope" id="id9">function and scope</a></li>
+<li><a class="reference internal" href="#evaluation" id="id10">evaluation</a></li>
+</ul>
 </div>
 <p>I like languages that can be explained within few pages of a book. Besides C,
 Lua, Erlang - Javascript is one such language that have that simplicity. This
@@ -33,7 +47,7 @@ post is a quick reference guide to javascript highlighted through examples,
 all of them can be found at this
 <a class="reference external" href="https://gist.github.com/prataprc/5843946">gist</a>.</p>
 <div class="section" id="literals">
-<h1>literals</h1>
+<h1><a class="toc-backref" href="#id1">literals</a></h1>
 <p>All languages are defined as collection of tokens and tokens are normally
 classified as literals, keywords, operators or identifiers. Literals are
 data-objects that are hard-coded in the program, they are baked into the
@@ -45,7 +59,7 @@ javascript objects. Javascript object is the parent type for all user-defined
 type. Supports constructor pattern, prototype inheritance etc...</p>
 </div>
 <div class="section" id="keywords">
-<h1>keywords</h1>
+<h1><a class="toc-backref" href="#id2">keywords</a></h1>
 <p>Keywords are special tokens that gives additional structure to the program.
 Following is a basic set of keywords in Javascript</p>
 
@@ -67,13 +81,13 @@ statements.</p>
 <p>all keywords that add looping structure are to be treated as statements.</p>
 </div>
 <div class="section" id="arithmetic-operators">
-<h1>arithmetic-operators</h1>
+<h1><a class="toc-backref" href="#id3">arithmetic-operators</a></h1>
 
     <script src="https://gist.github.com/prataprc/5843946.js?file=ops_arith.js"></script>
 <p>keep in mind that Javascript does lot of implicit type-coercions.</p>
 </div>
 <div class="section" id="comparison-operators">
-<h1>comparison-operators</h1>
+<h1><a class="toc-backref" href="#id4">comparison-operators</a></h1>
 
     <script src="https://gist.github.com/prataprc/5843946.js?file=ops_comp.js"></script>
 <p>there is no real way to compare equality of non-primitive objects and in many
@@ -81,12 +95,12 @@ cases it is better to stick with <tt class="docutils literal">===</tt> instead o
 for both value and type, while the later compares only the value.</p>
 </div>
 <div class="section" id="logical-operators">
-<h1>logical-operators</h1>
+<h1><a class="toc-backref" href="#id5">logical-operators</a></h1>
 
     <script src="https://gist.github.com/prataprc/5843946.js?file=ops_logic.js"></script>
 </div>
 <div class="section" id="bitwise-operators">
-<h1>bitwise-operators</h1>
+<h1><a class="toc-backref" href="#id6">bitwise-operators</a></h1>
 
     <script src="https://gist.github.com/prataprc/5843946.js?file=ops_bitwise.js"></script>
 <p>comments on the right side explain the output by demonstrating the operation
@@ -113,7 +127,7 @@ shifted out on the right.</li>
 Javascript.</p>
 </div>
 <div class="section" id="assignment-operators">
-<h1>assignment operators</h1>
+<h1><a class="toc-backref" href="#id7">assignment operators</a></h1>
 
     <script src="https://gist.github.com/prataprc/5843946.js?file=ops_assign.js"></script>
 <p>normally assignments are statement in many languages. In Javascript an
@@ -124,7 +138,7 @@ explained in a separate section below.</p>
 and methods on objects.</p>
 </div>
 <div class="section" id="types">
-<h1>types</h1>
+<h1><a class="toc-backref" href="#id8">types</a></h1>
 <p>Javascript is weakly typed. Please note that values and objects in Javascript
 are strongly typed and values are always associated with same type. It is the
 reference to values that are weakly typed - in the sense that same variable name
@@ -138,7 +152,7 @@ number-value 10 and <tt class="docutils literal">n === m</tt> give false because
 while the later is object-type.</p>
 </div>
 <div class="section" id="function-and-scope">
-<h1>function and scope</h1>
+<h1><a class="toc-backref" href="#id9">function and scope</a></h1>
 <p>following gist shows some name-resolution gymnastics with javascript functions.</p>
 
     <script src="https://gist.github.com/prataprc/5843946.js?file=function.js"></script>
@@ -172,7 +186,7 @@ is Javascript does not have the notion of modules, hence everything is
 executed in the context of the same single global namespace.</p>
 </div>
 <div class="section" id="evaluation">
-<h1>evaluation</h1>
+<h1><a class="toc-backref" href="#id10">evaluation</a></h1>
 <p>Since Javascript is byte-code interpreted language, program text can be parsed
 compiled to virtual-machine byte code and executed on the fly.</p>
 
@@ -185,8 +199,10 @@ caller. However, it only executes in the local scope when called directly.</p>
 </div></div>
 
 
-    <div  class="metaz"></div>
-      <div  id="myblog-social">
+    <div  class="metaz">
+      <span  class="last_modified"> last modified - Tue Jun 25, 2013;</span>
+      <a  class="email" href="mailto:prataprc@gmail.com">contact-author</a>;</div>
+    <div  id="myblog-social">
         <ul >
   
     <li  class="twitter"> <a href="https://twitter.com/share" class="twitter-share-button"

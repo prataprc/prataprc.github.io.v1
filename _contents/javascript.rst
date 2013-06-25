@@ -1,6 +1,8 @@
 :title: Javascript in a nutshell
-:abstract: programmers cookbook for using javascript
 :author: prataprc
+:summary: programmers cookbook for using javascript
+
+.. contents::
 
 I like languages that can be explained within few pages of a book. Besides C,
 Lua, Erlang - Javascript is one such language that have that simplicity. This
