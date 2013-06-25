@@ -8,7 +8,10 @@
   <body>
     <div #myblog-page>
       <div #myblog-header> ${ _header.body() }
-      <div #myblog-container> ${ page.articles[0][2] if page.articles else '' }
+      <div #myblog-container>
+        <article>
+          <div .content> ${ page.articles[0][2] if page.articles else '' }
+    
     <hr>
     <div #myblog-footer> ${ _footer.body() }
 
