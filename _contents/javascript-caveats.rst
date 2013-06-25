@@ -2,15 +2,15 @@
 :author: prataprc
 
 Every language has exceptional situations to common rules, that were originally
-explained as part of its specification, they end up as caveats in programmers
+explained as part of its specification. They end up as caveats in programmer's
 mind.
 
 interchanging properties as objects and associative array
 ---------------------------------------------------------
 
-Javascript objects are property-maps and property names can be accessed using the
-membership operator. Likewise, objects can be accessed like associative arrays 
-passing in property name as index.
+Javascript objects are property-maps and property names can be accessed using
+the membership operator. Likewise, objects can be accessed like associative
+arrays passing in property name as index.
 
 .. gist:: prataprc/5843946.js?file=caveat1.js
 
