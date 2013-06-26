@@ -6,8 +6,8 @@
 
 I like languages that can be explained within few pages of a book. Besides C,
 Lua, Erlang - Javascript is one such language that have that simplicity. This
-post is a quick reference guide to javascript highlighted through examples,
-all of them can be found at this
+post is a quick reference guide to javascript, highlighted through examples
+and all of them can be found at this
 `gist <https://gist.github.com/prataprc/5843946>`_.
 
 literals
@@ -21,8 +21,8 @@ language for sake of efficiency.
 .. gist:: prataprc/5843946.js?file=literals.js
 
 other than primitive types - Number, String, Boolean, rest of them are
-javascript objects. Javascript object is the parent type for all user-defined
-type. Supports constructor pattern, prototype inheritance etc...
+javascript objects. Javascript ``Oobject`` is the parent type for all
+user-defined type. Supports constructor pattern, prototype inheritance etc...
 
 keywords
 --------
@@ -53,9 +53,9 @@ Keywords that add looping structure,
 
 all keywords that add looping structure are to be treated as statements.
 
-Now let us move on to operator. While `literals` are means to express data
-values directly baked into the language for the sake of efficiency,
-`operators` are functions on data values that are baked into the language.
+Now let us move on to operators. While `literals` bake data values directly
+into the language, for the sake of efficiency, `operators` are functions on
+data values that are baked into the language.
 
 arithmetic-operators
 --------------------
