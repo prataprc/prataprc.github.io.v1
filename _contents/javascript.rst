@@ -1,6 +1,6 @@
 :title: Javascript in a nutshell
 :author: prataprc
-:summary: programmers cookbook for using javascript
+:summary: cookbook for javascript
 
 .. contents::
 
@@ -52,6 +52,10 @@ Keywords that add looping structure,
 .. gist:: prataprc/5843946.js?file=loop.js
 
 all keywords that add looping structure are to be treated as statements.
+
+Now let us move on to operator. While `literals` are means to express data
+values directly baked into the language for the sake of efficiency,
+`operators` are functions on data values that are baked into the language.
 
 arithmetic-operators
 --------------------
