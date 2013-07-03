@@ -21,13 +21,13 @@ language for sake of efficiency.
 .. gist:: prataprc/5843946.js?file=literals.js
 
 other than primitive types - Number, String, Boolean, rest of them are
-javascript objects. Javascript ``Oobject`` is the parent type for all
-user-defined type. Supports constructor pattern, prototype inheritance etc...
+javascript objects. Javascript ``Object`` is the parent type for all
+user-defined types. Supports constructor pattern, prototype inheritance etc...
 
 keywords
 --------
 
-Keywords are special tokens that gives additional structure to the program.
+Keywords are special tokens that give additional structure to the program.
 Following is a basic set of keywords in Javascript
 
 .. gist:: prataprc/5843946.js?file=keywords.js
@@ -116,8 +116,8 @@ assignment is treated like an expression, and based on the scope of the
 expression, the context where the side effects are created varies. It is
 explained in a separate section below.
 
-There is also membership operator ``.`` that can be used to access attributes
-and methods on objects.
+There is also membership operator ``.`` that can be used to access property
+names on objects.
 
 types
 -----

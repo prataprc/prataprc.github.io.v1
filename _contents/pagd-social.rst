@@ -1,4 +1,4 @@
-:title: Social interfaces for your site generated with pagd
+:title: Social interfaces for your, site generated using pagd
 :author: prataprc
 
 Read this `article <./blog-with-pagd.html>`_ to know how to set up your blog

@@ -1,4 +1,4 @@
-:title: Custom directives for restructured-text
+:title: Pagd, custom directives for restructured-text
 :author: prataprc
 
 Read this `article <./blog-with-pagd.html>`_ to know how to set up your blog

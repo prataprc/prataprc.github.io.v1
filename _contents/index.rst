@@ -6,10 +6,10 @@ Articles
 - `javascript in a nutshell <javascript.html>`_.
 - `prototype inheritance in javascript <javascript-prototype.html>`_.
 - `caveats in javascript <javascript-caveats.html>`_.
-- `custom directives for reStructuredText <pagd-rst-directives.html>`_.
+- `pagd, custom directives for reStructuredText <pagd-rst-directives.html>`_.
 - `blog with pagd, github and favorite text-editor <blog-with-pagd.html>`_.
 - `customizing your blog site with pagd <pagd-customizing.html>`_.
-- `social interfaces for your site - generated with pagd <pagd-social.html>`_.
+- `social interfaces for your site, generated using pagd <pagd-social.html>`_.
 - `integrating pagd with git / mercurial repository
   <pagd-repository-integration.html>`_.
 - `sudoku, erlang and concurrency <sudoku-in-erlang.html>`_.

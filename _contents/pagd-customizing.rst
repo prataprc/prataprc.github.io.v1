@@ -1,4 +1,4 @@
-:title: Customizing your blog site with pagd
+:title: Customizing your blog using pagd
 :author: prataprc
 
 Read this `article <./blog-with-pagd.html>`_ to know how to set up your blog
