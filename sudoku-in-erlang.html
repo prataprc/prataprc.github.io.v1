@@ -11,8 +11,8 @@
 </script><title > Sudoku on erlang</title>
 
 
-  <link  type="text/css" href="http://fonts.googleapis.com/css?family=Inconsolata" type="rel='stylesheet'"/><style   type="text/css">
-  body { font-family:Inconsolata }
+  <style   type="text/css">
+  body {  }
 </style>
   </head><body >
     <div  id="myblog-page">
@@ -141,7 +141,7 @@ core-counts.</p>
 <h1>how does it perform for pathological cases ?</h1>
 <p>I have added two puzzle files priv/long3.term and long4.term, both having a
 pathological case.</p>
-<p>First we will first solve the pathological case with sequential version</p>
+<p>First we will solve the pathological case with sequential version,</p>
 <div class="highlight"><pre><span class="nv">$ </span>bin/sudoku -f priv/long3.term         <span class="c"># SMP disabled</span>
 Time taken to evaluate: 3988177uS       <span class="c"># 3.9 Seconds</span>
 </pre></div>

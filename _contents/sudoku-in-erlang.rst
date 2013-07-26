@@ -153,7 +153,7 @@ how does it perform for pathological cases ?
 I have added two puzzle files priv/long3.term and long4.term, both having a
 pathological case.
 
-First we will first solve the pathological case with sequential version
+First we will solve the pathological case with sequential version,
 
 .. code-block:: bash
 
