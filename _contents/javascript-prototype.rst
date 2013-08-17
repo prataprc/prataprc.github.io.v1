@@ -8,7 +8,8 @@ black-magic in their tool.
 constructor
 -----------
 
-Any function call that is preceded by the new keyword acts as a constructor.
+Any function call that is preceded by the ``new`` keyword acts as a 
+constructor.
 
 .. gist:: prataprc/5843946.js?file=constructor.js
 
