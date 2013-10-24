@@ -5,7 +5,7 @@
 .. contents::
 
 I like languages that can be explained within few pages of a book. Besides C,
-Lua, Erlang - Javascript is one such language that have that simplicity. This
+Lua, Erlang - Javascript is one such language to have that simplicity. This
 post is a quick reference guide to javascript, highlighted through examples
 and all of them can be found at this
 `gist <https://gist.github.com/prataprc/5843946>`_.

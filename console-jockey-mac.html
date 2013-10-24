@@ -8,7 +8,7 @@
 <link  rel="stylesheet" type="text/css" href="media/magnific-popup/magnific-popup.css"/><!-- Magnific Popup core JS file -->
 <script  src="media/magnific-popup/jquery.magnific-popup.min.js">
 
-</script><title > git-remote-origin</title>
+</script><title > console-jockey-mac</title>
 
 
   <style   type="text/css">
@@ -20,30 +20,28 @@
   <a  href="index.html">home</a><a  href="http://in.linkedin.com/in/prataprc">linkedin</a><a  href="https://github.com/prataprc">github</a></nav></div>
       <div  id="myblog-container">
         <article >
-    <div  class="article-title"> git-remote-origin
+    <div  class="article-title"> console-jockey-mac
       <div  class="metaa">
         <span  class="author"> by prataprc;</span>
         <span  class="date"> Fri Jul 26, 2013</span></div></div>
-      <div  class="content"> <p>Github suggests following commands when creating a new repository.</p>
-<div class="highlight"><pre>git remote add origin git@github.com:&lt;username&gt;/&lt;reponame&gt;.git
-git push -u origin master
-</pre></div>
-<p>You can also add remote repository with a different name, for example <cite>github</cite>
-instead of origin (which obviously already exists in your system), like this:</p>
-<div class="highlight"><pre>git remote add github git@github.com:&lt;username&gt;/&lt;reponame&gt;.git
-</pre></div>
-<p>Remember though, everywhere in the tutorial you see <cite>origin</cite> you should
-replace it with <cite>github</cite>. For example,</p>
-<div class="highlight"><pre>git push origin master
-<span class="c"># should now be</span>
-git push github master.
-</pre></div>
-<p>However, if you want to see what that origin which already exists is, you can
-do a git remote -v. If you think this is there by some error, you can remove
-it and add the proper one by doing this:</p>
-<div class="highlight"><pre>git remote rm origin
-git remote add github git@github.com:&lt;username&gt;/&lt;reponame&gt;.git
-</pre></div></div>
+      <div  class="content"> <p>For mac, iterm2 is the pretty good. Download the .zip, unzip and cut paste the
+iterm2.app folder to /Applications, as of this writting iterm2 is not
+available via brew.</p>
+<div class="section" id="mercurial">
+<h1>mercurial</h1>
+<p>unfortunately I havn't found a way</p>
+<!-- tmux.conf.mac -->
+<p># Copy paste from clip-board
+bind P run &quot;pbpaste | tmux load-buffer -; tmux paste-buffer&quot;
+bind Y run &quot;tmux save-buffer - | pbcopy&quot;</p>
+<dl class="docutils">
+<dt>If you are using tmux, take a look at this,</dt>
+<dd><a class="reference external" href="https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard.git">https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard.git</a></dd>
+</dl>
+<p>Use Option-key + mouse to select text inside tmux, then use CMD+c to copy the
+selected text.
+CMD+v works anyway</p>
+</div></div>
 
 
     <div  class="metaz">

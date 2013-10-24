@@ -18,8 +18,8 @@ powerful way to introspect everything that is stored.
 
 *Lack of constructs*. This can also be called as lack-of-pretense. Many
 concepts and constructs that we observe in modern languages lack support
-from its hardware counter-part, there by, the compiler had to break them down
-to run on today's hardware and loose some performance in doing so.
+from its hardware counter-part, there by, a software runtime is added to
+augment the hardware and loose some performance in doing so.
 Nevertheless, present constructs and concepts provided by C are simply not
 enough for building large programs.
 
@@ -30,9 +30,9 @@ two languages in their mind and very many architectures along with that.
 
 *Portability*. A programmer in 1980s would have made portability as a
 winning advantage for C language. Faster processors, mature virtual machines,
-dynamic translation have made languages Python, Haskell, Java and Erlang as
-reasonable options for programmers. There is a section which cover some of the
-"features" in C language that makes it less portable ;).
+dynamic translation have made languages like Python, Haskell, Java and Erlang
+as reasonable options for programmers. There is a section which cover some of
+the "features" in C language that makes it less portable ;).
 
 *Undefined features*. If you get a chance, compile and run the following code
 snippet on Irix, GCC and sparc machines. You will know what "Undefined feature"

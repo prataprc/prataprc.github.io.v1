@@ -2,3 +2,4 @@ lextyrtab.py
 parsetyrtab.py
 .vimsession
 *.swp
+*.pyc
