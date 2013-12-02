@@ -286,7 +286,7 @@ use ncurses_ to author terminal applications.
 .. code-block:: bash
 
     sudo apt-get install automake autoconf  # Used for compiling C packages.
-    sudo apt-get openssl        # Secure socket layer
+    sudo apt-get install openssl            # Secure socket layer
     sudo apt-get install ncurses libncurses-dev ncurses-doc ncurses-examples
     sudo apt-get install libxml2-dev libxslt1-dev   # a tolerant HTML/XML parser
     sudo pip install lxml
@@ -455,6 +455,7 @@ A collection of useful console application.
     sudo apt-get install cmus               # music player
     sudo apt-get install urlview            # extracting url from text 
     sudo apt-get install w3m
+    sudo apt-get install rename
 
 More tools and utilities.
 
