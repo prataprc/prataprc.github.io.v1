@@ -1,4 +1,4 @@
-:title: Circular package dependencies in python.
+:title: circular package dependencies in python.
 :author: prataprc
 
 I am developing `pluggdapps`, `tayra` and `tayrakit`, and releasing them
@@ -13,8 +13,7 @@ can be used to configure web-apps written with pluggdapps. These web
 applications are in turn using `tayra` and `tayrakit`, creating a circular
 dependency.
 
-.. code-block:: text
-
+::
     tayrakit ---> tayra ---> pluggdapps
        ^            ^             |
        |            |             |

@@ -8,7 +8,7 @@
 <link  rel="stylesheet" type="text/css" href="media/magnific-popup/magnific-popup.css"/><!-- Magnific Popup core JS file -->
 <script  src="media/magnific-popup/jquery.magnific-popup.min.js">
 
-</script><title > Circular package dependencies in python.</title>
+</script><title > circular package dependencies in python.</title>
 
 
   <style   type="text/css">
@@ -20,10 +20,11 @@
   <a  href="index.html">home</a><a  href="http://in.linkedin.com/in/prataprc">linkedin</a><a  href="https://github.com/prataprc">github</a></nav></div>
       <div  id="myblog-container">
         <article >
-    <div  class="article-title"> Circular package dependencies in python.
+    <div  class="article-title"> circular package dependencies in python.
       <div  class="metaa">
-        <span  class="author"> by prataprc;</span></div></div>
-        <div  class="content"> <p>I am developing <cite>pluggdapps</cite>, <cite>tayra</cite> and <cite>tayrakit</cite>, and releasing them
+        <span  class="author"> by prataprc;</span>
+        <span  class="date"> Sun Jan 05, 2014</span></div></div>
+      <div  class="content"> <p>I am developing <cite>pluggdapps</cite>, <cite>tayra</cite> and <cite>tayrakit</cite>, and releasing them
 periodically. <cite>pluggdapps</cite> is a component system using which tayra templating
 language is designed and built. <cite>tayrakit</cite> is a collection of template plugins,
 under development, that uses tayra as the templating language.</p>
@@ -33,18 +34,25 @@ web framework comes with authentication and a configuration webapp that
 can be used to configure web-apps written with pluggdapps. These web
 applications are in turn using <cite>tayra</cite> and <cite>tayrakit</cite>, creating a circular
 dependency.</p>
-<div class="highlight"><pre>tayrakit ---&gt; tayra ---&gt; pluggdapps
-   ^            ^             |
-   |            |             |
-   *--------------------------*
-</pre></div>
+<dl class="docutils">
+<dt>::</dt>
+<dd><dl class="first last docutils">
+<dt>tayrakit ---&gt; tayra ---&gt; pluggdapps</dt>
+<dd>^            ^             |
+|            |             |
+<em>--------------------------</em></dd>
+</dl>
+</dd>
+</dl>
 <p>It just took me couple of releases to realize how circular dependency is
 cumbersome and painful during the release phase - it is difficult to make a
 working release without making sure that dependant releases are equally good.</p></div>
 
 
-    <div  class="metaz"></div>
-      <div  id="myblog-social">
+    <div  class="metaz">
+      <span  class="last_modified"> last modified - Sun Jan 05, 2014;</span>
+      <a  class="email" href="mailto:prataprc@gmail.com">contact-author</a>;</div>
+    <div  id="myblog-social">
         <ul >
   
     <li  class="twitter"> <a href="https://twitter.com/share" class="twitter-share-button"
