@@ -15,26 +15,39 @@ down my requirements,
 and found that github can address some of those. It can host static sites for
 me - even plain old HTML files, and pagd_ filled up the remaining
 requirements. Please note that techniques explained here are suitable for
-folks who are using a linux distribution and comfortable with shell interface.
+folks who are using a linux distribution or mac osX and comfortable with shell
+interface.
 
 How do I setup my blog site ?
 -----------------------------
 
-It is easy, create a virtual environment, install ``pagd``, and use 
+It is easy, create a virtual environment, install ``pagd``, and use
 `pagd.myblog` plugin to create a site layout. Let us go one step at a time,
 
-``setting up virtual environment``,
+First get python3.x for your distribution, pagd works only with python3. In
+case of mac, you can use `brew install python3` to get the latest python3.x
+version.
+
+Second, setup a virtual environment to install pagd and its dependacies. The
+following example assumes python3.2 as your python version. You can change it
+to python3.3 or later based on you machine's python version.
 
 .. code-block:: bash
 
+    # To install on ubuntu
     sudo apt-get install python3-setuptools     # Install python3-setuptools
     sudo easy_install3 pip          # will give you the command pip-3.2
     sudo pip-3.2 install virtualenv
 
+    # To install on mac-osx,
+    brew install python3    # automatically installs pip and setuptools
+    pip install --upgrade setuptools pip
+    pip install --upgrade virtualenv
+
 I hope that in coming future linux distributions will have python-3.x by
 default and comes with ``pip`` pre-installed, in which case executing ``sudo
-pip install virtualenv`` should suffice. Now we can go about creating a
-virtual environment to play with ``pagd``.
+pip install virtualenv`` should suffice. Let us now create a virtual
+environment to play with ``pagd``.
 
 .. code-block:: bash
 
@@ -42,10 +55,10 @@ virtual environment to play with ``pagd``.
     $ source env/bin/activate       # enter the virtual environment
     (env)$ pip install pagd
 
-note that we are explicitly using python3.2 version because ``pagd``
-works only with python-3.x. Installing pagd_ package will provide you
-``pagd`` command line script and as long as you are inside virtual environment
-the command will be available via `$PATH`.
+the example suggests python3.2, but you can use any later python3 version.
+Installing pagd_ package will provide you ``pagd`` command line script and as
+long as you are inside virtual environment the command will be available via
+`$PATH`.
 
 ``creating my blog layout``
 
@@ -78,8 +91,8 @@ supported. Keep a tab on pagd_ project site to know what else is getting
 added.
 
 Make sure that your ``_contents/`` directory have a file by name index.<format>
-which will be converted to index.html while generating the site.
-``index.html`` will be the main page for your web site.
+which will be converted to `index.html` while generating the site.
+`index.html` will be the main page for your web site.
 
 Once you have your articles, generate the site.
 
@@ -89,8 +102,8 @@ Once you have your articles, generate the site.
 
 this will generate the web site, translating your contents into html pages.
 Above command must be executed under the root-directory of your layout and
-unless ``-t`` switch, specifying a target directory, is passed on to the
-command, index.html and all the other pages will be placed relative to your
+unless ``-t`` switch, specifying a target directory, is passed via command
+line, index.html and all the other pages will be placed relative to your
 layout's root-directory.
 
 You can do ``pagd gen --help`` to learn available options.
@@ -113,8 +126,18 @@ To keep a tab on pagd_ - follow the
 `project at github <https://github.com/prataprc/pagd>`_ and post your queries
 to their mailing-list_.
 
+Reference
+---------
+* `python on mac`_ : installing python3.x on mac using home brew.
+* pagd_: pagd microsite with documentation and internals.
+* pluggdapps_: pagd depends on pluggdapps design elements.
+* tayra_: default templating language used in pagd.
+* blogspot_: blogsite maintained by google.
+* mailing-list_: pluggdapps/pagd developer and user mailing list.
+
 .. _pagd: http://pythonhosted.org/pagd
 .. _pluggdapps: https://github.com/prataprc/pluggdapps
 .. _tayra: https://github.com/prataprc/tayra
 .. _blogspot: www.blogger.com
 .. _mailing-list: http://groups.google.com/group/pluggdapps
+.. _`python on mac`: https://github.com/Homebrew/homebrew/wiki/Homebrew-and-Python

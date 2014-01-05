@@ -38,28 +38,40 @@ image url, etc ... are important.</li>
 <p>and found that github can address some of those. It can host static sites for
 me - even plain old HTML files, and <a class="reference external" href="http://pythonhosted.org/pagd">pagd</a> filled up the remaining
 requirements. Please note that techniques explained here are suitable for
-folks who are using a linux distribution and comfortable with shell interface.</p>
+folks who are using a linux distribution or mac osX and comfortable with shell
+interface.</p>
 <div class="section" id="how-do-i-setup-my-blog-site">
 <h1>How do I setup my blog site ?</h1>
 <p>It is easy, create a virtual environment, install <tt class="docutils literal">pagd</tt>, and use
 <cite>pagd.myblog</cite> plugin to create a site layout. Let us go one step at a time,</p>
-<p><tt class="docutils literal">setting up virtual environment</tt>,</p>
-<div class="highlight"><pre>sudo apt-get install python3-setuptools     <span class="c"># Install python3-setuptools</span>
+<p>First get python3.x for your distribution, pagd works only with python3. In
+case of mac, you can use <cite>brew install python3</cite> to get the latest python3.x
+version.</p>
+<p>Second, setup a virtual environment to install pagd and its dependacies. The
+following example assumes python3.2 as your python version. You can change it
+to python3.3 or later based on you machine's python version.</p>
+<div class="highlight"><pre><span class="c"># To install on ubuntu</span>
+sudo apt-get install python3-setuptools     <span class="c"># Install python3-setuptools</span>
 sudo easy_install3 pip          <span class="c"># will give you the command pip-3.2</span>
 sudo pip-3.2 install virtualenv
+
+<span class="c"># To install on mac-osx,</span>
+brew install python3    <span class="c"># automatically installs pip and setuptools</span>
+pip install --upgrade setuptools pip
+pip install --upgrade virtualenv
 </pre></div>
 <p>I hope that in coming future linux distributions will have python-3.x by
 default and comes with <tt class="docutils literal">pip</tt> pre-installed, in which case executing <tt class="docutils literal">sudo
-pip install virtualenv</tt> should suffice. Now we can go about creating a
-virtual environment to play with <tt class="docutils literal">pagd</tt>.</p>
+pip install virtualenv</tt> should suffice. Let us now create a virtual
+environment to play with <tt class="docutils literal">pagd</tt>.</p>
 <div class="highlight"><pre><span class="nv">$ </span>virtualenv --python<span class="o">=</span>python3.2 env     <span class="c"># env/ will be created under `pwd`</span>
 <span class="nv">$ </span><span class="nb">source </span>env/bin/activate       <span class="c"># enter the virtual environment</span>
 <span class="o">(</span>env<span class="o">)</span><span class="nv">$ </span>pip install pagd
 </pre></div>
-<p>note that we are explicitly using python3.2 version because <tt class="docutils literal">pagd</tt>
-works only with python-3.x. Installing <a class="reference external" href="http://pythonhosted.org/pagd">pagd</a> package will provide you
-<tt class="docutils literal">pagd</tt> command line script and as long as you are inside virtual environment
-the command will be available via <cite>$PATH</cite>.</p>
+<p>the example suggests python3.2, but you can use any later python3 version.
+Installing <a class="reference external" href="http://pythonhosted.org/pagd">pagd</a> package will provide you <tt class="docutils literal">pagd</tt> command line script and as
+long as you are inside virtual environment the command will be available via
+<cite>$PATH</cite>.</p>
 <p><tt class="docutils literal">creating my blog layout</tt></p>
 <p>One of the first thing that we do when using <tt class="docutils literal">pagd</tt> is to create a layout
 - in this case a layout implemented by <cite>pagd.myblog</cite> plugin. The name of the
@@ -83,15 +95,15 @@ this writing,  plain-text, reStructured-text, markdown and html formats are
 supported. Keep a tab on <a class="reference external" href="http://pythonhosted.org/pagd">pagd</a> project site to know what else is getting
 added.</p>
 <p>Make sure that your <tt class="docutils literal">_contents/</tt> directory have a file by name index.&lt;format&gt;
-which will be converted to index.html while generating the site.
-<tt class="docutils literal">index.html</tt> will be the main page for your web site.</p>
+which will be converted to <cite>index.html</cite> while generating the site.
+<cite>index.html</cite> will be the main page for your web site.</p>
 <p>Once you have your articles, generate the site.</p>
 <div class="highlight"><pre><span class="o">(</span>env<span class="o">)</span><span class="nv">$ </span>pagd gen
 </pre></div>
 <p>this will generate the web site, translating your contents into html pages.
 Above command must be executed under the root-directory of your layout and
-unless <tt class="docutils literal"><span class="pre">-t</span></tt> switch, specifying a target directory, is passed on to the
-command, index.html and all the other pages will be placed relative to your
+unless <tt class="docutils literal"><span class="pre">-t</span></tt> switch, specifying a target directory, is passed via command
+line, index.html and all the other pages will be placed relative to your
 layout's root-directory.</p>
 <p>You can do <tt class="docutils literal">pagd gen <span class="pre">--help</span></tt> to learn available options.</p>
 </div>
@@ -108,6 +120,17 @@ into your github repository.</p>
 <p>To keep a tab on <a class="reference external" href="http://pythonhosted.org/pagd">pagd</a> - follow the
 <a class="reference external" href="https://github.com/prataprc/pagd">project at github</a> and post your queries
 to their <a class="reference external" href="http://groups.google.com/group/pluggdapps">mailing-list</a>.</p>
+</div>
+<div class="section" id="reference">
+<h1>Reference</h1>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/Homebrew/homebrew/wiki/Homebrew-and-Python">python on mac</a> : installing python3.x on mac using home brew.</li>
+<li><a class="reference external" href="http://pythonhosted.org/pagd">pagd</a>: pagd microsite with documentation and internals.</li>
+<li><a class="reference external" href="https://github.com/prataprc/pluggdapps">pluggdapps</a>: pagd depends on pluggdapps design elements.</li>
+<li><a class="reference external" href="https://github.com/prataprc/tayra">tayra</a>: default templating language used in pagd.</li>
+<li><a class="reference external" href="www.blogger.com">blogspot</a>: blogsite maintained by google.</li>
+<li><a class="reference external" href="http://groups.google.com/group/pluggdapps">mailing-list</a>: pluggdapps/pagd developer and user mailing list.</li>
+</ul>
 </div></div>
 
 

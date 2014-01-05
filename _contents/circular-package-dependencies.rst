@@ -1,0 +1,25 @@
+:title: Circular package dependencies in python.
+:author: prataprc
+
+I am developing `pluggdapps`, `tayra` and `tayrakit`, and releasing them
+periodically. `pluggdapps` is a component system using which tayra templating
+language is designed and built. `tayrakit` is a collection of template plugins,
+under development, that uses tayra as the templating language.
+
+For couple of reasons, I also added a web framework based on pluggdapps
+component system and started releasing a sub-package under pluggdapps. The
+web framework comes with authentication and a configuration webapp that
+can be used to configure web-apps written with pluggdapps. These web
+applications are in turn using `tayra` and `tayrakit`, creating a circular
+dependency.
+
+.. code-block:: text
+
+    tayrakit ---> tayra ---> pluggdapps
+       ^            ^             |
+       |            |             |
+       *--------------------------*
+
+It just took me couple of releases to realize how circular dependency is
+cumbersome and painful during the release phase - it is difficult to make a
+working release without making sure that dependant releases are equally good.
