@@ -15,7 +15,7 @@ dependency.
 
 .. code-block:: text
 
-            tayrakit ---> tayra ---> pluggdapps
+            tayrakit -----> tayra -----> pluggdapps
                ^            ^             |
                |            |             |
                *------------*-------------*
