@@ -13,11 +13,12 @@ can be used to configure web-apps written with pluggdapps. These web
 applications are in turn using `tayra` and `tayrakit`, creating a circular
 dependency.
 
-::
-    tayrakit ---> tayra ---> pluggdapps
-       ^            ^             |
-       |            |             |
-       *--------------------------*
+.. code-block:: text
+
+            tayrakit ---> tayra ---> pluggdapps
+               ^            ^             |
+               |            |             |
+               *------------*-------------*
 
 It just took me couple of releases to realize how circular dependency is
 cumbersome and painful during the release phase - it is difficult to make a
