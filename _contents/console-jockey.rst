@@ -1,9 +1,9 @@
-Console is pairing of, output device called the monitor, and an input device
+Console is pairing of output device called the monitor, and an input device
 called the keyboard, that when jacked into a computing machine transforms any
 ordinary human-being into a console-jockey. Let us ride on ..
 
 This post is organized in five parts namely, the terminal, shell, programming
-languages, version control and handly bunch of tools.
+languages, version control and handy bunch of tools.
 
 terminal
 --------
@@ -23,12 +23,12 @@ of the gtk_ based terminal application.
 
 If you are power user of terminal, who end up opening several windows and
 several tabs in each window, then you must seriously consider tmux_ (or its
-ancestor screen).
+ancestor screen_).
 
 **tmux**,
 
 In short, tmux_ allows user to create sessions and attach any number of
-terminal emulatros to a session. Inside a session you can create any number
+terminal emulators to a session. Inside a session you can create any number
 of windows, even splitting them into panes. There is a whole bunch of short-cut
 keys defined for you to manage, migrate and monitor your windows/panes and
 emulator clients. For detailed information, check out its man-page.
@@ -37,56 +37,6 @@ emulator clients. For detailed information, check out its man-page.
 
     sudo apt-get install tmux
     man tmux    # To learn about tmux.
-
-Here is a sample configuration listing for tmux that I use for myself,
-
-.. code-block:: text
-
-    set -g default-command zsh     # zsh is my shell
-
-    # This is required to get vim behaviour correct
-    set -g default-terminal "screen-256color"
-
-    set-option -g status on             # Status line is on
-    set-option -g history-limit 200000  # max lines for terminal buffer
-    set-option -g mode-keys vi          # Use vim-bindings
-    set-option -g message-attr dim      
-    set-option -g repeat-time 800
-
-    # Enable mouse.
-    set-option -g mode-mouse on 
-    set-option -g mouse-resize-pane on
-    set-option -g mouse-select-pane on
-    set-option -g mouse-select-window on
-
-    # Monitor your window activities
-    setw -g monitor-activity on
-    set -g visual-activity on
-
-    # C-b is not acceptable -- Vim uses it -- change the prefix key
-    set-option -g prefix C-a
-    unbind-key C-b
-    bind-key C-a send-prefix
-
-    # Shortcuts to navigate between panes and windows, in repeat mode.
-    bind -r o select-pane -t :.+
-    bind -r n next-window
-    bind -r p previous-window
-
-    # Commonly used window patterns are saved under ``misc`` and ``main``
-    bind M source-file $HOME/.tmux/misc
-    bind N source-file $HOME/.tmux/main
-    bind Q kill-session
-
-    # Shortcuts to navigate between panes and windows, without the prefix
-    bind -n C-h prev
-    bind -n C-l next
-
-    # Copy paste from clip-board
-    bind P run "xclip -o | tmux load-buffer -; tmux paste-buffer"
-    bind Y run "tmux save-buffer - | xclip -i -selection clipboard"
-
-Yanking from Vim-buffer, inside tmux, to clipboard -
 
 shell
 -----
@@ -208,7 +158,7 @@ problem by using ``virtualenv``.
     sudo pip-3.2 install virtualenv
 
 Since python2.x and setuptools will eventually get phased out (hopefully),
-above gymnastic may not be relavant in the longer run.
+above gymnastic may not be relevant in the longer run.
 
 If you are authoring python package and uploading them into python-cheeseshop,
 pypi_ you can create a ~/.pypirc to automatically upload your package with
@@ -298,7 +248,7 @@ To configure DNS. Add this line in /etc/dhcp/dhclient.conf
     option domain-name-servers 8.8.8.8
 
 For development that does not consider full-screen terminal, just a reasonable
-control on keyboarb-input line by line, readline_ is very good. There is also
+control on keyboard-input line by line, readline_ is very good. There is also
 rlwrap tool that will give readline like interface for many interpreters.
 
 .. code-block:: bash
@@ -311,9 +261,6 @@ add the following line,
 .. code-block:: text
 
     set editing-mode vi
-
-
-
 
 version control
 ---------------
@@ -342,9 +289,9 @@ command line program to access mercurial repositories). Add them under ``~/.hgrc
 
     [ui]
     username = username <emailid>
-    verbose = True 
+    verbose = True
 
-If you are planning to use code.google.com or bitcucket with mercurial you
+If you are planning to use code.google.com or bitbucket with mercurial you
 might want your credentials to be automatically authenticated. For such cases
 add a list of credentials under ``[auth]`` section in the ``~/.hgrc``
 
@@ -371,7 +318,7 @@ for doing that.
 
 .. code-block:: bash
 
-    sudo apt-get install git 
+    sudo apt-get install git
 
 After installing git, update the user configuration file ~/.gitconfig,
 
@@ -474,7 +421,7 @@ Add package repository for adobe acrobat.
     sudo apt-get update
     sudo apt-get install acroread
 
-To share your filesystem with Windows, use samba server and configure the
+To share your file-system with Windows, use samba server and configure the
 user-name.
 
 .. code-block:: bash
@@ -514,6 +461,7 @@ fc-cache start the konsole and configure your desired fonts.
 .. _libvte: https://developer.gnome.org/vte/0.27/
 .. _gtk: www.gtk.org/
 .. _tmux: http://tmux.sourceforge.net/
+.. _screen: https://www.gnu.org/software/screen/
 .. _zsh: http://www.zsh.org/
 .. _vim: http://www.vim.org/
 .. _luarocks: http://luarocks.org/

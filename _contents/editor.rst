@@ -28,5 +28,3 @@ add the following in your `.vimrc` file.
     endif
 
 also make sure that $HOME/.viminfo has read/write permissions enabled.
-
-

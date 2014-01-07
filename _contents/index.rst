@@ -3,7 +3,7 @@
 Articles
 ========
 
-- `Circular package dependencies in python <circular-package-dependencies.html>`_.
+- `circular package dependencies in python <circular-package-dependencies.html>`_.
 - `javascript in a nutshell <javascript.html>`_.
 - `prototype inheritance in javascript <javascript-prototype.html>`_.
 - `caveats in javascript <javascript-caveats.html>`_.
