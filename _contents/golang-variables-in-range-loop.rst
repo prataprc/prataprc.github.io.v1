@@ -1,4 +1,4 @@
-:title: scope of variables declared in range loop - golang
+:title: golang - variables in range loop
 :author: prataprc
 
 Golang provides an interesting construct to range over arrays and maps. For
