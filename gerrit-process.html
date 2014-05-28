@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html >
+  <head > <!-- jQuery -->
+<script  src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js">
+
+</script><!-- local media files -->
+<link  rel="stylesheet" type="text/css" href="media/myblog.css"/><link  rel="stylesheet" type="text/css" href="media/pygments.css"/><!-- Magnific Popup core CSS file -->
+<link  rel="stylesheet" type="text/css" href="media/magnific-popup/magnific-popup.css"/><!-- Magnific Popup core JS file -->
+<script  src="media/magnific-popup/jquery.magnific-popup.min.js">
+
+</script><title > gerrit-process</title>
+
+
+  <style   type="text/css">
+  body {  }
+</style>
+  </head><body >
+    <div  id="myblog-page">
+      <div  id="myblog-header"> <nav >
+  <a  href="index.html">home</a><a  href="http://in.linkedin.com/in/prataprc">linkedin</a><a  href="https://github.com/prataprc">github</a></nav></div>
+      <div  id="myblog-container">
+        <article >
+    <div  class="article-title"> gerrit-process
+      <div  class="metaa">
+        <span  class="author"> by prataprc;</span>
+        <span  class="date"> Sun May 18, 2014</span></div></div>
+      <div  class="content"> <p>Deep had some concerns on this and gave some suggestion,</p>
+<p>The following is the scenario,</p>
+<ul class="simple">
+<li>Developer create a changeset-A, defining a bunch of data structure touching
+files M and N.</li>
+<li>Developer create a changeset-B, that has some logic that refer to variables
+defined in changeset-B touching files X and Y.</li>
+</ul>
+<p>Gerrit creates a dependency for each changeset by specifying a &quot;Neededby&quot;
+changeset and &quot;dependson&quot; changeset markers.</p>
+<p>Unfortunately, on the reviewers incoming review list, this ordering may not be
+maintained, for instance, reviewer might see,</p>
+<ul class="simple">
+<li>Changeset B</li>
+<li>Changeset A</li>
+</ul>
+<p>I am not sure whether we can configure gerrit to display proper ordering of
+changesets. Can we ?</p>
+<p>Now reviewer gives a comment to changeset-B which is also applicable to A.
+Developer have three options now,
+1. make independent patchset to A (files M and N) and B (files X and Y).
+2. create a new changeset C that will touch files M, N, X and Y.
+3. add a patchset to B touching files M, N, X and Y.</p>
+<p>We also discussed about the process of amending commits and pushing it to
+gerrit. We discussed two ways to do it,</p>
+<ol class="arabic">
+<li><p class="first">developer creates changesets A, B, C and D
+a. to add a patchset to D, developer can use do &quot;commit --amend&quot; and push</p>
+<div class="system-message">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">/Users/prataprc/myworld/devgit/prataprc.github.io/_contents/gerrit-process.rst</tt>, line 34)</p>
+<p>Unexpected indentation.</p>
+</div>
+<blockquote>
+<p>to gerrit</p>
+</blockquote>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">/Users/prataprc/myworld/devgit/prataprc.github.io/_contents/gerrit-process.rst</tt>, line 35)</p>
+<p>Block quote ends without a blank line; unexpected unindent.</p>
+</div>
+<ol class="loweralpha" start="2">
+<li><p class="first">to add a patchset to A
+- checkout A as separate branch with A as head
+- do &quot;commit --amend&quot;
+- push to gerrit
+- once a changeset is merged, rebase local/master with origin/master</p>
+<div class="system-message">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">/Users/prataprc/myworld/devgit/prataprc.github.io/_contents/gerrit-process.rst</tt>, line 40)</p>
+<p>Unexpected indentation.</p>
+</div>
+<blockquote>
+<p>and delete the branch</p>
+</blockquote>
+</li>
+<li><p class="first">to add a patchset to B and C follow same steps as 1.b above.</p>
+</li>
+</ol>
+</li>
+<li><p class="first">developer creates changesets A, B, C and D
+a. to add a patchset to D, developer can use do &quot;commit --amend&quot; and push</p>
+<div class="system-message">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">/Users/prataprc/myworld/devgit/prataprc.github.io/_contents/gerrit-process.rst</tt>, line 45)</p>
+<p>Unexpected indentation.</p>
+</div>
+<blockquote>
+<p>to gerrit</p>
+</blockquote>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">/Users/prataprc/myworld/devgit/prataprc.github.io/_contents/gerrit-process.rst</tt>, line 46)</p>
+<p>Block quote ends without a blank line; unexpected unindent.</p>
+</div>
+<ol class="loweralpha simple" start="2">
+<li>to add a patchset to A
+- commit a new changeset E.
+- git rebase -i &lt;sha1&gt;
+- squash E with A.
+- push to gerrit</li>
+<li>to add a patchset to B and C follow same steps as 2.b above.</li>
+</ol>
+</li>
+</ol></div>
+
+
+    <div  class="metaz">
+      <span  class="last_modified"> last modified - Sun May 18, 2014;</span>
+      <a  class="email" href="mailto:prataprc@gmail.com">contact-author</a>;</div>
+    <div  id="myblog-social">
+        <ul >
+  
+    <li  class="twitter"> <a href="https://twitter.com/share" class="twitter-share-button"
+    data-via="prataprc">Tweet</a>
+<script>!function(d,s,id){var
+    js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document,
+'script', 'twitter-wjs');</script>
+
+</li><li  class="fb"> <div id="fb-root"></div>
+<script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+      fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+</script>
+<div class="fb-like" data-send="false" data-layout="button_count"
+data-width="450" data-show-faces="true"></div>
+
+
+</li><li  class="linkedin"> <script src="//platform.linkedin.com/in.js" type="text/javascript">
+     lang: en_US
+</script>
+<script type="IN/Share" data-counter="right"></script>
+
+</li><li  class="gplus"> <!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-size="small"></div>
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  (function() {
+       var po = document.createElement('script'); po.type = 'text/javascript';
+       po.async = true;
+       po.src = 'https://apis.google.com/js/plusone.js';
+       var s = document.getElementsByTagName('script')[0];
+       s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+</li></ul></div></article></div></div>
+    
+
+      <hr/><div  id="myblog-footer"> <div  id="myblog-copyright"> &copy; 2013 Pratap Chakravarthy</div>
+<div  id="myblog-pagd"> generated using <a  href="https://github.com/prataprc/pagd">pagd</a></div>
+<script  type="text/javascript">
+  // Snippet to load rst gallery if available.
+  $(document).ready( function() {
+    $('.rst-gallery').each( function(idx, element) {
+        $(element).magnificPopup({
+          delegate: 'a',
+          type: 'image',
+          gallery: {
+            enabled: true, // set to true to enable gallery
+            preload: [0,1], // load next item
+            navigateByImgClick: true,
+          }
+        });
+    });
+  });
+
+</script></div></body>
+
+
+</html>

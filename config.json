@@ -7,7 +7,7 @@
    "style" : {
    },
    "show_email" : true,
-   "social_sharing" : "twitter,fb,hn,linkedin,gplus",
+   "social_sharing" : "twitter,fb,linkedin,gplus",
    "disqus" : false,
    "skip_context" : "",
    "copyright" : "&copy; 2013 Pratap Chakravarthy"
