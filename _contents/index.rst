@@ -3,7 +3,7 @@
 Articles
 ========
 
-- `scope of variables declared in range loop - golang <variable-scoping-in-range-golang.html>`_
+- `golang - variables in range loop golang <golang-variables-in-range-loop.rst>`_
 - `circular package dependencies in python <circular-package-dependencies.html>`_.
 - `javascript in a nutshell <javascript.html>`_.
 - `prototype inheritance in javascript <javascript-prototype.html>`_.

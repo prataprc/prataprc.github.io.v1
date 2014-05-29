@@ -1,6 +1,6 @@
-Console is pairing of output device called the monitor, and an input device
-called the keyboard, that when jacked into a computing machine transforms any
-ordinary human-being into a console-jockey. Let us ride on ..
+Console is pairing an input device called keyboard and an output device called
+the monitor, that when jacked into a computing machine transforms any ordinary
+human-being into a console-jockey. Let us ride on ..
 
 This post is organized in five parts namely, the terminal, shell, programming
 languages, version control and handy bunch of tools.
@@ -79,7 +79,7 @@ Similarly, to copy/paste content from OS clipboard ``+clipboard`` option should
 be listed when doing --version, subsequently use  ``+yy``, ``+p`` and related
 commands inside vim will copy/paste from OS clipboard.
 
-Supposing Vim has clipboard support, synchronizing Vim's default register and 
+Supposing Vim has clipboard support, synchronizing Vim's default register and
 the clipboard register is possible by adding the following line in your
 `.vimrc` file,
 
@@ -162,7 +162,7 @@ above gymnastic may not be relevant in the longer run.
 
 If you are authoring python package and uploading them into python-cheeseshop,
 pypi_ you can create a ~/.pypirc to automatically upload your package with
-credential.Make sure that the file is readable only by your uid,
+credential. Make sure that the file is readable only by your uid,
 
 .. code-block:: ini
 

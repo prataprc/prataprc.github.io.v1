@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html >
+  <head > <!-- jQuery -->
+<script  src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js">
+
+</script><!-- local media files -->
+<link  rel="stylesheet" type="text/css" href="media/myblog.css"/><link  rel="stylesheet" type="text/css" href="media/pygments.css"/><!-- Magnific Popup core CSS file -->
+<link  rel="stylesheet" type="text/css" href="media/magnific-popup/magnific-popup.css"/><!-- Magnific Popup core JS file -->
+<script  src="media/magnific-popup/jquery.magnific-popup.min.js">
+
+</script><title > golang - variables in range loop</title>
+
+
+  <style   type="text/css">
+  body {  }
+</style>
+  </head><body >
+    <div  id="myblog-page">
+      <div  id="myblog-header"> <nav >
+  <a  href="index.html">home</a><a  href="http://in.linkedin.com/in/prataprc">linkedin</a><a  href="https://github.com/prataprc">github</a></nav></div>
+      <div  id="myblog-container">
+        <article >
+    <div  class="article-title"> golang - variables in range loop
+      <div  class="metaa">
+        <span  class="author"> by prataprc;</span>
+        <span  class="date"> Wed May 28, 2014</span></div></div>
+      <div  class="content"> <p>Golang provides an interesting construct to range over arrays and maps. For
+instance to range over arrays,</p>
+<div class="highlight"><pre><span class="kd">type</span> <span class="nx">X</span> <span class="kd">struct</span> <span class="p">{</span>
+    <span class="nx">n</span> <span class="kt">int</span>
+    <span class="nx">square</span> <span class="kt">int</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">xs</span> <span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="nx">X</span>
+    <span class="k">for</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">x</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">xs</span> <span class="p">{</span>
+        <span class="nx">x</span><span class="p">.</span><span class="nx">a</span><span class="p">,</span> <span class="nx">x</span><span class="p">.</span><span class="nx">b</span> <span class="p">=</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">i</span><span class="o">*</span><span class="nx">i</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<p><cite>xs</cite> is the slice, <cite>i</cite> is the index for each iteration and <cite>x</cite> holds the value
+for each iteration.</p>
+<p>Some times while doing the above pattern of programming, especially coming
+from other languages, it is easy to get confused. For instance, let us say we
+want to build a <cite>map</cite> out of an array by ranging over them,</p>
+<div class="highlight"><pre><span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">xs</span> <span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="nx">X</span>
+    <span class="nx">ym</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="o">*</span><span class="nx">X</span><span class="p">]</span><span class="kt">int</span><span class="p">)</span> <span class="c1">// the map we need to build</span>
+    <span class="k">for</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">x</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">xs</span> <span class="p">{</span>
+        <span class="nx">ym</span><span class="p">[</span><span class="o">&amp;</span><span class="nx">x</span><span class="p">]</span> <span class="p">=</span> <span class="nx">i</span><span class="o">*</span><span class="nx">i</span><span class="o">*</span><span class="nx">i</span>
+        <span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;%p %p\n&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">x</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">xs</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span>
+    <span class="p">}</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Map output&quot;</span><span class="p">)</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">ym</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+<p>above program, when executed, emits following output</p>
+<div class="highlight"><pre>0x2101fb150 0x210230040
+0x2101fb150 0x210230050
+0x2101fb150 0x210230060
+0x2101fb150 0x210230070
+map[0x2101fb150:100]
+</pre></div>
+<p>why does the map contain just one key ? why is the address of <cite>x</cite> in each
+iteration is the same. The common type of misconception that leads to this
+confusion is the way we understand how <cite>x</cite> is declared and reused. The
+misconception can be explained by expanding the range loop into traditional
+for-loop,</p>
+<div class="highlight"><pre><span class="nx">ym</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="o">*</span><span class="nx">X</span><span class="p">]</span><span class="kt">int</span><span class="p">)</span> <span class="c1">// the map we need to build</span>
+<span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="nx">xs</span><span class="p">);</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+    <span class="nx">x</span> <span class="o">:=</span> <span class="nx">xs</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span>
+    <span class="o">...</span>
+<span class="p">}</span>
+</pre></div>
+<p>which is wrong, the correct way of expanding the range loop, as implemented by
+go, would be,</p>
+<div class="highlight"><pre><span class="nx">ym</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="o">*</span><span class="nx">X</span><span class="p">]</span><span class="kt">int</span><span class="p">)</span> <span class="c1">// the map we need to build</span>
+<span class="kd">var</span> <span class="nx">x</span> <span class="nx">X</span>
+<span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="nx">xs</span><span class="p">);</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+    <span class="nx">x</span> <span class="p">=</span> <span class="nx">xs</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span>
+    <span class="o">...</span>
+<span class="p">}</span>
+</pre></div></div>
+
+
+    <div  class="metaz">
+      <span  class="last_modified"> last modified - Wed May 28, 2014;</span>
+      <a  class="email" href="mailto:prataprc@gmail.com">contact-author</a>;</div>
+    <div  id="myblog-social">
+        <ul >
+  
+    <li  class="twitter"> <a href="https://twitter.com/share" class="twitter-share-button"
+    data-via="prataprc">Tweet</a>
+<script>!function(d,s,id){var
+    js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document,
+'script', 'twitter-wjs');</script>
+
+</li><li  class="fb"> <div id="fb-root"></div>
+<script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+      fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+</script>
+<div class="fb-like" data-send="false" data-layout="button_count"
+data-width="450" data-show-faces="true"></div>
+
+
+</li><li  class="linkedin"> <script src="//platform.linkedin.com/in.js" type="text/javascript">
+     lang: en_US
+</script>
+<script type="IN/Share" data-counter="right"></script>
+
+</li><li  class="gplus"> <!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-size="small"></div>
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  (function() {
+       var po = document.createElement('script'); po.type = 'text/javascript';
+       po.async = true;
+       po.src = 'https://apis.google.com/js/plusone.js';
+       var s = document.getElementsByTagName('script')[0];
+       s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+</li></ul></div></article></div></div>
+    
+
+      <hr/><div  id="myblog-footer"> <div  id="myblog-copyright"> &copy; 2013 Pratap Chakravarthy</div>
+<div  id="myblog-pagd"> generated using <a  href="https://github.com/prataprc/pagd">pagd</a></div>
+<script  type="text/javascript">
+  // Snippet to load rst gallery if available.
+  $(document).ready( function() {
+    $('.rst-gallery').each( function(idx, element) {
+        $(element).magnificPopup({
+          delegate: 'a',
+          type: 'image',
+          gallery: {
+            enabled: true, // set to true to enable gallery
+            preload: [0,1], // load next item
+            navigateByImgClick: true,
+          }
+        });
+    });
+  });
+
+</script></div></body>
+
+
+</html>
