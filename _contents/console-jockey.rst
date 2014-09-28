@@ -63,7 +63,7 @@ editing and text manipulations.
 
 .. code-block:: bash
 
-    sudo apt-get install exuberant-ctags vim
+    sudo apt-get install exuberant-ctags vim vim-gnome
 
 vim_ comes with a built in scripting language. But bindings are available for
 several languages like python, lua, tcl etc ... To know the available binding
@@ -88,6 +88,9 @@ the clipboard register is possible by adding the following line in your
     set clipboard^=unnamed
 
 allowing you to simply use y and p.
+
+under /etc/vim/vimrc uncomment lines to enable vim to jump to the last
+position when opening a file.
 
 programming languages
 ---------------------
@@ -121,8 +124,7 @@ growing language-tool-kit.
 
     sudo add-apt-repository ppa:chris-lea/node.js
     sudo apt-get update
-    sudo apt-get install nodejs
-    sudo apt-get install npm
+    sudo apt-get install nodejs npm
 
 npm_ is node-package-manager. Installing the package will also install the
 console based interactive shell for node. node packages when 
@@ -214,7 +216,7 @@ interpreted as ruby program, can be written in declarative style.
 
 .. code-block:: bash
 
-    sudo apt-get install go
+    sudo apt-get install go vim-syntax-go
 
 .. code-block:: bashrc
 
