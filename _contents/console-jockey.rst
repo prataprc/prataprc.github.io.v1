@@ -369,6 +369,11 @@ and add the following configuration settings under .hgrc file
     hgext.bookmarks =
     hggit=
 
+ssh setup for github
+
+.. code-block:: bash
+    ssh -T git@github.com
+
 **Few other version control systems**,
 
 .. code-block:: bash
@@ -451,8 +456,11 @@ append id_rsa.pub to client's `authorized_keys` under ``.ssh/authrized_keys``
 
 .. code-block:: bash
 
+    sudo apt-get install openssh-client openssh-server
     ssh-keygen -t rsa   # Optional ssh auto login
+    chmod 700 $HOME/.ssh # security
     sudo apt-get install ssh-askpass
+    service ssh restart
 
 GUI tools and utilities.
 
