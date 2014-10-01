@@ -5,6 +5,23 @@ human-being into a console-jockey. Let us ride on ..
 This post is organized in five parts namely, the terminal, shell, programming
 languages, version control and handy bunch of tools.
 
+Desktop
+-------
+
+keyboard tweaks
+
+.. code-block:: bash
+
+    sudo apt-get install gnome-tweak-tool // to remap key codes.
+    sudo apt-get install gnome-session-fallback // to go back to classic desktop
+
+fonts and konsole
+
+.. code-block:: bash
+
+    curl -kL https://raw.github.com/cstrap/monaco-font/master/install-font-ubuntu.sh | bash
+
+
 terminal
 --------
 
@@ -16,7 +33,7 @@ are almost always emulated, here are some such emulators,
 .. code-block:: bash
 
     sudo apt-get install konsole terminator
-    sudo apt-get install libvte libvte-dev
+    sudo apt-get install libvte-dev
 
 `libvte_` is the popular library that provides the terminal emulator for most
 of the gtk_ based terminal application.
@@ -63,7 +80,9 @@ editing and text manipulations.
 
 .. code-block:: bash
 
-    sudo apt-get install exuberant-ctags vim vim-gnome
+    sudo apt-get install exuberant-ctags vim vim-scripts vim-python-jedi
+    sudo apt-get install vim-syntax-docker vim-syntax-go vim-vimerl
+    sudo apt-get install vim-vimerl-syntax vim-athena
 
 vim_ comes with a built in scripting language. But bindings are available for
 several languages like python, lua, tcl etc ... To know the available binding
@@ -107,7 +126,7 @@ applications.
 
 .. code-block:: bash
 
-    sudo apt-get install lua luabind luajit luarocks metalua 
+    sudo apt-get install lua luajit luarocks
 
 luajit_ is a super-fast Just-in-time compiler for lua that can almost compete
 with Google-javascript-V8. luarocks_ is package manager for lua. Packages
@@ -122,8 +141,6 @@ growing language-tool-kit.
 
 .. code-block:: bash
 
-    sudo add-apt-repository ppa:chris-lea/node.js
-    sudo apt-get update
     sudo apt-get install nodejs npm
 
 npm_ is node-package-manager. Installing the package will also install the
@@ -138,10 +155,10 @@ third party packages.
 
 .. code-block:: bash
 
-    sudo apt-get install python python3.2 python-doc python3.2-doc
-    sudo apt-get install pip pip3           # package manager for python
+    sudo apt-get install python python3 python-doc python3-doc
+    sudo apt-get install python-pip python3-pip # package manager for python
     sudo apt-get install ipython ipython3   # powerful interactive shell
-    sudo apt-get install python-dev         # python development package
+    sudo apt-get install python-dev python3-dev # python development package
 
 right now python is going through a phase of split personality, one called as
 2.x version and the other called as 3.x version. Incompatibilities exist
@@ -184,9 +201,8 @@ strong community of programmers and large collection of libraries and tools.
 .. code-block:: bash
 
     sudo apt-get install ghc ghc-doc ghc-haddock ghc-prof haskell-platform
-    sudo apt-get install cabal  # Package manager for haskell
     cabal update                # Update list of haskell packages.
-    cabal install darcs
+    sudo apt-get install darcs
 
 darcs_ is a DVCS written in haskell and many haskell projects use that as
 their revision control. Cabal_ is the package manager for haskell.
@@ -210,18 +226,13 @@ interpreted as ruby program, can be written in declarative style.
 
 .. code-block:: bash
 
-    sudo apt-get install ruby rubygems
+    sudo apt-get install ruby
 
 **go**,
 
 .. code-block:: bash
 
-    sudo apt-get install go vim-syntax-go
-
-.. code-block:: bashrc
-
-    export GOPATH=$HOME/gocode:$GOPATH
-    export PATH=$HOME/gocode/bin:$PATH
+    sudo apt-get install golang gccgo-go
 
 Get the tutorial on go.
 
@@ -238,10 +249,11 @@ use ncurses_ to author terminal applications.
 .. code-block:: bash
 
     sudo apt-get install automake autoconf  # Used for compiling C packages.
-    sudo apt-get install openssl            # Secure socket layer
-    sudo apt-get install ncurses libncurses-dev ncurses-doc ncurses-examples
+    sudo apt-get install openssl  ncurses-examples # Secure socket layer
+    sudo apt-get install ncurses-base libncurses-dev ncurses-doc
     sudo apt-get install libxml2-dev libxslt1-dev   # a tolerant HTML/XML parser
     sudo pip install lxml
+    sudo pip3 install lxml
 
 To configure DNS. Add this line in /etc/dhcp/dhclient.conf
 
@@ -347,6 +359,7 @@ git respository-hosting service, you can use hg-git_ and dulwich_
 .. code-block:: bash
 
     sudo pip install hg-git dulwich
+    sudo pip3 install hg-git dulwich
 
 and add the following configuration settings under .hgrc file
 
@@ -410,7 +423,7 @@ More tools and utilities.
 
 .. code-block:: bash
 
-    sudo apt-get install htop xclip rar curl apache2-utils
+    sudo apt-get install htop atop xclip rar curl apache2-utils
     sudo apt-get install sqlite3    # Access SQL-like database as library
     sudo apt-get install gimp       # Image processing tool
 
