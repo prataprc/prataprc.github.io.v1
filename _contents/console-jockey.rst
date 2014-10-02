@@ -234,6 +234,14 @@ interpreted as ruby program, can be written in declarative style.
 
     sudo apt-get install golang gccgo-go
 
+To work with bleeding edge Go, download the latest version for the target
+machine,
+
+.. code-block:: bash
+
+    tar -C /usr/local -xzf go$VERSION.$OS-$ARCH.tar.gz
+    export PATH=$PATH:/usr/local/go/bin
+
 Get the tutorial on go.
 
 .. code-block:: bashrc
