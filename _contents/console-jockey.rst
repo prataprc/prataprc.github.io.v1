@@ -242,11 +242,22 @@ machine,
     tar -C /usr/local -xzf go$VERSION.$OS-$ARCH.tar.gz
     export PATH=$PATH:/usr/local/go/bin
 
-Get the tutorial on go.
+Some go tools,
 
 .. code-block:: bashrc
 
-    go get code.google.com/p/go-tour/gotour
+    go get code.google.com/p/go-tour/gotour # tutorial on go.
+
+    go get github.com/golang/lint # for golint
+    cd lint; go install ./...
+
+    go get github.com/mattn/goveralls # for goveralls
+    go install github.com/mattn/goveralls
+
+    go get github.com/axw/gocov # for gocov
+    cd lint; go install ./...
+
+    sudo apt-get install protobuf-compier # to install protobuf
 
 Mercurial must be installed for `go get` command to work.
 
