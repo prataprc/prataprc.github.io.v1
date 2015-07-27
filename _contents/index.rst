@@ -2,6 +2,7 @@ Articles
 ========
 
 - `console jockey <console-jockey.html>`_.
+- `3 programmers <3-programmers.html>`_.
 - `programming languages and error handling <error-handling.html>`_.
 - `golang - variables in range loop golang <golang-variables-in-range-loop.html>`_.
 - `circular package dependencies in python <circular-package-dependencies.html>`_.
@@ -13,6 +14,7 @@ Articles
 - `customizing your blog site with pagd <pagd-customizing.html>`_.
 - `social interfaces for your site, generated using pagd <pagd-social.html>`_.
 - `integrating pagd with git / mercurial repository <pagd-repository-integration.html>`_.
+- `computing machines <compute-machines.html>`_.
 - `booting erlang <booting-erlang.html>`_.
 - `sudoku, erlang and concurrency <sudoku-in-erlang.html>`_.
 - `sudoku, backtracking and pathological situation <sudoku-pathological.html>`_.
