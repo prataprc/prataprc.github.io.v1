@@ -1,15 +1,13 @@
->> Or, if you're not into poetry, some pseudocode...
+> Or, if you're not into poetry, some pseudocode...
+>
+>  assert("plain old error handling code" > "assert");
 
-I prefer poetry, in its absence may be aphoristic prose :)
-
-asserts, exceptions and error-returns - something that
-sharpest minds in our industry are still deciphering a clean
-way out.
+I prefer poetry, or in its absence aphoristic prose :)
 
 Golang says, multi value returns or panic/recover.
     - http://blog.golang.org/error-handling-and-go
 
-Like most _practical_ languages they simply short-circuit
+like most _practical_ languages they simply short-circuit
 the execution path. Ofcourse it will come back to bite us
 if side-effects are not adequatly taken care. And multi-value
 return as an after-thought ?
@@ -38,6 +36,10 @@ implementation to handle exceptions, after which
 every thing that follow becomes pure, and
 leaves rest of the programming world
 scratching its head …
+
+asserts, exceptions and error-returns - looks like
+sharpest minds in our industry are still deciphering
+a clean way out.
 
 IMHO given such a loaded situation if programmer handles
 exceptions and errors bad-ly is he/she the only person
