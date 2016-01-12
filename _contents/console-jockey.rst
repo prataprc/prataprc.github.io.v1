@@ -442,6 +442,7 @@ A collection of useful console application.
     sudo apt-get install urlview            # extracting url from text 
     sudo apt-get install w3m
     sudo apt-get install rename
+    sudo apt-get install ltrace htop atop iostat iotop
 
 More tools and utilities.
 
