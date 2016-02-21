@@ -43,8 +43,8 @@ sense in this context. Source code for the same can be found in
 <a class="reference external" href="https://github.com/prataprc/sudoku">github</a>. You can find more details on
 how to use the sudoku script there, that we will using it here.</p>
 <p>Now, let us have some fun.</p>
-<div class="highlight"><pre><span class="c"># solve a single sudoku puzzle of complexity 3 (9x9) and difficulty 40%</span>
-<span class="nv">$ </span>bin/sudoku -c 3 -d 40 -s 1123
+<div class="highlight"><pre><span class="c1"># solve a single sudoku puzzle of complexity 3 (9x9) and difficulty 40%</span>
+$ bin/sudoku -c <span class="m">3</span> -d <span class="m">40</span> -s 1123
 complexity:3 count:1 difficulty:40 seed:1123
 Time taken to evaluate 6329uS
 </pre></div>
@@ -55,8 +55,8 @@ for the same seed value. Note that the puzzle is solved using a sequential
 backtracking algorithm explained above.</p>
 <p><cite>All measurements are taken with my 2GHz Core-2 Quad desktop</cite>.</p>
 <p>Using the same parameters but solving 100 puzzles - <cite>sequentially</cite>,</p>
-<div class="highlight"><pre><span class="c"># solve a single sudoku puzzle of complexity 3 (9x9) and difficulty 40%</span>
-<span class="nv">$ </span>bin/sudoku -c 3 -d 40 -s 1123 -n 100
+<div class="highlight"><pre><span class="c1"># solve a single sudoku puzzle of complexity 3 (9x9) and difficulty 40%</span>
+$ bin/sudoku -c <span class="m">3</span> -d <span class="m">40</span> -s <span class="m">1123</span> -n 100
 complexity:3 count:100 difficulty:40 seed:1123
 Time taken to evaluate 1182004uS
 </pre></div>
@@ -87,7 +87,7 @@ cores.</dd>
 available cores.</dd>
 </dl>
 <p>We will run the same script with few more switches, and SMP disabled.</p>
-<div class="highlight"><pre><span class="nv">$ </span>bin/sudoku -c 3 -n 100 -d 40 -s 1123 -benchmark <span class="c"># SMP disabled</span>
+<div class="highlight"><pre>$ bin/sudoku -c <span class="m">3</span> -n <span class="m">100</span> -d <span class="m">40</span> -s <span class="m">1123</span> -benchmark <span class="c1"># SMP disabled</span>
 </pre></div>
 <p>Above command generates 100 puzzles of complexity 3, 9x9 sudoku table,
 populating 40% of the slots. Same seed value will generate same set of tables.
@@ -142,18 +142,18 @@ core-counts.</p>
 <p>I have added two puzzle files priv/long3.term and long4.term, both having a
 pathological case.</p>
 <p>First we will solve the pathological case with sequential version,</p>
-<div class="highlight"><pre><span class="nv">$ </span>bin/sudoku -f priv/long3.term         <span class="c"># SMP disabled</span>
-Time taken to evaluate: 3988177uS       <span class="c"># 3.9 Seconds</span>
+<div class="highlight"><pre>$ bin/sudoku -f priv/long3.term         <span class="c1"># SMP disabled</span>
+Time taken to evaluate: 3988177uS       <span class="c1"># 3.9 Seconds</span>
 </pre></div>
 <p>Then with concurrent version, on different number of cores.</p>
-<div class="highlight"><pre><span class="nv">$ </span>bin/sudoku -t -f priv/long3.term      <span class="c"># SMP with 4 cores</span>
-Time taken to evaluate: 195572uS        <span class="c"># 195 milliseconds</span>
+<div class="highlight"><pre>$ bin/sudoku -t -f priv/long3.term      <span class="c1"># SMP with 4 cores</span>
+Time taken to evaluate: 195572uS        <span class="c1"># 195 milliseconds</span>
 
-<span class="nv">$ </span>bin/sudoku -t -f priv/long3.term      <span class="c"># SMP with 2 cores</span>
-Time taken to evaluate: 415335uS        <span class="c"># 415 milliseconds</span>
+$ bin/sudoku -t -f priv/long3.term      <span class="c1"># SMP with 2 cores</span>
+Time taken to evaluate: 415335uS        <span class="c1"># 415 milliseconds</span>
 
-<span class="nv">$ </span>bin/sudoku -t -f priv/long3.term      <span class="c"># SMP disabled</span>
-Time taken to evaluate: 1078302uS       <span class="c"># 1 second</span>
+$ bin/sudoku -t -f priv/long3.term      <span class="c1"># SMP disabled</span>
+Time taken to evaluate: 1078302uS       <span class="c1"># 1 second</span>
 </pre></div>
 <p><cite>-t</cite> switch enables the concurrent mode, we can see that between 4 cores and 2
 cores there is 2x improvement because the concurrent logic is making use of

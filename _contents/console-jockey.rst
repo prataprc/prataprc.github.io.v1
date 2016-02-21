@@ -391,6 +391,7 @@ and add the following configuration settings under .hgrc file
 ssh setup for github
 
 .. code-block:: bash
+
     ssh -T git@github.com
 
 **Few other version control systems**,

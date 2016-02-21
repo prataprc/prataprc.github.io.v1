@@ -8,7 +8,7 @@
 <link  rel="stylesheet" type="text/css" href="media/magnific-popup/magnific-popup.css"/><!-- Magnific Popup core JS file -->
 <script  src="media/magnific-popup/jquery.magnific-popup.min.js">
 
-</script><title > git-remote-origin</title>
+</script><title > error-poetry</title>
 
 
   <style   type="text/css">
@@ -20,34 +20,70 @@
   <a  href="index.html">home</a><a  href="http://in.linkedin.com/in/prataprc">linkedin</a><a  href="https://github.com/prataprc">github</a></nav></div>
       <div  id="myblog-container">
         <article >
-    <div  class="article-title"> git-remote-origin
+    <div  class="article-title"> error-poetry
       <div  class="metaa">
         <span  class="author"> by prataprc;</span>
-        <span  class="date"> Fri Jul 26, 2013</span></div></div>
-      <div  class="content"> <p>Github suggests following commands when creating a new repository.</p>
-<div class="highlight"><pre>git remote add origin git@github.com:&lt;username&gt;/&lt;reponame&gt;.git
-git push -u origin master
-</pre></div>
-<p>You can also add remote repository with a different name, for example <cite>github</cite>
-instead of origin (which obviously already exists in your system), like this:</p>
-<div class="highlight"><pre>git remote add github git@github.com:&lt;username&gt;/&lt;reponame&gt;.git
-</pre></div>
-<p>Remember though, everywhere in the tutorial you see <cite>origin</cite> you should
-replace it with <cite>github</cite>. For example,</p>
-<div class="highlight"><pre>git push origin master
-<span class="c1"># should now be</span>
-git push github master.
-</pre></div>
-<p>However, if you want to see what that origin which already exists is, you can
-do a git remote -v. If you think this is there by some error, you can remove
-it and add the proper one by doing this:</p>
-<div class="highlight"><pre>git remote rm origin
-git remote add github git@github.com:&lt;username&gt;/&lt;reponame&gt;.git
-</pre></div></div>
+        <span  class="date"> Sat Sep 26, 2015</span></div></div>
+      <div  class="content"> <p>&gt; Or, if you're not into poetry, some pseudocode...
+&gt;
+&gt;  assert(&quot;plain old error handling code&quot; &gt; &quot;assert&quot;);</p>
+<p>I prefer poetry, or in its absence aphoristic prose :)</p>
+<dl class="docutils">
+<dt>Golang says, multi value returns or panic/recover.</dt>
+<dd><ul class="first last simple">
+<li><a class="reference external" href="http://blog.golang.org/error-handling-and-go">http://blog.golang.org/error-handling-and-go</a></li>
+</ul>
+</dd>
+</dl>
+<p>like most _practical_ languages they simply short-circuit
+the execution path. Ofcourse it will come back to bite us
+if side-effects are not adequatly taken care. And multi-value
+return as an after-thought ?</p>
+<p>Erlang says, let it crash - <a class="reference external" href="http://c2.com/cgi/wiki?LetItCrash">http://c2.com/cgi/wiki?LetItCrash</a></p>
+<p>because the number of variables and assumptions are
+so high that we will never ship if we had to get into
+every last detail.</p>
+<p>Rust says, be it authoring an OS or authoring a log-parser
+error handling shall not interfere with code composability</p>
+<div class="system-message">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">/Users/prataprc/myworld/devgit/prataprc.github.io/_contents/error-poetry.rst</tt>, line 23)</p>
+Unexpected indentation.</div>
+<blockquote>
+<ul class="simple">
+<li><a class="reference external" href="https://doc.rust-lang.org/book/error-handling.html">https://doc.rust-lang.org/book/error-handling.html</a></li>
+</ul>
+</blockquote>
+<p>if types are aligned then functions are composable, and
+they say algebraic-data-types is a clean solution rather
+than multi-value returns, but their error handling seem
+to be an ongoing story ?</p>
+<p>Haskell says, exception make a function impure, and
+un-handled exception is an error,</p>
+<div class="system-message">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">/Users/prataprc/myworld/devgit/prataprc.github.io/_contents/error-poetry.rst</tt>, line 32)</p>
+Unexpected indentation.</div>
+<blockquote>
+<ul class="simple">
+<li><a class="reference external" href="https://wiki.haskell.org/Exception">https://wiki.haskell.org/Exception</a></li>
+</ul>
+</blockquote>
+<p>it takes a thesis in category theory and a monadic
+implementation to handle exceptions, after which
+every thing that follow becomes pure, and
+leaves rest of the programming world
+scratching its head …</p>
+<p>asserts, exceptions and error-returns - looks like
+sharpest minds in our industry are still deciphering
+a clean way out.</p>
+<p>IMHO given such a loaded situation if programmer handles
+exceptions and errors bad-ly is he/she the only person
+to blame ? After all, if the language is in-adequate why
+blame the speakers.</p>
+<p>Thanks for reading this far,</p></div>
 
 
     <div  class="metaz">
-      <span  class="last_modified"> last modified - Fri Jul 26, 2013;</span>
+      <span  class="last_modified"> last modified - Sat Sep 26, 2015;</span>
       <a  class="email" href="mailto:prataprc@gmail.com">contact-author</a>;</div>
     <div  id="myblog-social">
         <ul >
