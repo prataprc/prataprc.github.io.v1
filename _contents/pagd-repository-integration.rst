@@ -13,7 +13,7 @@ repository. Just open the ``_context.json`` file under your site's
 
 .. code-block:: json
 
-   "_xcontext" : "pagd.git"
+   { "_xcontext" : "pagd.git" }
 
 note that context attributes defined with ``_contents/_context.json`` file is 
 applicable to all page contents created under `_contents` sub-directory.

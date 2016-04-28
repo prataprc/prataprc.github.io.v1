@@ -19,13 +19,13 @@ as its style attribute.
 
 .. code-block:: JSON
 
-   "google_webfonts" : [
+    { "google_webfonts" : [
        "http://fonts.googleapis.com/css?family=Inconsolata"
-   ],
-   "style" : {
-       "font-family" : "Inconsolata"
-   }
-
+      ],
+      "style" : {
+          "font-family" : "Inconsolata"
+      }
+    }
 
 Note that above settings are global to all pages in the site. If you want to
 customize the fonts for specific elements in the page, then you must customize
@@ -62,7 +62,7 @@ layout's root directory, for eg.,
 
 .. code-block:: json
 
-   "copyright" : "&copy; 2013 Pratap Chakravarthy"
+   { "copyright" : "&copy; 2013 Pratap Chakravarthy" }
 
 
 advanced customization

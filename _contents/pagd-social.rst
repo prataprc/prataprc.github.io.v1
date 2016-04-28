@@ -20,7 +20,7 @@ your layout`s config.json file,
 
 .. code-block:: json
 
-   "disqus" : true,
+   { "disqus" : true }
 
 you should also `sign-up with disqus <https://disqus.com/admin/signup/>`_ and
 copy the html snippet that they generate for you into the template file,
@@ -42,7 +42,7 @@ network) in your ``config.json`` file
 
 .. code-block:: json
 
-   "social_sharing" : "twitter,fb,hn,linkedin,gplus"
+   { "social_sharing" : "twitter,fb,hn,linkedin,gplus" }
 
 above example adds, Twitter, FaceBook, HackerNews, LinkedIn, Google+ social
 buttons to my blog-pages. Note that the comma separated names mentioned above,

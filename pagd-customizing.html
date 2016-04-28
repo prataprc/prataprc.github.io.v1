@@ -36,11 +36,12 @@ element - set the <tt class="docutils literal"><span class="pre">font-family</sp
 property object in config.json will be converted to a string of
 semi-colon separated list of CSS properties and applied to page's body element
 as its style attribute.</p>
-<div class="highlight"><pre><span></span><span class="s2">&quot;google_webfonts&quot;</span> <span class="err">:</span> <span class="p">[</span>
-    <span class="s2">&quot;http://fonts.googleapis.com/css?family=Inconsolata&quot;</span>
-<span class="p">]</span><span class="err">,</span>
-<span class="s2">&quot;style&quot;</span> <span class="err">:</span> <span class="p">{</span>
-    <span class="nt">&quot;font-family&quot;</span> <span class="p">:</span> <span class="s2">&quot;Inconsolata&quot;</span>
+<div class="highlight"><pre><span></span><span class="p">{</span> <span class="nt">&quot;google_webfonts&quot;</span> <span class="p">:</span> <span class="p">[</span>
+   <span class="s2">&quot;http://fonts.googleapis.com/css?family=Inconsolata&quot;</span>
+  <span class="p">],</span>
+  <span class="nt">&quot;style&quot;</span> <span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;font-family&quot;</span> <span class="p">:</span> <span class="s2">&quot;Inconsolata&quot;</span>
+  <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 <p>Note that above settings are global to all pages in the site. If you want to
@@ -70,7 +71,7 @@ creating under <tt class="docutils literal">_contents</tt> sub-directory.</p>
 <h1>copyright</h1>
 <p>Add your copyright information in <tt class="docutils literal">config.json</tt> file placed under your site
 layout's root directory, for eg.,</p>
-<div class="highlight"><pre><span></span><span class="s2">&quot;copyright&quot;</span> <span class="err">:</span> <span class="s2">&quot;&amp;copy; 2013 Pratap Chakravarthy&quot;</span>
+<div class="highlight"><pre><span></span><span class="p">{</span> <span class="nt">&quot;copyright&quot;</span> <span class="p">:</span> <span class="s2">&quot;&amp;copy; 2013 Pratap Chakravarthy&quot;</span> <span class="p">}</span>
 </pre></div>
 </div>
 <div class="section" id="advanced-customization">
