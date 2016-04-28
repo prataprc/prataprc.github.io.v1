@@ -3,7 +3,7 @@
 @@ tCounter = '<span class="mfp-counter">%curr% of %total%</span>' 
 
 <div #myblog-copyright> ${copyright}
-<div #myblog-pagd> generated using <a "https://github.com/prataprc/pagd">pagd
+<div #myblog-pagd> generated using <a "http://pythonhosted.org/pagd/">pagd
 <script text/javascript>
   // Snippet to load rst gallery if available.
   $(document).ready( function() {
