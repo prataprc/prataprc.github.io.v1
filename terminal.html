@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html >
-  <head > <!-- jQuery -->
-<script  src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js">
+  <head > <script  src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js">
 
 </script><!-- local media files -->
 <link  rel="stylesheet" type="text/css" href="media/myblog.css"/><link  rel="stylesheet" type="text/css" href="media/pygments.css"/><!-- Magnific Popup core CSS file -->
@@ -27,7 +26,7 @@
       <div  class="content"> <div class="section" id="enabling-256-colors-for-your-terminal-applications">
 <h1>Enabling 256 colors for your terminal applications</h1>
 <p>Check whether your terminal supports 256 colors,</p>
-<div class="highlight"><pre>tput colors
+<div class="highlight"><pre><span></span>tput colors
 </pre></div>
 <p>You can check available terminal database under /lib/terminfo/ subdirectory.
 If you could find a database file suffixed with <cite>256color</cite>, then you can use
@@ -38,12 +37,12 @@ line in your shell's <cite>rc</cite> file, eg., $HOME/.zshrc</p>
 <dt>TODO:</dt>
 <dd>&lt;Add C code gist based on ncurses to check colors available&gt;</dd>
 </dl>
-<div class="highlight"><pre><span class="nb">export</span> <span class="nv">TERM</span><span class="o">=</span>xterm-256color
+<div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">TERM</span><span class="o">=</span>xterm-256color
 </pre></div>
 <p>If you are an <a class="reference external" href="www.zsh.org">zsh</a> user, then you have to setup keyboard mapping for the
 terminal as well. You can choose to ignore this short cut and redo the mapping
 manually when you start the zsh shell next time.</p>
-<div class="highlight"><pre><span class="nb">cd</span> ~/.zkbd
+<div class="highlight"><pre><span></span><span class="nb">cd</span> ~/.zkbd
 cp xterm-pc-linux-gnu xterm-256color-pc-linux-gnu
 </pre></div>
 </div>
@@ -53,10 +52,10 @@ cp xterm-pc-linux-gnu xterm-256color-pc-linux-gnu
 available from bottom of this page, download and copy them to your
 <cite>$HOME/.vim/colors/</cite> directory and add the following line in <cite>$HOME/.vimrc</cite>
 file,</p>
-<div class="highlight"><pre><span class="k">color</span> jellybeans
+<div class="highlight"><pre><span></span><span class="k">color</span> jellybeans
 </pre></div>
 <p>Inside Vim, you can change the colors on the fly by doing,</p>
-<div class="highlight"><pre><span class="p">:</span><span class="k">color</span> solarized
+<div class="highlight"><pre><span></span><span class="p">:</span><span class="k">color</span> solarized
 </pre></div>
 <p><a class="reference external" href="https://github.com/altercation/solarized">solarized</a>, <a class="reference external" href="https://github.com/nanotech/jellybeans.vim">jellybeans</a>, <a class="reference external" href="https://github.com/noahfrederick/Hemisu">ir_black</a>, <a class="reference external" href="https://github.com/noahfrederick/Hemisu">hemisu</a> are some good color schemes, there
 is also a <a class="reference external" href="https://github.com/tomasr/dotfiles/">collection of themes</a>

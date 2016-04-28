@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html >
-  <head > <!-- jQuery -->
-<script  src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js">
+  <head > <script  src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js">
 
 </script><!-- local media files -->
 <link  rel="stylesheet" type="text/css" href="media/myblog.css"/><link  rel="stylesheet" type="text/css" href="media/pygments.css"/><!-- Magnific Popup core CSS file -->
@@ -30,7 +29,7 @@
 features like tabbed-open, split-view etc ... If you want to take a break and
 return back to the same environment later, you can do so by saving the vim
 session as,</p>
-<div class="highlight"><pre><span class="p">:</span><span class="k">mksession</span><span class="p">!</span> .vimsession
+<div class="highlight"><pre><span></span><span class="p">:</span><span class="k">mksession</span><span class="p">!</span> .vimsession
 </pre></div>
 <p>current vim session is saved under file <tt class="docutils literal">.vimsession</tt> - overwriting if it
 already exists.</p>
@@ -39,7 +38,7 @@ already exists.</p>
 <h1>Some common problems with vim</h1>
 <p>If you cannot open a file at the same line number you closed it at last time,
 add the following in your <cite>.vimrc</cite> file.</p>
-<div class="highlight"><pre><span class="c">&quot; Vim jump to the last position when reopening a file</span>
+<div class="highlight"><pre><span></span><span class="c">&quot; Vim jump to the last position when reopening a file</span>
 <span class="k">if</span> has<span class="p">(</span><span class="s2">&quot;autocmd&quot;</span><span class="p">)</span>
   <span class="k">au</span> <span class="nb">BufReadPost</span> * <span class="k">if</span> line<span class="p">(</span><span class="s2">&quot;&#39;\&quot;&quot;</span><span class="p">)</span> <span class="p">&gt;</span> <span class="m">0</span> &amp;&amp; line<span class="p">(</span><span class="s2">&quot;&#39;\&quot;&quot;</span><span class="p">)</span> <span class="p">&lt;=</span> line<span class="p">(</span><span class="s2">&quot;$&quot;</span><span class="p">)</span>
       \<span class="p">|</span> exe <span class="s2">&quot;normal! g&#39;\&quot;&quot;</span> <span class="p">|</span> <span class="k">endif</span>

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html >
-  <head > <!-- jQuery -->
-<script  src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js">
+  <head > <script  src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js">
 
 </script><!-- local media files -->
 <link  rel="stylesheet" type="text/css" href="media/myblog.css"/><link  rel="stylesheet" type="text/css" href="media/pygments.css"/><!-- Magnific Popup core CSS file -->
@@ -50,7 +49,7 @@ version.</p>
 <p>Second, setup a virtual environment to install pagd and its dependacies. The
 following example assumes python3.2 as your python version. You can change it
 to python3.3 or later based on you machine's python version.</p>
-<div class="highlight"><pre><span class="c1"># To install on ubuntu</span>
+<div class="highlight"><pre><span></span><span class="c1"># To install on ubuntu</span>
 sudo apt-get install python3-setuptools     <span class="c1"># Install python3-setuptools</span>
 sudo easy_install3 pip          <span class="c1"># will give you the command pip-3.2</span>
 sudo pip-3.2 install virtualenv
@@ -64,7 +63,7 @@ pip install --upgrade virtualenv
 default and comes with <tt class="docutils literal">pip</tt> pre-installed, in which case executing <tt class="docutils literal">sudo
 pip install virtualenv</tt> should suffice. Let us now create a virtual
 environment to play with <tt class="docutils literal">pagd</tt>.</p>
-<div class="highlight"><pre>$ virtualenv --python<span class="o">=</span>python3.2 env     <span class="c1"># env/ will be created under `pwd`</span>
+<div class="highlight"><pre><span></span>$ virtualenv --python<span class="o">=</span>python3.2 env     <span class="c1"># env/ will be created under `pwd`</span>
 $ <span class="nb">source</span> env/bin/activate       <span class="c1"># enter the virtual environment</span>
 <span class="o">(</span>env<span class="o">)</span>$ pip install pagd
 </pre></div>
@@ -77,13 +76,13 @@ long as you are inside virtual environment the command will be available via
 - in this case a layout implemented by <cite>pagd.myblog</cite> plugin. The name of the
 plugin is <cite>myblog</cite> which comes pre-packaged with pagd, hence we address it as
 <cite>pagd.myblog</cite>.</p>
-<div class="highlight"><pre><span class="o">(</span>env<span class="o">)</span>$ pagd create
+<div class="highlight"><pre><span></span><span class="o">(</span>env<span class="o">)</span>$ pagd create
 </pre></div>
 <p>a layout is created under the current working tree, so make sure to change to
 an appropriate path under your home-directory before executing the above
 command. And executing the above command will create a bunch of files and
 directories for you.</p>
-<div class="highlight"><pre>+- config.json
+<div class="highlight"><pre><span></span>+- config.json
 +- _contents/
 +- media/
 +- _templates/
@@ -98,7 +97,7 @@ added.</p>
 which will be converted to <cite>index.html</cite> while generating the site.
 <cite>index.html</cite> will be the main page for your web site.</p>
 <p>Once you have your articles, generate the site.</p>
-<div class="highlight"><pre><span class="o">(</span>env<span class="o">)</span>$ pagd gen
+<div class="highlight"><pre><span></span><span class="o">(</span>env<span class="o">)</span>$ pagd gen
 </pre></div>
 <p>this will generate the web site, translating your contents into html pages.
 Above command must be executed under the root-directory of your layout and

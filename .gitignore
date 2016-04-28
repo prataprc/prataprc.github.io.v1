@@ -4,3 +4,4 @@ parsetyrtab.py
 *.swp
 *.pyc
 paenv/
+venv/

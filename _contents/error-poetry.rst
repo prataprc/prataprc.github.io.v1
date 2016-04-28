@@ -20,7 +20,7 @@ every last detail.
 
 Rust says, be it authoring an OS or authoring a log-parser
 error handling shall not interfere with code composability
-    - https://doc.rust-lang.org/book/error-handling.html
+- https://doc.rust-lang.org/book/error-handling.html
 
 if types are aligned then functions are composable, and
 they say algebraic-data-types is a clean solution rather
@@ -29,7 +29,7 @@ to be an ongoing story ?
 
 Haskell says, exception make a function impure, and
 un-handled exception is an error,
-    - https://wiki.haskell.org/Exception
+- https://wiki.haskell.org/Exception
 
 it takes a thesis in category theory and a monadic
 implementation to handle exceptions, after which

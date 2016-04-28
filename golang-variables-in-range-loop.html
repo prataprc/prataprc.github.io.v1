@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html >
-  <head > <!-- jQuery -->
-<script  src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js">
+  <head > <script  src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js">
 
 </script><!-- local media files -->
 <link  rel="stylesheet" type="text/css" href="media/myblog.css"/><link  rel="stylesheet" type="text/css" href="media/pygments.css"/><!-- Magnific Popup core CSS file -->
@@ -26,7 +25,7 @@
         <span  class="date"> Wed May 28, 2014</span></div></div>
       <div  class="content"> <p>Golang provides an interesting construct to range over arrays and maps. For
 instance to range over arrays,</p>
-<div class="highlight"><pre><span class="kd">type</span> <span class="nx">X</span> <span class="kd">struct</span> <span class="p">{</span>
+<div class="highlight"><pre><span></span><span class="kd">type</span> <span class="nx">X</span> <span class="kd">struct</span> <span class="p">{</span>
     <span class="nx">n</span> <span class="kt">int</span>
     <span class="nx">square</span> <span class="kt">int</span>
 <span class="p">}</span>
@@ -43,7 +42,7 @@ for each iteration.</p>
 <p>Some times while doing the above pattern of programming, especially coming
 from other languages, it is easy to get confused. For instance, let us say we
 want to build a <cite>map</cite> out of an array by ranging over them,</p>
-<div class="highlight"><pre><span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+<div class="highlight"><pre><span></span><span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">xs</span> <span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="nx">X</span>
     <span class="nx">ym</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="o">*</span><span class="nx">X</span><span class="p">]</span><span class="kt">int</span><span class="p">)</span> <span class="c1">// the map we need to build</span>
     <span class="k">for</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">x</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">xs</span> <span class="p">{</span>
@@ -55,7 +54,7 @@ want to build a <cite>map</cite> out of an array by ranging over them,</p>
 <span class="p">}</span>
 </pre></div>
 <p>above program, when executed, emits following output</p>
-<div class="highlight"><pre>0x2101fb150 0x210230040
+<div class="highlight"><pre><span></span>0x2101fb150 0x210230040
 0x2101fb150 0x210230050
 0x2101fb150 0x210230060
 0x2101fb150 0x210230070
@@ -66,7 +65,7 @@ iteration is the same. The common type of misconception that leads to this
 confusion is the way we understand how <cite>x</cite> is declared and reused. The
 misconception can be explained by expanding the range loop into traditional
 for-loop,</p>
-<div class="highlight"><pre><span class="nx">ym</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="o">*</span><span class="nx">X</span><span class="p">]</span><span class="kt">int</span><span class="p">)</span> <span class="c1">// the map we need to build</span>
+<div class="highlight"><pre><span></span><span class="nx">ym</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="o">*</span><span class="nx">X</span><span class="p">]</span><span class="kt">int</span><span class="p">)</span> <span class="c1">// the map we need to build</span>
 <span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="nx">xs</span><span class="p">);</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
     <span class="nx">x</span> <span class="o">:=</span> <span class="nx">xs</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span>
     <span class="o">...</span>
@@ -74,7 +73,7 @@ for-loop,</p>
 </pre></div>
 <p>which is wrong, the correct way of expanding the range loop, as implemented by
 go, would be,</p>
-<div class="highlight"><pre><span class="nx">ym</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="o">*</span><span class="nx">X</span><span class="p">]</span><span class="kt">int</span><span class="p">)</span> <span class="c1">// the map we need to build</span>
+<div class="highlight"><pre><span></span><span class="nx">ym</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="o">*</span><span class="nx">X</span><span class="p">]</span><span class="kt">int</span><span class="p">)</span> <span class="c1">// the map we need to build</span>
 <span class="kd">var</span> <span class="nx">x</span> <span class="nx">X</span>
 <span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="nx">xs</span><span class="p">);</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
     <span class="nx">x</span> <span class="p">=</span> <span class="nx">xs</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span>

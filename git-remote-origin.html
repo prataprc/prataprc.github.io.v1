@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html >
-  <head > <!-- jQuery -->
-<script  src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js">
+  <head > <script  src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js">
 
 </script><!-- local media files -->
 <link  rel="stylesheet" type="text/css" href="media/myblog.css"/><link  rel="stylesheet" type="text/css" href="media/pygments.css"/><!-- Magnific Popup core CSS file -->
@@ -25,23 +24,23 @@
         <span  class="author"> by prataprc;</span>
         <span  class="date"> Fri Jul 26, 2013</span></div></div>
       <div  class="content"> <p>Github suggests following commands when creating a new repository.</p>
-<div class="highlight"><pre>git remote add origin git@github.com:&lt;username&gt;/&lt;reponame&gt;.git
+<div class="highlight"><pre><span></span>git remote add origin git@github.com:&lt;username&gt;/&lt;reponame&gt;.git
 git push -u origin master
 </pre></div>
 <p>You can also add remote repository with a different name, for example <cite>github</cite>
 instead of origin (which obviously already exists in your system), like this:</p>
-<div class="highlight"><pre>git remote add github git@github.com:&lt;username&gt;/&lt;reponame&gt;.git
+<div class="highlight"><pre><span></span>git remote add github git@github.com:&lt;username&gt;/&lt;reponame&gt;.git
 </pre></div>
 <p>Remember though, everywhere in the tutorial you see <cite>origin</cite> you should
 replace it with <cite>github</cite>. For example,</p>
-<div class="highlight"><pre>git push origin master
+<div class="highlight"><pre><span></span>git push origin master
 <span class="c1"># should now be</span>
 git push github master.
 </pre></div>
 <p>However, if you want to see what that origin which already exists is, you can
 do a git remote -v. If you think this is there by some error, you can remove
 it and add the proper one by doing this:</p>
-<div class="highlight"><pre>git remote rm origin
+<div class="highlight"><pre><span></span>git remote rm origin
 git remote add github git@github.com:&lt;username&gt;/&lt;reponame&gt;.git
 </pre></div></div>
 

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html >
-  <head > <!-- jQuery -->
-<script  src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js">
+  <head > <script  src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js">
 
 </script><!-- local media files -->
 <link  rel="stylesheet" type="text/css" href="media/myblog.css"/><link  rel="stylesheet" type="text/css" href="media/pygments.css"/><!-- Magnific Popup core CSS file -->
@@ -34,7 +33,7 @@ generating a site with pagd.</p>
 programming and languages - it is likely that you will be including snippets of
 code in your article. In such cases wrap your code-snippets with
 <tt class="docutils literal"><span class="pre">code-block</span></tt> rst-directive, like,</p>
-<div class="highlight"><pre><span class="p">..</span> <span class="ow">code-block</span><span class="p">::</span> <span class="k">c</span>
+<div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">code-block</span><span class="p">::</span> <span class="k">c</span>
 
     <span class="kt">void</span> <span class="nf">myfunc</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
         <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
@@ -43,7 +42,7 @@ code in your article. In such cases wrap your code-snippets with
 </pre></div>
 <p>while generating your web site using <a class="reference external" href="http://pythonhosted.org/pagd">pagd</a>, above block of code will be
 rendered like,</p>
-<div class="highlight"><pre><span class="kt">void</span> <span class="nf">myfunc</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">myfunc</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
     <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
     <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d %d %d %d %x &quot;</span><span class="p">,</span> <span class="n">i</span><span class="o">++</span><span class="p">,</span> <span class="o">--</span><span class="n">i</span><span class="p">,</span> <span class="o">++</span><span class="n">i</span><span class="p">,</span> <span class="o">++</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="o">++</span> <span class="p">);</span>
 <span class="p">}</span>
@@ -53,7 +52,7 @@ rendered like,</p>
 <h1>youtube directive</h1>
 <p>There were many occations we wanted to refer you-tube links that can play
 inside our page. For such occations,</p>
-<div class="highlight"><pre><span class="p">..</span> <span class="ow">youtube</span><span class="p">::</span> 7-qGKqveZaM
+<div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">youtube</span><span class="p">::</span> 7-qGKqveZaM
 </pre></div>
 <p>and while generating the page with pagd,</p>
 <object class="rst-youtube" type="application/x-shockwave-flash"
@@ -69,7 +68,7 @@ modifying the CSS sytling for <tt class="docutils literal"><span class="pre">div
 <h1>gallery directive</h1>
 <p>Let us say you have a bunch of charts that you would like to present them as
 image gallery for your readers,</p>
-<div class="highlight"><pre><span class="p">..</span> <span class="ow">gallery</span><span class="p">::</span> My collection of charts
+<div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">gallery</span><span class="p">::</span> My collection of charts
     media/sudokucharts/nosmp.png
     media/sudokucharts/smp2.png
     media/sudokucharts/smp4.png
@@ -92,12 +91,12 @@ do some basic cusomization as well.</p>
 <h1>gist directive</h1>
 <p>If you have code gist in github and you want to embed them inside your
 article, use the following directive,</p>
-<div class="highlight"><pre><span class="p">..</span> <span class="ow">gist</span><span class="p">::</span> prataprc/5843946.js
+<div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">gist</span><span class="p">::</span> prataprc/5843946.js
 </pre></div>
 <p>where <tt class="docutils literal">prataprc</tt> is the user-name and it will expand to full url -
 <a class="reference external" href="https://gist.github.com/prataprc/5843946.js">https://gist.github.com/prataprc/5843946.js</a>.</p>
 <p>To include a specific file from the gist,</p>
-<div class="highlight"><pre><span class="p">..</span> <span class="ow">gist</span><span class="p">::</span> prataprc/5843946.js?file=caveat7.js
+<div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">gist</span><span class="p">::</span> prataprc/5843946.js?file=caveat7.js
 </pre></div>
 <p>This will embed only <tt class="docutils literal">caveat7.js</tt> file inside your article.</p>
 </div></div>
