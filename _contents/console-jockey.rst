@@ -1,6 +1,6 @@
-Console is pairing an input device called keyboard and an output device called
-the monitor, that when jacked into a computing machine transforms any ordinary
-human-being into a console-jockey. Let us ride on ..
+Console is pairing input device, the keyboard, and output device called,
+the monitor. That, when jacked into a computing machine, transforms any
+ordinary human-being into a console-jockey. Let us ride on ..
 
 This post is organized in five parts namely, the terminal, shell, programming
 languages, version control and handy bunch of tools.
@@ -502,8 +502,27 @@ fc-cache start the konsole and configure your desired fonts.
     sudo fc-cache 
     fc-cache
 
+For mac
+-------
+
+iterm2 is the pretty good. Download the .zip, unzip and cut paste the
+iterm2.app folder to /Applications, as of this writting iterm2 is not
+available via brew.
+
+.. code-block:: config
+
+    # Copy paste from clip-board
+    bind P run "pbpaste | tmux load-buffer -; tmux paste-buffer"
+    bind Y run "tmux save-buffer - | pbcopy"
+
+If you are using tmux, take a look at this,
+https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard.git
+
+Use Option-key + mouse to select text inside tmux, then use CMD+c to copy the
+selected text. CMD+v works anyway
+
 .. _libvte: https://developer.gnome.org/vte/0.27/
-.. _gtk: www.gtk.org/
+.. _gtk: http://www.gtk.org/
 .. _tmux: http://tmux.sourceforge.net/
 .. _screen: https://www.gnu.org/software/screen/
 .. _zsh: http://www.zsh.org/
@@ -529,4 +548,3 @@ fc-cache start the konsole and configure your desired fonts.
 .. _erlang: http://www.erlang.org/
 .. _hipe: http://www.erlang.org/doc/apps/hipe/
 .. _cabal: http://www.haskell.org/cabal/
-

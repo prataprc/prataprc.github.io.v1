@@ -3,6 +3,7 @@
 Articles
 ========
 
+- `console jockey <console-jockey.html>`_
 - `golang - variables in range loop golang <golang-variables-in-range-loop.html>`_
 - `circular package dependencies in python <circular-package-dependencies.html>`_.
 - `javascript in a nutshell <javascript.html>`_.

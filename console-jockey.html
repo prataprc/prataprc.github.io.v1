@@ -23,9 +23,9 @@
       <div  class="metaa">
         <span  class="author"> by Pratap Chakravarthy;</span>
         <span  class="date"> Wed Jul 03, 2013</span></div></div>
-      <div  class="content"> <p>Console is pairing an input device called keyboard and an output device called
-the monitor, that when jacked into a computing machine transforms any ordinary
-human-being into a console-jockey. Let us ride on ..</p>
+      <div  class="content"> <p>Console is pairing input device, the keyboard, and output device called,
+the monitor. That, when jacked into a computing machine, transforms any
+ordinary human-being into a console-jockey. Let us ride on ..</p>
 <p>This post is organized in five parts namely, the terminal, shell, programming
 languages, version control and handy bunch of tools.</p>
 <div class="section" id="desktop">
@@ -48,7 +48,7 @@ are almost always emulated, here are some such emulators,</p>
 sudo apt-get install libvte-dev
 </pre></div>
 <p><cite>libvte_</cite> is the popular library that provides the terminal emulator for most
-of the <a class="reference external" href="www.gtk.org/">gtk</a> based terminal application.</p>
+of the <a class="reference external" href="http://www.gtk.org/">gtk</a> based terminal application.</p>
 <p>If you are power user of terminal, who end up opening several windows and
 several tabs in each window, then you must seriously consider <a class="reference external" href="http://tmux.sourceforge.net/">tmux</a> (or its
 ancestor <a class="reference external" href="https://www.gnu.org/software/screen/">screen</a>).</p>
@@ -365,6 +365,20 @@ sudo apt-get install xfonts-terminus console-terminus
 sudo fc-cache
 fc-cache
 </pre></div>
+</div>
+<div class="section" id="for-mac">
+<h1>For mac</h1>
+<p>iterm2 is the pretty good. Download the .zip, unzip and cut paste the
+iterm2.app folder to /Applications, as of this writting iterm2 is not
+available via brew.</p>
+<div class="highlight"><pre><span></span># Copy paste from clip-board
+bind P run &quot;pbpaste | tmux load-buffer -; tmux paste-buffer&quot;
+bind Y run &quot;tmux save-buffer - | pbcopy&quot;
+</pre></div>
+<p>If you are using tmux, take a look at this,
+<a class="reference external" href="https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard.git">https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard.git</a></p>
+<p>Use Option-key + mouse to select text inside tmux, then use CMD+c to copy the
+selected text. CMD+v works anyway</p>
 </div></div>
 
 
