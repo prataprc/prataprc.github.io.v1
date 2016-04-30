@@ -1,7 +1,7 @@
 :title: Console jockey
 :author: prataprc
 
-Console is pairing input device, the keyboard, and output device called,
+Console is pairing input device - the keyboard, and output device -
 the monitor. That, when jacked into a computing machine, transforms any
 ordinary human-being into a console-jockey. Let us ride on ..
 
