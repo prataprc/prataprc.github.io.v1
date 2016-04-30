@@ -1,3 +1,6 @@
+:title: Overhead of booting an erlang VM
+:author: prataprc
+
 Wanted to measure the overhead of booting an erlang virtual machine, do
 nothing and shut it down.
 

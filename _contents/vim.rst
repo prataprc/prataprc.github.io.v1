@@ -1,3 +1,6 @@
+:title: Vim editor
+:author: prataprc
+
 Saving your editor session
 --------------------------
 

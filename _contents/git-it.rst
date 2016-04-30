@@ -1,3 +1,7 @@
+:title: Git it
+:author: prataprc
+:date:  Thu Oct 20, 2011
+
 Github suggests following commands when creating a new repository.
 
 .. code-block:: bash

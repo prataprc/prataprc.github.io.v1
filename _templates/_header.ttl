@@ -1,5 +1,6 @@
 <nav>
   <a "index.html"!>home
+  <a "projects.html"!>projects
   <a "http://in.linkedin.com/in/prataprc"!>linkedin
   <a "https://github.com/prataprc"!>github
 

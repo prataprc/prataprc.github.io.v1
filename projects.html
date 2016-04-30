@@ -7,7 +7,7 @@
 <link  rel="stylesheet" type="text/css" href="media/magnific-popup/magnific-popup.css"/><!-- Magnific Popup core JS file -->
 <script  src="media/magnific-popup/jquery.magnific-popup.min.js">
 
-</script><title > erlang-metric</title>
+</script><title > projects</title>
 
 
   <style   type="text/css">
@@ -16,39 +16,43 @@
   </head><body >
     <div  id="myblog-page">
       <div  id="myblog-header"> <nav >
-  <a  href="index.html">home</a><a  href="http://in.linkedin.com/in/prataprc">linkedin</a><a  href="https://github.com/prataprc">github</a></nav></div>
+  <a  href="index.html">home</a><a  href="projects.html">projects</a><a  href="http://in.linkedin.com/in/prataprc">linkedin</a><a  href="https://github.com/prataprc">github</a></nav></div>
       <div  id="myblog-container">
         <article >
-    <div  class="article-title"> erlang-metric
-      <div  class="metaa">
-        <span  class="author"> by Pratap Chakravarthy;</span>
-        <span  class="date"> Sat Jun 15, 2013</span></div></div>
-      <div  class="content"> <p>Wanted to measure the overhead of booting an erlang virtual machine, do
-nothing and shut it down.</p>
-<p>These measurements are on <strong>2Ghz Core-2 Duo desktop machine running ubuntu
-12.04 LTS</strong>.</p>
-<div class="highlight"><pre><span></span>$ /usr/bin/time -p erl -noinput -noshell -s init stop
-real 1.13
-user 0.14
-sys 0.01
-</pre></div>
-<p>Looks like it takes about 1.130 Seconds - this includes both booting and shutdown
-times. <tt class="docutils literal">init:stop/0</tt> is the proper way to shutdown erlang virtual machine
-and we don't really know whether most of the time went, whether in booting the
-VM or to shutdown the VM. To figure this out let us try is using another method,</p>
-<div class="highlight"><pre><span></span>$ /usr/bin/time -p erl -noinput -noshell -s erlang halt
-real 0.14
-user 0.13
-sys 0.01
-</pre></div>
-<p><tt class="docutils literal">erlang:halt/0</tt> abruptly shutdowns the VM, the above numbers give us an idea
-on how-long it takes to boot Erlang-Virtual-Machine.</p></div>
+    <div  class="article-title"> projects
+      <div  class="metaa"></div></div>
+        <div  class="content"> <div class="section" id="python">
+<h1>Python</h1>
+<dl class="docutils">
+<dt><a class="reference external" href="http://github.com/prataprc/pagd">pagd</a></dt>
+<dd>Static site generator, this site was generated using it.
+<a class="reference external" href="http://pythonhosted.org/pagd">Pagd documentation</a> hosted in python cheese shop.</dd>
+<dt><a class="reference external" href="http://github.com/prataprc/pluggdapps">pluggdapps</a></dt>
+<dd>A component system in python. <a class="reference external" href="http://pythonhosted.org/pluggdapps">Pluggdapps documentation</a> hosted
+in python cheese shop.</dd>
+<dt><a class="reference external" href="http://github.com/prataprc/tayra">tayra</a></dt>
+<dd>Create concise, beautiful and highly re-usable HTML templates.
+<a class="reference external" href="http://pythonhosted.org/tayra">Tayra documentation</a> hosted in python cheese shop.</dd>
+<dt><a class="reference external" href="http://github.com/prataprc/tayrakit">tayrakit</a></dt>
+<dd>Widget toolkit using tayra.</dd>
+</dl>
+<p><br/></p>
+</div>
+<div class="section" id="erlang">
+<h1>Erlang</h1>
+<dl class="docutils">
+<dt><a class="reference external" href="http://github.com/prataprc/netscale">netscale</a></dt>
+<dd>A collection of distributed apps in erlang.</dd>
+<dt><a class="reference external" href="http://github.com/prataprc/sudoku">sudoku</a></dt>
+<dd>sudoku puzzle generator and solver in erlang.</dd>
+<dt><a class="reference external" href="http://github.com/prataprc/textmode">textmode</a></dt>
+<dd>erlang + ncurses, terminal server for erlang applications.</dd>
+</dl>
+</div></div>
 
 
-    <div  class="metaz">
-      <span  class="last_modified"> last modified - Sat Jun 15, 2013;</span>
-      <a  class="email" href="mailto:prataprc@gmail.com">contact-author</a>;</div>
-    <div  id="myblog-social">
+    <div  class="metaz"></div>
+      <div  id="myblog-social">
         <ul >
   
     <li  class="twitter"> <a href="https://twitter.com/share" class="twitter-share-button"

@@ -1,5 +1,6 @@
-Enabling 256 colors for your terminal applications
---------------------------------------------------
+:title: Go beyond 8 colors, 256 colors are here to stay !
+:author: prataprc
+
 
 Check whether your terminal supports 256 colors,
 
@@ -17,7 +18,7 @@ TODO:
     <Add C code gist based on ncurses to check colors available>
 
 .. code-block:: bash
-    
+
     export TERM=xterm-256color
 
 If you are an zsh_ user, then you have to setup keyboard mapping for the
@@ -25,7 +26,7 @@ terminal as well. You can choose to ignore this short cut and redo the mapping
 manually when you start the zsh shell next time.
 
 .. code-block:: bash
-    
+
     cd ~/.zkbd
     cp xterm-pc-linux-gnu xterm-256color-pc-linux-gnu
 
@@ -39,7 +40,7 @@ available from bottom of this page, download and copy them to your
 file,
 
 .. code-block:: vim
-    
+
     color jellybeans
 
 Inside Vim, you can change the colors on the fly by doing,

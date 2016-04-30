@@ -2,7 +2,6 @@
 :author: prataprc
 :createdon: Mon Dec 17, 2007
 
-
 C as popularly called, is a spartan language that requires lot of self
 discipline to master it and make use of it. The absolute freedom and the
 straight interaction with hardware demands lot of care, insight and discipline.

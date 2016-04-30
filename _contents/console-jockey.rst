@@ -1,3 +1,6 @@
+:title: Console jockey
+:author: prataprc
+
 Console is pairing input device, the keyboard, and output device called,
 the monitor. That, when jacked into a computing machine, transforms any
 ordinary human-being into a console-jockey. Let us ride on ..
@@ -183,7 +186,7 @@ If you are authoring python package and uploading them into python-cheeseshop,
 pypi_ you can create a ~/.pypirc to automatically upload your package with
 credential. Make sure that the file is readable only by your uid,
 
-.. code-block:: ini
+.. code-block:: text
 
     [distutils]
       index-servers = pypi
