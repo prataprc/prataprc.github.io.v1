@@ -30,3 +30,16 @@ Publish site.
     $ git commit
     $ git remote add origin https://github.com/prataprc/prataprc.github.io.git
     $ git push -u origin master
+
+To add a block post, generate the pages twice.
+
+.. code-block:: bash
+
+    $ vi _contents/mynewpost.rst
+    $ pagd gen // first pass, to generate html
+    $ git add .
+    $ git commit . -m "new post"
+    $ pagd gen // second pass, for created_on and last_modified
+    $ git add .
+    $ git commit . -m "new post"
+    $ git push origin master

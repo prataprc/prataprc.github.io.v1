@@ -1,6 +1,7 @@
 Articles
 ========
 
+- `sorting data <sorting-data.html>`_.
 - `console jockey <console-jockey.html>`_.
 - `3 programmers <3-programmers.html>`_.
 - `programming languages and error handling <error-handling.html>`_.
