@@ -119,7 +119,7 @@ div#myblog-page {                              /* Entire page */
 div#myblog-header {                            /* Header / navigation */
     font-weight : bold;
     border-bottom : 1px dashed gray;
-    padding : 0px 5px;
+    padding : 0px 20px;
 }
 div#myblog-header nav {
     padding : 5px 15px;
@@ -133,6 +133,7 @@ div#myblog-header nav a {
 
 div#myblog-container {                     /* container for blog article */
     margin-top : 20px;
+    padding: 0px 20px;
 }
 article {                                   /* article */
     position: relative;
@@ -170,7 +171,7 @@ div.metaz .last_modified {
     color: gray;
 }
 div.content {                       /* article main content */
-    margin: 0px 20px 10px 20px;
+    margin: 0px 0px 10px 0px;
 }
 div.metaz .email {                  /* author email-id */
 }
@@ -252,6 +253,15 @@ div.rst-gallery img {
 div.gist {
     font-size: x-small;
     word-spacing: 0px;
+}
+
+/* Styling for ``index`` ``contents`` */
+div.index ul {
+    margin-left: 10px;
+    list-style-type: none;
+}
+div.index ul li a:link {
+    text-decoration: none;
 }
 
 /* Styling for ``contents`` rst directive */

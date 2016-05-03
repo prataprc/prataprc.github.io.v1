@@ -10,7 +10,7 @@
       <div #myblog-header> ${ _header.body() }
       <div #myblog-container>
         <article>
-          <div .content> ${ page.articles[0][2] if page.articles else '' }
+          <div .index.content> ${ page.articles[0][2] if page.articles else '' }
     
     <hr>
     <div #myblog-footer> ${ _footer.body() }
