@@ -1,6 +1,7 @@
 Articles
 ========
 
+- `parser combinator and Maybe rule <parser-combinator-maybe.html>`_.
 - `sorting data <sorting-data.html>`_.
 - `console jockey <console-jockey.html>`_.
 - `3 programmers <3-programmers.html>`_.
