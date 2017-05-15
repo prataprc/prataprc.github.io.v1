@@ -21,13 +21,53 @@
         <article >
     <div  class="article-title"> Using Maybe combinator in goparsec tool
       <div  class="metaa">
-        <span  class="author"> by prataprc;</span></div></div>
-        <div  class="content"> 
-    <script src="https://gist.github.com/prataprc/5843946.js?file=parsec-maybe.go"></script></div>
+        <span  class="author"> by prataprc;</span>
+        <span  class="date"> Mon May 15, 2017</span></div></div>
+      <div  class="content"> <p>Parser combinator is a technique to build top down parsing logic in any
+language, for more detail on that refer to <a class="reference external" href="https://en.wikipedia.org/wiki/Parser_combinator">Parser Combinator</a> wiki page,
+rest of this article describe a use case with <a class="reference external" href="https://github.com/prataprc/goparsec">goparsec</a> tool written in
+<a class="reference external" href="https://golang.org/">golang</a>.</p>
+<p>Following code uses two types of combinator logic, <tt class="docutils literal">And</tt> and <tt class="docutils literal">Maybe</tt>:</p>
+<ul class="simple">
+<li><tt class="docutils literal">And</tt> combinator forces that all three tokens should match.</li>
+<li><tt class="docutils literal">Maybe</tt> combinator gives an exception on the second token, which can be
+optional.</li>
+</ul>
+
+    <script src="https://gist.github.com/prataprc/5843946.js?file=parsec-maybe.go"></script>
+<p>Prior to <a class="reference external" href="https://github.com/prataprc/goparsec/commit/f685ded37361150d354e52efaaf2aeb29d773e36">this commit</a>, there was an issue with goparsec tool, which failed
+to parse the second i/p text <tt class="docutils literal">text: &quot;hello&quot; false</tt>:</p>
+<div class="highlight"><pre><span></span>text: <span class="s2">&quot;hello&quot;</span> <span class="m">10</span> <span class="nb">false</span>
+parsed <span class="m">3</span> items
+index:0 string
+index:1 parsec.Terminal
+index:2 parsec.Terminal
+    ......
+text: <span class="s2">&quot;hello&quot;</span> <span class="nb">false</span>
+</pre></div>
+<p>with a fix to goparsec tool, our parsec works fine with the second i/p text.</p>
+<div class="highlight"><pre><span></span>text: <span class="s2">&quot;hello&quot;</span> <span class="m">10</span> <span class="nb">false</span>
+parsed <span class="m">3</span> items
+index:0 string
+index:1 parsec.Terminal
+index:2 parsec.Terminal
+    ......
+text: <span class="s2">&quot;hello&quot;</span> <span class="nb">false</span>
+parsed <span class="m">3</span> items
+index:0 string
+index:1 parsec.MaybeNone
+index:2 parsec.Terminal
+</pre></div>
+<p>Note that the second item, <tt class="docutils literal">index:1</tt>, is parsed as parsec.MaybeNone, which
+indicates that the second token was not present in the input text. Whereas the
+first, <tt class="docutils literal">index:0</tt> and the third, <tt class="docutils literal">index:2</tt> nodes are parsed in same way as
+that of the first i/p.</p></div>
 
 
-    <div  class="metaz"></div>
-      <div  id="myblog-social">
+    <div  class="metaz">
+      <span  class="last_modified"> last modified - Mon May 15, 2017;</span>
+      <a  class="email" href="mailto:prataprc@gmail.com">contact-author</a>;</div>
+    <div  id="myblog-social">
         <ul >
   
     <li  class="twitter"> <a href="https://twitter.com/share" class="twitter-share-button"
