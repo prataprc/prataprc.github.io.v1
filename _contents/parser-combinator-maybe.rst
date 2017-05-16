@@ -12,7 +12,7 @@ Following code uses two types of combinator logic, ``And`` and ``Maybe``:
 * ``Maybe`` combinator gives an exception on the second token, which can be
   optional.
 
-.. gist:: prataprc/d8f1b6607c854fcfa7b651f648f75ffb.js
+.. gist:: prataprc/d8f1b6607c854fcfa7b651f648f75ffb.js?file=parsecmaybe.go
 
 Prior to `this commit`_, there was an issue with goparsec tool, which failed
 to parse the second i/p text ``text: "hello" false``:
