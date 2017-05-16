@@ -12,7 +12,7 @@ Javascript objects are property-maps and property names can be accessed using
 the membership operator. Likewise, objects can be accessed like associative
 arrays passing in property name as index.
 
-.. gist:: prataprc/5843946.js?file=caveat1.js
+.. gist:: prataprc/d8f1b6607c854fcfa7b651f648f75ffb.js?file=caveat1.js
 
 note that if accessed using membership operator, property name is constrained
 by identifier token rules.
@@ -25,7 +25,7 @@ inheritance, so the only way to figure out whether a property is directly
 attached to the object is by using ``hasOwnProperty`` method call on the
 object. But what if the method is overridden accidentally ?
 
-.. gist:: prataprc/5843946.js?file=caveat2.js
+.. gist:: prataprc/d8f1b6607c854fcfa7b651f648f75ffb.js?file=caveat2.js
 
 stacking Calls with setInterval
 -------------------------------
@@ -34,7 +34,7 @@ stacking Calls with setInterval
 is the timeout value for the subscribed-handler. What happens if handler
 function takes more time to complete than the timeout-value ?
 
-.. gist:: prataprc/5843946.js?file=caveat3.js
+.. gist:: prataprc/d8f1b6607c854fcfa7b651f648f75ffb.js?file=caveat3.js
 
 you can execute the above program to understand the behaviour of timeout
 handling in Javascript. But the fact is, it is bad programming to use
@@ -45,14 +45,14 @@ in the above snippet itself.
 shadowing undefined
 -------------------
 
-.. gist:: prataprc/5843946.js?file=caveat4.js
+.. gist:: prataprc/d8f1b6607c854fcfa7b651f648f75ffb.js?file=caveat4.js
 
 unfortunately, ``undefined`` can also be used as identifier.
 
 semicolons and leading paranthesis
 ----------------------------------
 
-.. gist:: prataprc/5843946.js?file=caveat5.js
+.. gist:: prataprc/d8f1b6607c854fcfa7b651f648f75ffb.js?file=caveat5.js
 
 the call to foo and bar are treated as single statement without a semicolon
 in-between, ``foo()(bar(10))``.
@@ -69,14 +69,14 @@ But ``delete`` works normal on property types, where names are added
 programmatically. This applies even to global ``this``, as demonstrated by the
 last block of the following gist.
 
-.. gist:: prataprc/5843946.js?file=caveat6.js
+.. gist:: prataprc/d8f1b6607c854fcfa7b651f648f75ffb.js?file=caveat6.js
 
 late-binding of this
 --------------------
 
 ``this`` name is bound late while making function calls.
 
-.. gist:: prataprc/5843946.js?file=caveat7.js
+.. gist:: prataprc/d8f1b6607c854fcfa7b651f648f75ffb.js?file=caveat7.js
 
 in the above example, ``this`` inside test function is not bound to ``this``
 of ``new Foo()`` instance when its constructor is called. Instead it is bound
@@ -88,6 +88,6 @@ closures and namespace reference
 in closures, parent function's namespaces are only referred by enclosed
 function, they are not copied to enclosed function's namespace.
 
-.. gist:: prataprc/5843946.js?file=caveat7.js
+.. gist:: prataprc/d8f1b6607c854fcfa7b651f648f75ffb.js?file=caveat8.js
 
 outputs 10, 10 times.

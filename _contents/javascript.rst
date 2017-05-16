@@ -7,8 +7,7 @@
 I like languages that can be explained within few pages of a book. Besides C,
 Lua, Erlang - Javascript is one such language to have that simplicity. This
 post is a quick reference guide to javascript, highlighted through examples
-and all of them can be found at this
-`gist <https://gist.github.com/prataprc/5843946>`_.
+and all of them can be found `here <https://github.com/prataprc/gist/tree/master/js>`_.
 
 literals
 --------
@@ -18,7 +17,7 @@ classified as literals, keywords, operators or identifiers. Literals are
 data-objects that are hard-coded in the program, they are baked into the
 language for sake of efficiency.
 
-.. gist:: prataprc/5843946.js?file=literals.js
+.. gist:: prataprc/d8f1b6607c854fcfa7b651f648f75ffb.js?file=literals.js
 
 other than primitive types - Number, String, Boolean, rest of them are
 javascript objects. Javascript ``Object`` is the parent type for all
@@ -30,7 +29,7 @@ keywords
 Keywords are special tokens that give additional structure to the program.
 Following is a basic set of keywords in Javascript
 
-.. gist:: prataprc/5843946.js?file=keywords.js
+.. gist:: prataprc/d8f1b6607c854fcfa7b651f648f75ffb.js?file=keywords.js
 
 note that ``typeof`` is unreliable in most implementation of Javascript. It
 is better to use - ``Object.prototype.toString(10)`` to retrieve the type of an
@@ -42,14 +41,14 @@ To remove a property name from object, use ``delete`` instead of assigning
 
 Keywords that add conditional structure,
 
-.. gist:: prataprc/5843946.js?file=condblocks.js
+.. gist:: prataprc/d8f1b6607c854fcfa7b651f648f75ffb.js?file=condblocks.js
 
 only the ternary operator can be treated as expression rest every thing are
 statements.
 
 Keywords that add looping structure,
 
-.. gist:: prataprc/5843946.js?file=loop.js
+.. gist:: prataprc/d8f1b6607c854fcfa7b651f648f75ffb.js?file=loop.js
 
 all keywords that add looping structure are to be treated as statements.
 
@@ -60,14 +59,14 @@ data values that are baked into the language.
 arithmetic-operators
 --------------------
 
-.. gist:: prataprc/5843946.js?file=ops_arith.js
+.. gist:: prataprc/d8f1b6607c854fcfa7b651f648f75ffb.js?file=ops_arith.js
 
 keep in mind that Javascript does lot of implicit type-coercions.
 
 comparison-operators
 --------------------
 
-.. gist:: prataprc/5843946.js?file=ops_comp.js
+.. gist:: prataprc/d8f1b6607c854fcfa7b651f648f75ffb.js?file=ops_comp.js
 
 there is no real way to compare equality of non-primitive objects and in many
 cases it is better to stick with ``===`` instead of ``==``. Former compares
@@ -76,12 +75,12 @@ for both value and type, while the later compares only the value.
 logical-operators
 -----------------
 
-.. gist:: prataprc/5843946.js?file=ops_logic.js
+.. gist:: prataprc/d8f1b6607c854fcfa7b651f648f75ffb.js?file=ops_logic.js
 
 bitwise-operators
 -----------------
 
-.. gist:: prataprc/5843946.js?file=ops_bitwise.js
+.. gist:: prataprc/d8f1b6607c854fcfa7b651f648f75ffb.js?file=ops_bitwise.js
 
 comments on the right side explain the output by demonstrating the operation
 in binary-format. Conceptually, the bitwise logical operators work as follows:
@@ -109,7 +108,7 @@ Javascript.
 assignment operators
 --------------------
 
-.. gist:: prataprc/5843946.js?file=ops_assign.js
+.. gist:: prataprc/d8f1b6607c854fcfa7b651f648f75ffb.js?file=ops_assign.js
 
 normally assignments are statement in many languages. In Javascript an
 assignment is treated like an expression, and based on the scope of the
@@ -129,7 +128,7 @@ can refer to different types of value while the program is executing. It also
 means that programmers can interpret a variable as particular type which can be
 wrong and it is difficult to catch this problem at compile time.
 
-.. gist:: prataprc/5843946.js?file=types.js
+.. gist:: prataprc/d8f1b6607c854fcfa7b651f648f75ffb.js?file=types.js
 
 in the end of above gist, we demonstrate two other ways of creating a
 number-value 10 and ``n === m`` give false because the former is number-type
@@ -140,7 +139,7 @@ function and scope
 
 following gist shows some name-resolution gymnastics with javascript functions.
 
-.. gist:: prataprc/5843946.js?file=function.js
+.. gist:: prataprc/d8f1b6607c854fcfa7b651f648f75ffb.js?file=function.js
 
 in javascript functions are the only means of code-abstraction and thereby
 only form of scoping available for programmers. By default every function act
@@ -154,11 +153,11 @@ namespace.
 
 Function arguments can be accessed within a function like,
 
-.. gist:: prataprc/5843946.js?file=arguments.js
+.. gist:: prataprc/d8f1b6607c854fcfa7b651f648f75ffb.js?file=arguments.js
 
 And some gymnastics with scope.
 
-.. gist:: prataprc/5843946.js?file=scope.js
+.. gist:: prataprc/d8f1b6607c854fcfa7b651f648f75ffb.js?file=scope.js
 
 it is always a good practice to declare variables with ``var``, so that it
 gets contained in the enclosing scope. Javascript can hoists declarations,
@@ -182,7 +181,7 @@ evaluation
 Since Javascript is byte-code interpreted language, program text can be parsed
 compiled to virtual-machine byte code and executed on the fly.
 
-.. gist:: prataprc/5843946.js?file=eval.js
+.. gist:: prataprc/d8f1b6607c854fcfa7b651f648f75ffb.js?file=eval.js
 
 a curious aspect here is that even statements like ``if`` blocks are executed
 as expression and value is returned. Note that it is not legal to do ``a =

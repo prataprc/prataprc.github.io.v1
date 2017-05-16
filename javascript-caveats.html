@@ -32,7 +32,7 @@ mind.</p>
 the membership operator. Likewise, objects can be accessed like associative
 arrays passing in property name as index.</p>
 
-    <script src="https://gist.github.com/prataprc/5843946.js?file=caveat1.js"></script>
+    <script src="https://gist.github.com/prataprc/d8f1b6607c854fcfa7b651f648f75ffb.js?file=caveat1.js"></script>
 <p>note that if accessed using membership operator, property name is constrained
 by identifier token rules.</p>
 </div>
@@ -43,7 +43,7 @@ inheritance, so the only way to figure out whether a property is directly
 attached to the object is by using <tt class="docutils literal">hasOwnProperty</tt> method call on the
 object. But what if the method is overridden accidentally ?</p>
 
-    <script src="https://gist.github.com/prataprc/5843946.js?file=caveat2.js"></script>
+    <script src="https://gist.github.com/prataprc/d8f1b6607c854fcfa7b651f648f75ffb.js?file=caveat2.js"></script>
 </div>
 <div class="section" id="stacking-calls-with-setinterval">
 <h1>stacking Calls with setInterval</h1>
@@ -51,7 +51,7 @@ object. But what if the method is overridden accidentally ?</p>
 is the timeout value for the subscribed-handler. What happens if handler
 function takes more time to complete than the timeout-value ?</p>
 
-    <script src="https://gist.github.com/prataprc/5843946.js?file=caveat3.js"></script>
+    <script src="https://gist.github.com/prataprc/d8f1b6607c854fcfa7b651f648f75ffb.js?file=caveat3.js"></script>
 <p>you can execute the above program to understand the behaviour of timeout
 handling in Javascript. But the fact is, it is bad programming to use
 setInterval a.k.a periodic-timeout if we doubt that the handler function is
@@ -61,13 +61,13 @@ in the above snippet itself.</p>
 <div class="section" id="shadowing-undefined">
 <h1>shadowing undefined</h1>
 
-    <script src="https://gist.github.com/prataprc/5843946.js?file=caveat4.js"></script>
+    <script src="https://gist.github.com/prataprc/d8f1b6607c854fcfa7b651f648f75ffb.js?file=caveat4.js"></script>
 <p>unfortunately, <tt class="docutils literal">undefined</tt> can also be used as identifier.</p>
 </div>
 <div class="section" id="semicolons-and-leading-paranthesis">
 <h1>semicolons and leading paranthesis</h1>
 
-    <script src="https://gist.github.com/prataprc/5843946.js?file=caveat5.js"></script>
+    <script src="https://gist.github.com/prataprc/d8f1b6607c854fcfa7b651f648f75ffb.js?file=caveat5.js"></script>
 <p>the call to foo and bar are treated as single statement without a semicolon
 in-between, <tt class="docutils literal"><span class="pre">foo()(bar(10))</span></tt>.</p>
 </div>
@@ -81,13 +81,13 @@ with DontDelete, and therefore cannot be deleted.</p>
 programmatically. This applies even to global <tt class="docutils literal">this</tt>, as demonstrated by the
 last block of the following gist.</p>
 
-    <script src="https://gist.github.com/prataprc/5843946.js?file=caveat6.js"></script>
+    <script src="https://gist.github.com/prataprc/d8f1b6607c854fcfa7b651f648f75ffb.js?file=caveat6.js"></script>
 </div>
 <div class="section" id="late-binding-of-this">
 <h1>late-binding of this</h1>
 <p><tt class="docutils literal">this</tt> name is bound late while making function calls.</p>
 
-    <script src="https://gist.github.com/prataprc/5843946.js?file=caveat7.js"></script>
+    <script src="https://gist.github.com/prataprc/d8f1b6607c854fcfa7b651f648f75ffb.js?file=caveat7.js"></script>
 <p>in the above example, <tt class="docutils literal">this</tt> inside test function is not bound to <tt class="docutils literal">this</tt>
 of <tt class="docutils literal">new Foo()</tt> instance when its constructor is called. Instead it is bound
 to global object.</p>
@@ -97,7 +97,7 @@ to global object.</p>
 <p>in closures, parent function's namespaces are only referred by enclosed
 function, they are not copied to enclosed function's namespace.</p>
 
-    <script src="https://gist.github.com/prataprc/5843946.js?file=caveat7.js"></script>
+    <script src="https://gist.github.com/prataprc/d8f1b6607c854fcfa7b651f648f75ffb.js?file=caveat8.js"></script>
 <p>outputs 10, 10 times.</p>
 </div></div>
 

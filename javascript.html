@@ -43,8 +43,7 @@
 <p>I like languages that can be explained within few pages of a book. Besides C,
 Lua, Erlang - Javascript is one such language to have that simplicity. This
 post is a quick reference guide to javascript, highlighted through examples
-and all of them can be found at this
-<a class="reference external" href="https://gist.github.com/prataprc/5843946">gist</a>.</p>
+and all of them can be found <a class="reference external" href="https://github.com/prataprc/gist/tree/master/js">here</a>.</p>
 <div class="section" id="literals">
 <h1><a class="toc-backref" href="#id1">literals</a></h1>
 <p>All languages are defined as collection of tokens and tokens are normally
@@ -52,7 +51,7 @@ classified as literals, keywords, operators or identifiers. Literals are
 data-objects that are hard-coded in the program, they are baked into the
 language for sake of efficiency.</p>
 
-    <script src="https://gist.github.com/prataprc/5843946.js?file=literals.js"></script>
+    <script src="https://gist.github.com/prataprc/d8f1b6607c854fcfa7b651f648f75ffb.js?file=literals.js"></script>
 <p>other than primitive types - Number, String, Boolean, rest of them are
 javascript objects. Javascript <tt class="docutils literal">Object</tt> is the parent type for all
 user-defined types. Supports constructor pattern, prototype inheritance etc...</p>
@@ -62,7 +61,7 @@ user-defined types. Supports constructor pattern, prototype inheritance etc...</
 <p>Keywords are special tokens that give additional structure to the program.
 Following is a basic set of keywords in Javascript</p>
 
-    <script src="https://gist.github.com/prataprc/5843946.js?file=keywords.js"></script>
+    <script src="https://gist.github.com/prataprc/d8f1b6607c854fcfa7b651f648f75ffb.js?file=keywords.js"></script>
 <p>note that <tt class="docutils literal">typeof</tt> is unreliable in most implementation of Javascript. It
 is better to use - <tt class="docutils literal">Object.prototype.toString(10)</tt> to retrieve the type of an
 object, although you will have to process the returned string to remove the
@@ -71,12 +70,12 @@ prefix.</p>
 <tt class="docutils literal">null</tt>.</p>
 <p>Keywords that add conditional structure,</p>
 
-    <script src="https://gist.github.com/prataprc/5843946.js?file=condblocks.js"></script>
+    <script src="https://gist.github.com/prataprc/d8f1b6607c854fcfa7b651f648f75ffb.js?file=condblocks.js"></script>
 <p>only the ternary operator can be treated as expression rest every thing are
 statements.</p>
 <p>Keywords that add looping structure,</p>
 
-    <script src="https://gist.github.com/prataprc/5843946.js?file=loop.js"></script>
+    <script src="https://gist.github.com/prataprc/d8f1b6607c854fcfa7b651f648f75ffb.js?file=loop.js"></script>
 <p>all keywords that add looping structure are to be treated as statements.</p>
 <p>Now let us move on to operators. While <cite>literals</cite> bake data values directly
 into the language, for the sake of efficiency, <cite>operators</cite> are functions on
@@ -85,13 +84,13 @@ data values that are baked into the language.</p>
 <div class="section" id="arithmetic-operators">
 <h1><a class="toc-backref" href="#id3">arithmetic-operators</a></h1>
 
-    <script src="https://gist.github.com/prataprc/5843946.js?file=ops_arith.js"></script>
+    <script src="https://gist.github.com/prataprc/d8f1b6607c854fcfa7b651f648f75ffb.js?file=ops_arith.js"></script>
 <p>keep in mind that Javascript does lot of implicit type-coercions.</p>
 </div>
 <div class="section" id="comparison-operators">
 <h1><a class="toc-backref" href="#id4">comparison-operators</a></h1>
 
-    <script src="https://gist.github.com/prataprc/5843946.js?file=ops_comp.js"></script>
+    <script src="https://gist.github.com/prataprc/d8f1b6607c854fcfa7b651f648f75ffb.js?file=ops_comp.js"></script>
 <p>there is no real way to compare equality of non-primitive objects and in many
 cases it is better to stick with <tt class="docutils literal">===</tt> instead of <tt class="docutils literal">==</tt>. Former compares
 for both value and type, while the later compares only the value.</p>
@@ -99,12 +98,12 @@ for both value and type, while the later compares only the value.</p>
 <div class="section" id="logical-operators">
 <h1><a class="toc-backref" href="#id5">logical-operators</a></h1>
 
-    <script src="https://gist.github.com/prataprc/5843946.js?file=ops_logic.js"></script>
+    <script src="https://gist.github.com/prataprc/d8f1b6607c854fcfa7b651f648f75ffb.js?file=ops_logic.js"></script>
 </div>
 <div class="section" id="bitwise-operators">
 <h1><a class="toc-backref" href="#id6">bitwise-operators</a></h1>
 
-    <script src="https://gist.github.com/prataprc/5843946.js?file=ops_bitwise.js"></script>
+    <script src="https://gist.github.com/prataprc/d8f1b6607c854fcfa7b651f648f75ffb.js?file=ops_bitwise.js"></script>
 <p>comments on the right side explain the output by demonstrating the operation
 in binary-format. Conceptually, the bitwise logical operators work as follows:</p>
 <ul class="simple">
@@ -131,7 +130,7 @@ Javascript.</p>
 <div class="section" id="assignment-operators">
 <h1><a class="toc-backref" href="#id7">assignment operators</a></h1>
 
-    <script src="https://gist.github.com/prataprc/5843946.js?file=ops_assign.js"></script>
+    <script src="https://gist.github.com/prataprc/d8f1b6607c854fcfa7b651f648f75ffb.js?file=ops_assign.js"></script>
 <p>normally assignments are statement in many languages. In Javascript an
 assignment is treated like an expression, and based on the scope of the
 expression, the context where the side effects are created varies. It is
@@ -148,7 +147,7 @@ can refer to different types of value while the program is executing. It also
 means that programmers can interpret a variable as particular type which can be
 wrong and it is difficult to catch this problem at compile time.</p>
 
-    <script src="https://gist.github.com/prataprc/5843946.js?file=types.js"></script>
+    <script src="https://gist.github.com/prataprc/d8f1b6607c854fcfa7b651f648f75ffb.js?file=types.js"></script>
 <p>in the end of above gist, we demonstrate two other ways of creating a
 number-value 10 and <tt class="docutils literal">n === m</tt> give false because the former is number-type
 while the later is object-type.</p>
@@ -157,7 +156,7 @@ while the later is object-type.</p>
 <h1><a class="toc-backref" href="#id9">function and scope</a></h1>
 <p>following gist shows some name-resolution gymnastics with javascript functions.</p>
 
-    <script src="https://gist.github.com/prataprc/5843946.js?file=function.js"></script>
+    <script src="https://gist.github.com/prataprc/d8f1b6607c854fcfa7b651f648f75ffb.js?file=function.js"></script>
 <p>in javascript functions are the only means of code-abstraction and thereby
 only form of scoping available for programmers. By default every function act
 as a closure, making its local namespace available for enclosed function
@@ -168,10 +167,10 @@ function, parent function's namespace is not copied to enclosed function's
 namespace.</p>
 <p>Function arguments can be accessed within a function like,</p>
 
-    <script src="https://gist.github.com/prataprc/5843946.js?file=arguments.js"></script>
+    <script src="https://gist.github.com/prataprc/d8f1b6607c854fcfa7b651f648f75ffb.js?file=arguments.js"></script>
 <p>And some gymnastics with scope.</p>
 
-    <script src="https://gist.github.com/prataprc/5843946.js?file=scope.js"></script>
+    <script src="https://gist.github.com/prataprc/d8f1b6607c854fcfa7b651f648f75ffb.js?file=scope.js"></script>
 <p>it is always a good practice to declare variables with <tt class="docutils literal">var</tt>, so that it
 gets contained in the enclosing scope. Javascript can hoists declarations,
 that is, both var statements and function declarations will be moved to the
@@ -192,7 +191,7 @@ executed in the context of the same single global namespace.</p>
 <p>Since Javascript is byte-code interpreted language, program text can be parsed
 compiled to virtual-machine byte code and executed on the fly.</p>
 
-    <script src="https://gist.github.com/prataprc/5843946.js?file=eval.js"></script>
+    <script src="https://gist.github.com/prataprc/d8f1b6607c854fcfa7b651f648f75ffb.js?file=eval.js"></script>
 <p>a curious aspect here is that even statements like <tt class="docutils literal">if</tt> blocks are executed
 as expression and value is returned. Note that it is not legal to do <tt class="docutils literal">a =
 if(true) {100} else {200}</tt> in your <cite>.js</cite> file or under <cite>&lt;script&gt;</cite> tag of html.</p>
