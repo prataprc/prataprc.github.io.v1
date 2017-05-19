@@ -47,13 +47,13 @@ table {
 /* standard styling, not specific to any tag-element */
 body {
     font-family: "Lucida Console", Monaco, monospace;
-    font-size: 18px;
+    font-size: 17px;
     width : 960px;
     min-width : 640px;
     margin : 0px auto;
     background-color : white;
     word-spacing: 3px;
-    line-height: 1.7em;
+    line-height: 1.5em;
 }
 
 h1, h2 {
@@ -140,8 +140,8 @@ article {                                   /* article */
     padding-bottom: 32px;
 }
 div.article-title {                         /* article title */
-    margin : 0px 0px 20px 0px;
-    padding: 0px 20px;
+    margin : 0px -20px 20px -20px;
+    padding: 20px 20px;
     font-weight : bold;
     font-size : larger;
     background : #EEE;
@@ -157,11 +157,14 @@ div.metaa, div.metaz {              /* meta-data for article */
     font-weight : normal;
     font-size : xx-small;
     color : gray;
-    padding : 2px 0px; 
+    padding : 2px 0px;
     line-height : 1.5em;
 }
+div.metaa {
+    margin: 5px 0px 0px 0px;
+}
 div.metaz {
-    padding: 5px 20px;
+    padding: 5px 0px;
 }
 div.metaa .author {                 /* article author */
     color: green;
@@ -216,6 +219,10 @@ div#myblog-pagd {
 div#myblog-copyright {
     text-align : right;
     float: right;
+}
+div#myblog-copyright span {
+    transform: rotate(180deg);
+    display: inline-block;
 }
 
 /* Styling for rst sourcode directive */

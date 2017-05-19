@@ -2,7 +2,9 @@
             'class="mfp-arrow mfp-arrow-%dir%"></button>'
 @@ tCounter = '<span class="mfp-counter">%curr% of %total%</span>' 
 
-<div #myblog-copyright> ${copyright}
+<div #myblog-copyright>
+  <span>&copy</span>
+  ${copyright}
 <div #myblog-pagd> generated using <a "http://pythonhosted.org/pagd/">pagd
 <script text/javascript>
   // Snippet to load rst gallery if available.
