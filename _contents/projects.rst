@@ -1,3 +1,28 @@
+Golang
+------
+
+goparsec_
+    Parser combinator library with standard set of combinators, reg-ex based
+    scanner and commonly used Terminal parsers..
+
+monster_
+    A Production system in Go. Reverse of parsing, given a BNF grammar
+    generates text.
+
+gofast_
+    High performance transport protocol in golang.
+
+gson_
+    Collection of JSON algorithms in golang. Includes JSON processing.
+
+golog_
+    A logging library in golang, for golang.
+
+gosettings_
+    Settings and configuration for golang applications.
+
+|br|
+
 Python
 ------
 
@@ -25,10 +50,20 @@ sudoku_
 textmode_
     erlang + ncurses, terminal server for erlang applications.
 
+|br|
+
+.. _goparsec: http://github.com/prataprc/goparsec
+.. _monster: http://github.com/prataprc/monster
+.. _gofast: http://github.com/prataprc/gofast
+.. _gson: http://github.com/prataprc/gson
+.. _golog: http://github.com/prataprc/gofast
+.. _gosettings: http://github.com/prataprc/gosettings
+
 .. _pluggdapps: http://github.com/prataprc/pluggdapps
 .. _tayra: http://github.com/prataprc/tayra
 .. _tayrakit: http://github.com/prataprc/tayrakit
 .. _pagd: http://github.com/prataprc/pagd
+
 .. _sudoku: http://github.com/prataprc/sudoku
 .. _textmode: http://github.com/prataprc/textmode
 .. _netscale: http://github.com/prataprc/netscale
