@@ -26,6 +26,7 @@ Articles
 - `Terminal beyond 8 colors <terminal.html>`_.
 - `How to setup dual monitors in Ubuntu <dual-monitors.html>`_.
 - `Eternal struggle <eternal-struggle.html>`_.
+- `Faith, Hope and Love <faith-hope-love.html>`_.
 - `Ideas are inter-connected <ideas-are-inter-connected.html>`_.
 - `Hello world <hello-world.html>`_.
 

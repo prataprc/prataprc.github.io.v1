@@ -1,7 +1,7 @@
-:title: Overhead of booting an erlang VM
+:title: Overhead of booting an Erlang VM
 :author: prataprc
 
-Wanted to measure the overhead of booting an erlang virtual machine, do
+Wanted to measure the overhead of booting an Erlang virtual machine, do
 nothing and shut it down.
 
 These measurements are on **2Ghz Core-2 Duo desktop machine running ubuntu
@@ -16,7 +16,7 @@ These measurements are on **2Ghz Core-2 Duo desktop machine running ubuntu
     sys 0.01
 
 Looks like it takes about 1.130 Seconds - this includes both booting and shutdown
-times. ``init:stop/0`` is the proper way to shutdown erlang virtual machine
+times. ``init:stop/0`` is the proper way to shutdown Erlang virtual machine
 and we don't really know whether most of the time went, whether in booting the
 VM or to shutdown the VM. To figure this out let us try is using another method,
 

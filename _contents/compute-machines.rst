@@ -8,11 +8,11 @@ But we have `turing machines`_, so we had to worry about designing a
 fast ISA_ and efficient way to move data between memory and processor.
 
 RISC_ - did show us on how to pack a processor efficiently and make
-it fast via pipelining, branch prediction et al..
+it fast via pipe-lining, branch prediction et al..
 
 Btw, processor got faster while memory lagged behind.
 
-Cache, build with costly high speed SRAMS, was added that would bridge
+Cache, build with costly high speed SRAM, was added that would bridge
 the gap between processor and memory.
 
 That brings us to how the fastest machines are built,

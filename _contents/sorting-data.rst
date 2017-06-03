@@ -19,7 +19,7 @@ as primitive type or built in types.
 * Array, a composition of Number, and/or Null, and/or Boolean, and/or
   Character, and/or String, and/or array, and/or Map.
 * Map, a {key, value} composition where key is typically an immutable
-  hashable data mapping to value of Number, and/or Null, and/or Boolean,
+  hash-able data mapping to value of Number, and/or Null, and/or Boolean,
   and/or Character, and/or String, and/or array, and/or Map.
 
 As to what comes before and what come after - Numbers have a strong
@@ -35,7 +35,7 @@ But my mother tongue has more than 200 characters, and I don’t know and I
 don't remember the order for those characters. In fact, I am not even sure
 whether it matters.
 
-Additionally there are certain european languages that uses latin characters
+Additionally there are certain European languages that uses Latin characters
 for script and do have a sort order, but the sort order differs from one
 context to another, for instance whether it is an index of "phone-book" or
 "dictionary".

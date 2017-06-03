@@ -11,14 +11,14 @@ languages, version control and handy bunch of tools.
 Desktop
 -------
 
-keyboard tweaks
+Keyboard tweaks
 
 .. code-block:: bash
 
     sudo apt-get install gnome-tweak-tool // to remap key codes.
     sudo apt-get install gnome-session-fallback // to go back to classic desktop
 
-fonts and konsole
+Fonts and konsole
 
 .. code-block:: bash
 
@@ -69,7 +69,7 @@ user you ought to try zsh_.
 
     sudo apt-get install zsh zsh-completions zsh-lovers zsh-syntax-highlighting
 
-zsh comes with an awesome completion, with syntax-highlighting you can even
+Zsh comes with an awesome completion, with syntax-highlighting you can even
 get live feed back about what you are typing, similar to fish-shell.
 
 Don't forget to configure your shell with .zshrc, there are many samples
@@ -95,7 +95,7 @@ in your vim installation,
 
     vim --version
 
-should list ``+python``, ``+lua`` etc.. in the output.
+Should list ``+python``, ``+lua`` etc.. in the output.
 
 Similarly, to copy/paste content from OS clipboard ``+clipboard`` option should
 be listed when doing --version, subsequently use  ``+yy``, ``+p`` and related
@@ -109,9 +109,9 @@ the clipboard register is possible by adding the following line in your
 
     set clipboard^=unnamed
 
-allowing you to simply use y and p.
+Allowing you to simply use y and p.
 
-under /etc/vim/vimrc uncomment lines to enable vim to jump to the last
+Under /etc/vim/vimrc uncomment lines to enable vim to jump to the last
 position when opening a file.
 
 programming languages
@@ -122,7 +122,7 @@ install and play-around with,
 
 **lua**,
 
-In spirit lua_ is similar to javascript, with some semantic support for
+In spirit lua_ is similar to Javascript, with some semantic support for
 concurrency using co-routines. It is an elegant and cleanly done language
 which must be the first choice of language for configuring/extending
 applications.
@@ -138,7 +138,7 @@ available for all users.
 
 **node.js**,
 
-node.js_ is a javascript tool that encourages the paradigm of event-driven
+node.js_ is a Javascript tool that encourages the paradigm of event-driven
 programming, similar to what we see in web-browsers. It is one of the fastest
 growing language-tool-kit.
 
@@ -147,7 +147,7 @@ growing language-tool-kit.
     sudo apt-get install nodejs npm
 
 npm_ is node-package-manager. Installing the package will also install the
-console based interactive shell for node. node packages when 
+console based interactive shell for node. Node packages when 
 
 **python**,
 
@@ -163,13 +163,13 @@ third party packages.
     sudo apt-get install ipython ipython3   # powerful interactive shell
     sudo apt-get install python-dev python3-dev # python development package
 
-right now python is going through a phase of split personality, one called as
+Right now python is going through a phase of split personality, one called as
 2.x version and the other called as 3.x version. Incompatibilities exist
 between these two versions, and there are still some applications/tools that
 are slowly changing to 3.x version.
 
 This leads to an interesting situation for developers, who may want to develop
-with python2.x sometimes and with python3.x other times. Normally get around this
+with Python2.x sometimes and with Python3.x other times. Normally get around this
 problem by using ``virtualenv``.
 
 .. code-block:: bash
@@ -179,7 +179,7 @@ problem by using ``virtualenv``.
     sudo easy_install3 pip  # will give you the command pip-3.2 like kev's solution.
     sudo pip-3.2 install virtualenv
 
-Since python2.x and setuptools will eventually get phased out (hopefully),
+Since Python2.x and setuptools will eventually get phased out (hopefully),
 above gymnastic may not be relevant in the longer run.
 
 If you are authoring python package and uploading them into python-cheeseshop,
@@ -301,7 +301,7 @@ add the following line,
 version control
 ---------------
 
-subversion is a great replacement for CVS, which have the concepts of tagging
+Subversion is a great replacement for CVS, which have the concepts of tagging
 and branching straightened out when compared to CVS.
 
 .. code-block:: bash
@@ -312,7 +312,7 @@ and branching straightened out when compared to CVS.
 
 When new to DVCS_ (distributed version control system) Mercurial_ is better
 place to start. Written in C and python is fast and fun to work with, although
-it might complain when commiting large files (>10M).
+it might complain when committing large files (>10M).
 
 .. code-block:: bash
 
@@ -383,7 +383,7 @@ git respository-hosting service, you can use hg-git_ and dulwich_
     sudo pip install hg-git dulwich
     sudo pip3 install hg-git dulwich
 
-and add the following configuration settings under .hgrc file
+And add the following configuration settings under .hgrc file
 
 .. code-block:: ini
 
@@ -509,7 +509,7 @@ For mac
 -------
 
 iterm2 is the pretty good. Download the .zip, unzip and cut paste the
-iterm2.app folder to /Applications, as of this writting iterm2 is not
+iterm2.app folder to /Applications, as of this writing iterm2 is not
 available via brew.
 
 .. code-block:: config

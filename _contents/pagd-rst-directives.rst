@@ -37,8 +37,8 @@ rendered like,
 youtube directive
 -----------------
 
-There were many occations we wanted to refer you-tube links that can play
-inside our page. For such occations,
+There were many occasions we wanted to refer you-tube links that can play
+inside our page. For such occasions,
 
 .. code-block:: rst
 
@@ -49,7 +49,7 @@ and while generating the page with pagd,
 .. youtube:: 7-qGKqveZaM
 
 You can also apply custom styling for youtube widgets in your site my
-modifying the CSS sytling for ``div.rst-youtube`` selectors inside
+modifying the CSS styling for ``div.rst-youtube`` selectors inside
 ``media/myblog.css`` file.
 
 gallery directive
@@ -80,7 +80,7 @@ pagd_ uses magnific-popup_ jquery plugin to show image galleries within HTML
 pages. They have excellent documentation and there are many ways to customize
 the plugin - which you can learn from their project site. There is also a bunch
 of CSS selectors that are available in ``media/myblog.css`` with which you can
-do some basic cusomization as well.
+do some basic customization as well.
 
 gist directive
 --------------
@@ -92,7 +92,7 @@ article, use the following directive,
 
     .. gist:: prataprc/5843946.js
 
-where ``prataprc`` is the user-name and it will expand to full url - 
+where ``prataprc`` is the user-name and it will expand to full URL - 
 https://gist.github.com/prataprc/5843946.js.
 
 To include a specific file from the gist,

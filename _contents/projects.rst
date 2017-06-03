@@ -23,6 +23,17 @@ gosettings_
 
 |br|
 
+Double entry accounting
+-----------------------
+
+goledger_
+    Double entry accounting for currencies and commodities.
+
+tall2ledger_
+    Convert tally books to ledger books.
+
+|br|
+
 Python
 ------
 
@@ -37,6 +48,9 @@ tayra_
     `Tayra documentation`_ hosted in python cheese shop.
 tayrakit_
     Widget toolkit using tayra.
+eazytext_
+    Wiki markup language, unlike Markdown_, aims to give more options
+    to users at the expense of looking little cluttered.
 
 |br|
 
@@ -59,10 +73,14 @@ textmode_
 .. _golog: http://github.com/prataprc/gofast
 .. _gosettings: http://github.com/prataprc/gosettings
 
-.. _pluggdapps: http://github.com/prataprc/pluggdapps
-.. _tayra: http://github.com/prataprc/tayra
-.. _tayrakit: http://github.com/prataprc/tayrakit
-.. _pagd: http://github.com/prataprc/pagd
+.. _goledger: http://github.com/tn47/goledger
+.. _tall2ledger: http://github.com/tn47/tall2ledger
+
+.. _pluggdapps: http://github.com/pluggdapps/pluggdapps
+.. _tayra: http://github.com/pluggdapps/tayra
+.. _tayrakit: http://github.com/pluggdapps/tayrakit
+.. _pagd: http://github.com/pluggdapps/pagd
+.. _eazytext: http://github.com/pluggdapps/eazytext
 
 .. _sudoku: http://github.com/prataprc/sudoku
 .. _textmode: http://github.com/prataprc/textmode
@@ -71,6 +89,8 @@ textmode_
 .. _pluggdapps documentation: http://pythonhosted.org/pluggdapps
 .. _tayra documentation: http://pythonhosted.org/tayra
 .. _pagd documentation: http://pythonhosted.org/pagd
+
+.. _Markdown: https://en.wikipedia.org/wiki/Markdown
 
 .. |br| raw:: html
 

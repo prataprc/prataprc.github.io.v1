@@ -9,13 +9,13 @@ down my requirements,
   move around.
 - by committing to the repository, my article gets published.
 - basic features like, wiki-style markup, code highlighting, referring to
-  image url, etc ... are important.
+  image URL, etc ... are important.
 - customizable layouts and templates.
 
-and found that github can address some of those. It can host static sites for
+And found that github can address some of those. It can host static sites for
 me - even plain old HTML files, and pagd_ filled up the remaining
 requirements. Please note that techniques explained here are suitable for
-folks who are using a linux distribution or mac osX and comfortable with shell
+folks who are using a linux distribution or Mac OS-X and comfortable with shell
 interface.
 
 How do I setup my blog site ?
@@ -24,13 +24,13 @@ How do I setup my blog site ?
 It is easy, create a virtual environment, install ``pagd``, and use
 `pagd.myblog` plugin to create a site layout. Let us go one step at a time,
 
-First get python3.x for your distribution, pagd works only with python3. In
-case of mac, you can use `brew install python3` to get the latest python3.x
+First get Python3.x for your distribution, Pagd works only with Python3. In
+case of mac, you can use `brew install python3` to get the latest Python3.x
 version.
 
-Second, setup a virtual environment to install pagd and its dependacies. The
-following example assumes python3.2 as your python version. You can change it
-to python3.3 or later based on you machine's python version.
+Second, setup a virtual environment to install Pagd and its dependencies. The
+following example assumes Python3.2 as your python version. You can change it
+to Python3.3 or later based on you machine's python version.
 
 .. code-block:: bash
 
@@ -55,7 +55,7 @@ environment to play with ``pagd``.
     $ source env/bin/activate       # enter the virtual environment
     (env)$ pip install pagd
 
-the example suggests python3.2, but you can use any later python3 version.
+The example suggests Python3.2, but you can use any later Python3 version.
 Installing pagd_ package will provide you ``pagd`` command line script and as
 long as you are inside virtual environment the command will be available via
 `$PATH`.
@@ -64,14 +64,14 @@ long as you are inside virtual environment the command will be available via
 
 One of the first thing that we do when using ``pagd`` is to create a layout
 - in this case a layout implemented by `pagd.myblog` plugin. The name of the
-plugin is `myblog` which comes pre-packaged with pagd, hence we address it as
+plugin is `myblog` which comes pre-packaged with Pagd, hence we address it as
 `pagd.myblog`.
 
 .. code-block:: bash
 
     (env)$ pagd create
 
-a layout is created under the current working tree, so make sure to change to
+A layout is created under the current working tree, so make sure to change to
 an appropriate path under your home-directory before executing the above
 command. And executing the above command will create a bunch of files and
 directories for you.
@@ -83,10 +83,10 @@ directories for you.
     +- media/
     +- _templates/
 
-to start with, you don't have to bother about ``_templates/`` and ``media/``
+To start with, you don't have to bother about ``_templates/`` and ``media/``
 directories. Just add your articles under ``_contents/`` directory in one of
 the supported formats - which are extensible by plugins - and as of
-this writing,  plain-text, reStructured-text, markdown and html formats are
+this writing,  plain-text, ReStructured-text, markdown and html formats are
 supported. Keep a tab on pagd_ project site to know what else is getting
 added.
 
@@ -100,7 +100,7 @@ Once you have your articles, generate the site.
 
     (env)$ pagd gen
 
-this will generate the web site, translating your contents into html pages.
+This will generate the web site, translating your contents into html pages.
 Above command must be executed under the root-directory of your layout and
 unless ``-t`` switch, specifying a target directory, is passed via command
 line, index.html and all the other pages will be placed relative to your
@@ -111,7 +111,7 @@ You can do ``pagd gen --help`` to learn available options.
 Add to github and publish your site
 -----------------------------------
 
-github has certain `conventions <http://pages.github.com/>`_ on hosting a
+Github has certain `conventions <http://pages.github.com/>`_ on hosting a
 repository as personal blog site. Since that could change in future, I am not
 going to explain them here, may be in a separate post.
 
@@ -128,10 +128,10 @@ to their mailing-list_.
 
 Reference
 ---------
-* `python on mac`_ : installing python3.x on mac using home brew.
-* pagd_: pagd microsite with documentation and internals.
-* pluggdapps_: pagd depends on pluggdapps design elements.
-* tayra_: default templating language used in pagd.
+* `python on mac`_ : installing Python3.x on mac using home brew.
+* pagd_: Pagd microsite with documentation and internals.
+* pluggdapps_: Pagd depends on Pluggdapps design elements.
+* tayra_: default templating language used in Pagd.
 * blogspot_: blogsite maintained by google.
 * mailing-list_: pluggdapps/pagd developer and user mailing list.
 

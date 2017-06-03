@@ -34,7 +34,7 @@ as reasonable options for programmers. There is a section which cover some of
 the "features" in C language that makes it less portable ;).
 
 *Undefined features*. If you get a chance, compile and run the following code
-snippet on Irix, GCC and sparc machines. You will know what "Undefined feature"
+snippet on Irix, GCC and SPARC machines. You will know what "Undefined feature"
 means.
 
 .. code-block:: c
@@ -79,7 +79,7 @@ worry whether their data is stored in big endian or little endian.
 *Size of data-types*. The program/programmer cannot make assumptions on the
 size of the basic data types like int, short, long, char, pointer etc...
 
-*Memory alignment*. Some processors require that half-word, word, dword
+*Memory alignment*. Some processors require that Half-word, Word, Dword
 memory are accessed with aligned address. That is a half-word (2 byte) memory
 access should be only through address which are multiples of 2, a word (4
 byte) memory access should be only through address which are multiples of

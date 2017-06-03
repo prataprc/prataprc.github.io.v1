@@ -10,7 +10,7 @@ adding fonts with google-webfonts
 
 Pagd by default comes with inconsolata font from google-webfonts_. Pagd
 templates will load all font references from ``config.json`` file present under
-your layout's root directory. Just append the reference url to the list of
+your layout's root directory. Just append the reference URL to the list of
 ``google_webfonts``. To apply one of the loaded fonts to page's <body>
 element - set the ``font-family`` attribute in config.json.  The ``style``
 property object in config.json will be converted to a string of

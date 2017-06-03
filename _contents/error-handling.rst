@@ -6,7 +6,7 @@ panic/recover - http://blog.golang.org/error-handling-and-go
 
 like most _practical_ languages they simply short-circuit
 the execution path. Ofcourse it will come back to bite us
-if side-effects are not adequatly taken care. And multi-value
+if side-effects are not adequately taken care. And multi-value
 return as an after-thought ?
 
 **Erlang** says, let it crash - http://c2.com/cgi/wiki?LetItCrash

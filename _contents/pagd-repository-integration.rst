@@ -30,7 +30,7 @@ following information for each page,
 - createdon
 - last_modified
 
-There is an important ceveate in this. If you are relying on repository meta
+There is an important caveat in this. If you are relying on repository meta
 data for ``last_modified`` attribute, then you will have to do it like this,
 
 - create / update your blog articles.

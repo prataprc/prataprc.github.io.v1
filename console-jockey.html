@@ -30,11 +30,11 @@ ordinary human-being into a console-jockey. Let us ride on ..</p>
 languages, version control and handy bunch of tools.</p>
 <div class="section" id="desktop">
 <h1>Desktop</h1>
-<p>keyboard tweaks</p>
+<p>Keyboard tweaks</p>
 <div class="highlight"><pre><span></span>sudo apt-get install gnome-tweak-tool // to remap key codes.
 sudo apt-get install gnome-session-fallback // to go back to classic desktop
 </pre></div>
-<p>fonts and konsole</p>
+<p>Fonts and konsole</p>
 <div class="highlight"><pre><span></span>curl -kL https://raw.github.com/cstrap/monaco-font/master/install-font-ubuntu.sh <span class="p">|</span> bash
 </pre></div>
 </div>
@@ -69,7 +69,7 @@ defined in /etc/passwd or in terminal's configuration file. If you are a power
 user you ought to try <a class="reference external" href="http://www.zsh.org/">zsh</a>.</p>
 <div class="highlight"><pre><span></span>sudo apt-get install zsh zsh-completions zsh-lovers zsh-syntax-highlighting
 </pre></div>
-<p>zsh comes with an awesome completion, with syntax-highlighting you can even
+<p>Zsh comes with an awesome completion, with syntax-highlighting you can even
 get live feed back about what you are typing, similar to fish-shell.</p>
 <p>Don't forget to configure your shell with .zshrc, there are many samples
 available through google.</p>
@@ -87,7 +87,7 @@ several languages like python, lua, tcl etc ... To know the available binding
 in your vim installation,</p>
 <div class="highlight"><pre><span></span>vim --version
 </pre></div>
-<p>should list <tt class="docutils literal">+python</tt>, <tt class="docutils literal">+lua</tt> etc.. in the output.</p>
+<p>Should list <tt class="docutils literal">+python</tt>, <tt class="docutils literal">+lua</tt> etc.. in the output.</p>
 <p>Similarly, to copy/paste content from OS clipboard <tt class="docutils literal">+clipboard</tt> option should
 be listed when doing --version, subsequently use  <tt class="docutils literal">+yy</tt>, <tt class="docutils literal">+p</tt> and related
 commands inside vim will copy/paste from OS clipboard.</p>
@@ -96,8 +96,8 @@ the clipboard register is possible by adding the following line in your
 <cite>.vimrc</cite> file,</p>
 <div class="highlight"><pre><span></span><span class="nb">set</span> clipboard^<span class="o">=</span>unnamed
 </pre></div>
-<p>allowing you to simply use y and p.</p>
-<p>under /etc/vim/vimrc uncomment lines to enable vim to jump to the last
+<p>Allowing you to simply use y and p.</p>
+<p>Under /etc/vim/vimrc uncomment lines to enable vim to jump to the last
 position when opening a file.</p>
 </div>
 <div class="section" id="programming-languages">
@@ -105,7 +105,7 @@ position when opening a file.</p>
 <p>Now that we have an editor, here is a list of uber-cool languages that you should
 install and play-around with,</p>
 <p><strong>lua</strong>,</p>
-<p>In spirit <a class="reference external" href="http://www.lua.org/">lua</a> is similar to javascript, with some semantic support for
+<p>In spirit <a class="reference external" href="http://www.lua.org/">lua</a> is similar to Javascript, with some semantic support for
 concurrency using co-routines. It is an elegant and cleanly done language
 which must be the first choice of language for configuring/extending
 applications.</p>
@@ -116,13 +116,13 @@ with Google-javascript-V8. <a class="reference external" href="http://luarocks.o
 can be installed local to a single user or under system directory making it
 available for all users.</p>
 <p><strong>node.js</strong>,</p>
-<p><a class="reference external" href="http://nodejs.org/">node.js</a> is a javascript tool that encourages the paradigm of event-driven
+<p><a class="reference external" href="http://nodejs.org/">node.js</a> is a Javascript tool that encourages the paradigm of event-driven
 programming, similar to what we see in web-browsers. It is one of the fastest
 growing language-tool-kit.</p>
 <div class="highlight"><pre><span></span>sudo apt-get install nodejs npm
 </pre></div>
 <p><a class="reference external" href="https://npmjs.org/">npm</a> is node-package-manager. Installing the package will also install the
-console based interactive shell for node. node packages when</p>
+console based interactive shell for node. Node packages when</p>
 <p><strong>python</strong>,</p>
 <p><a class="reference external" href="http://www.python.org/">Python</a> is dynamically typed, high level programming language. It is both
 suitable for quick scripting and prototyping applications, has got a wonderful
@@ -133,19 +133,19 @@ sudo apt-get install python-pip python3-pip <span class="c1"># package manager f
 sudo apt-get install ipython ipython3   <span class="c1"># powerful interactive shell</span>
 sudo apt-get install python-dev python3-dev <span class="c1"># python development package</span>
 </pre></div>
-<p>right now python is going through a phase of split personality, one called as
+<p>Right now python is going through a phase of split personality, one called as
 2.x version and the other called as 3.x version. Incompatibilities exist
 between these two versions, and there are still some applications/tools that
 are slowly changing to 3.x version.</p>
 <p>This leads to an interesting situation for developers, who may want to develop
-with python2.x sometimes and with python3.x other times. Normally get around this
+with Python2.x sometimes and with Python3.x other times. Normally get around this
 problem by using <tt class="docutils literal">virtualenv</tt>.</p>
 <div class="highlight"><pre><span></span><span class="c1"># Installing setuptools / pip / virtualenv</span>
 sudo apt-get install python3-setuptools <span class="c1"># Install package python3-setuptools,</span>
 sudo easy_install3 pip  <span class="c1"># will give you the command pip-3.2 like kev&#39;s solution.</span>
 sudo pip-3.2 install virtualenv
 </pre></div>
-<p>Since python2.x and setuptools will eventually get phased out (hopefully),
+<p>Since Python2.x and setuptools will eventually get phased out (hopefully),
 above gymnastic may not be relevant in the longer run.</p>
 <p>If you are authoring python package and uploading them into python-cheeseshop,
 <a class="reference external" href="https://pypi.python.org/pypi">pypi</a> you can create a ~/.pypirc to automatically upload your package with
@@ -226,14 +226,14 @@ add the following line,</p>
 </div>
 <div class="section" id="version-control">
 <h1>version control</h1>
-<p>subversion is a great replacement for CVS, which have the concepts of tagging
+<p>Subversion is a great replacement for CVS, which have the concepts of tagging
 and branching straightened out when compared to CVS.</p>
 <div class="highlight"><pre><span></span>sudo apt-get install subversion
 </pre></div>
 <p><strong>Mercurial</strong>,</p>
 <p>When new to <a class="reference external" href="http://en.wikipedia.org/wiki/Distributed_revision_control">DVCS</a> (distributed version control system) <a class="reference external" href="http://mercurial.selenic.com/">Mercurial</a> is better
 place to start. Written in C and python is fast and fun to work with, although
-it might complain when commiting large files (&gt;10M).</p>
+it might complain when committing large files (&gt;10M).</p>
 <div class="highlight"><pre><span></span>sudo apt-get install mercurial
 </pre></div>
 <p>The following configurations might be helpful when working with <tt class="docutils literal">hg</tt> (the
@@ -280,7 +280,7 @@ git respository-hosting service, you can use <a class="reference external" href=
 <div class="highlight"><pre><span></span>sudo pip install hg-git dulwich
 sudo pip3 install hg-git dulwich
 </pre></div>
-<p>and add the following configuration settings under .hgrc file</p>
+<p>And add the following configuration settings under .hgrc file</p>
 <div class="highlight"><pre><span></span><span class="k">[extensions]</span>
 <span class="na">hgext.bookmarks</span> <span class="o">=</span>
 <span class="na">hggit</span><span class="o">=</span>
@@ -369,7 +369,7 @@ fc-cache
 <div class="section" id="for-mac">
 <h1>For mac</h1>
 <p>iterm2 is the pretty good. Download the .zip, unzip and cut paste the
-iterm2.app folder to /Applications, as of this writting iterm2 is not
+iterm2.app folder to /Applications, as of this writing iterm2 is not
 available via brew.</p>
 <div class="highlight"><pre><span></span># Copy paste from clip-board
 bind P run &quot;pbpaste | tmux load-buffer -; tmux paste-buffer&quot;

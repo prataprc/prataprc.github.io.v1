@@ -1,8 +1,8 @@
 :title: Prototypal inheritance in Javascript
 :author: prataprc
 
-This post will discuss exclusively about Javascript's prototypal inheritance.
-Many JS frameworks leverage on prototypal inheritance to add that extra bit
+This post will discuss exclusively about Javascript's prototype inheritance.
+Many JS frameworks leverage on prototype inheritance to add that extra bit
 black-magic in their tool.
 
 constructor
@@ -16,7 +16,7 @@ constructor.
 prototypes
 ----------
 
-Object oriented-ness in Javascript is achieved by using prototypal inheritance
+Object oriented-ness in Javascript is achieved by using prototype inheritance
 and late binding of ``this``.
 
 .. gist:: prataprc/d8f1b6607c854fcfa7b651f648f75ffb.js?file=prototype.js

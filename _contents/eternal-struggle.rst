@@ -5,7 +5,7 @@
 In 1947 Aug 15, a party began, to celebrate something that was vaguely similar
 to Independence. In 1960s a bunch of people decide to spoil the party. They did
 every thing to that end and till today they are moving around the country in
-different forms. I never understood their purpose. They dont seem to be
+different forms. I never understood their purpose. They don't seem to be
 fighting for the proletarian either, although, sometimes they camouflage into
 that ideal. They spoil the party, where ever it is, what ever kind it is, for
 every form of good-times a resistance was lurking around, people always shored

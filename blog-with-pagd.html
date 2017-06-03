@@ -31,24 +31,24 @@ down my requirements,</p>
 move around.</li>
 <li>by committing to the repository, my article gets published.</li>
 <li>basic features like, wiki-style markup, code highlighting, referring to
-image url, etc ... are important.</li>
+image URL, etc ... are important.</li>
 <li>customizable layouts and templates.</li>
 </ul>
-<p>and found that github can address some of those. It can host static sites for
+<p>And found that github can address some of those. It can host static sites for
 me - even plain old HTML files, and <a class="reference external" href="http://pythonhosted.org/pagd">pagd</a> filled up the remaining
 requirements. Please note that techniques explained here are suitable for
-folks who are using a linux distribution or mac osX and comfortable with shell
+folks who are using a linux distribution or Mac OS-X and comfortable with shell
 interface.</p>
 <div class="section" id="how-do-i-setup-my-blog-site">
 <h1>How do I setup my blog site ?</h1>
 <p>It is easy, create a virtual environment, install <tt class="docutils literal">pagd</tt>, and use
 <cite>pagd.myblog</cite> plugin to create a site layout. Let us go one step at a time,</p>
-<p>First get python3.x for your distribution, pagd works only with python3. In
-case of mac, you can use <cite>brew install python3</cite> to get the latest python3.x
+<p>First get Python3.x for your distribution, Pagd works only with Python3. In
+case of mac, you can use <cite>brew install python3</cite> to get the latest Python3.x
 version.</p>
-<p>Second, setup a virtual environment to install pagd and its dependacies. The
-following example assumes python3.2 as your python version. You can change it
-to python3.3 or later based on you machine's python version.</p>
+<p>Second, setup a virtual environment to install Pagd and its dependencies. The
+following example assumes Python3.2 as your python version. You can change it
+to Python3.3 or later based on you machine's python version.</p>
 <div class="highlight"><pre><span></span><span class="c1"># To install on ubuntu</span>
 sudo apt-get install python3-setuptools     <span class="c1"># Install python3-setuptools</span>
 sudo easy_install3 pip          <span class="c1"># will give you the command pip-3.2</span>
@@ -67,18 +67,18 @@ environment to play with <tt class="docutils literal">pagd</tt>.</p>
 $ <span class="nb">source</span> env/bin/activate       <span class="c1"># enter the virtual environment</span>
 <span class="o">(</span>env<span class="o">)</span>$ pip install pagd
 </pre></div>
-<p>the example suggests python3.2, but you can use any later python3 version.
+<p>The example suggests Python3.2, but you can use any later Python3 version.
 Installing <a class="reference external" href="http://pythonhosted.org/pagd">pagd</a> package will provide you <tt class="docutils literal">pagd</tt> command line script and as
 long as you are inside virtual environment the command will be available via
 <cite>$PATH</cite>.</p>
 <p><tt class="docutils literal">creating my blog layout</tt></p>
 <p>One of the first thing that we do when using <tt class="docutils literal">pagd</tt> is to create a layout
 - in this case a layout implemented by <cite>pagd.myblog</cite> plugin. The name of the
-plugin is <cite>myblog</cite> which comes pre-packaged with pagd, hence we address it as
+plugin is <cite>myblog</cite> which comes pre-packaged with Pagd, hence we address it as
 <cite>pagd.myblog</cite>.</p>
 <div class="highlight"><pre><span></span><span class="o">(</span>env<span class="o">)</span>$ pagd create
 </pre></div>
-<p>a layout is created under the current working tree, so make sure to change to
+<p>A layout is created under the current working tree, so make sure to change to
 an appropriate path under your home-directory before executing the above
 command. And executing the above command will create a bunch of files and
 directories for you.</p>
@@ -87,10 +87,10 @@ directories for you.</p>
 +- media/
 +- _templates/
 </pre></div>
-<p>to start with, you don't have to bother about <tt class="docutils literal">_templates/</tt> and <tt class="docutils literal">media/</tt>
+<p>To start with, you don't have to bother about <tt class="docutils literal">_templates/</tt> and <tt class="docutils literal">media/</tt>
 directories. Just add your articles under <tt class="docutils literal">_contents/</tt> directory in one of
 the supported formats - which are extensible by plugins - and as of
-this writing,  plain-text, reStructured-text, markdown and html formats are
+this writing,  plain-text, ReStructured-text, markdown and html formats are
 supported. Keep a tab on <a class="reference external" href="http://pythonhosted.org/pagd">pagd</a> project site to know what else is getting
 added.</p>
 <p>Make sure that your <tt class="docutils literal">_contents/</tt> directory have a file by name index.&lt;format&gt;
@@ -99,7 +99,7 @@ which will be converted to <cite>index.html</cite> while generating the site.
 <p>Once you have your articles, generate the site.</p>
 <div class="highlight"><pre><span></span><span class="o">(</span>env<span class="o">)</span>$ pagd gen
 </pre></div>
-<p>this will generate the web site, translating your contents into html pages.
+<p>This will generate the web site, translating your contents into html pages.
 Above command must be executed under the root-directory of your layout and
 unless <tt class="docutils literal"><span class="pre">-t</span></tt> switch, specifying a target directory, is passed via command
 line, index.html and all the other pages will be placed relative to your
@@ -108,7 +108,7 @@ layout's root-directory.</p>
 </div>
 <div class="section" id="add-to-github-and-publish-your-site">
 <h1>Add to github and publish your site</h1>
-<p>github has certain <a class="reference external" href="http://pages.github.com/">conventions</a> on hosting a
+<p>Github has certain <a class="reference external" href="http://pages.github.com/">conventions</a> on hosting a
 repository as personal blog site. Since that could change in future, I am not
 going to explain them here, may be in a separate post.</p>
 <p>Once you have your repository setup in github, like in my case
@@ -123,10 +123,10 @@ to their <a class="reference external" href="http://groups.google.com/group/plug
 <div class="section" id="reference">
 <h1>Reference</h1>
 <ul class="simple">
-<li><a class="reference external" href="https://github.com/Homebrew/homebrew/wiki/Homebrew-and-Python">python on mac</a> : installing python3.x on mac using home brew.</li>
-<li><a class="reference external" href="http://pythonhosted.org/pagd">pagd</a>: pagd microsite with documentation and internals.</li>
-<li><a class="reference external" href="https://github.com/prataprc/pluggdapps">pluggdapps</a>: pagd depends on pluggdapps design elements.</li>
-<li><a class="reference external" href="https://github.com/prataprc/tayra">tayra</a>: default templating language used in pagd.</li>
+<li><a class="reference external" href="https://github.com/Homebrew/homebrew/wiki/Homebrew-and-Python">python on mac</a> : installing Python3.x on mac using home brew.</li>
+<li><a class="reference external" href="http://pythonhosted.org/pagd">pagd</a>: Pagd microsite with documentation and internals.</li>
+<li><a class="reference external" href="https://github.com/prataprc/pluggdapps">pluggdapps</a>: Pagd depends on Pluggdapps design elements.</li>
+<li><a class="reference external" href="https://github.com/prataprc/tayra">tayra</a>: default templating language used in Pagd.</li>
 <li><a class="reference external" href="www.blogger.com">blogspot</a>: blogsite maintained by google.</li>
 <li><a class="reference external" href="http://groups.google.com/group/pluggdapps">mailing-list</a>: pluggdapps/pagd developer and user mailing list.</li>
 </ul>

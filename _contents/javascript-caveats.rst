@@ -20,7 +20,7 @@ by identifier token rules.
 hasOwnProperty
 --------------
 
-Any reference to JS object-property will follow the chain of prototypal
+Any reference to JS object-property will follow the chain of prototype
 inheritance, so the only way to figure out whether a property is directly
 attached to the object is by using ``hasOwnProperty`` method call on the
 object. But what if the method is overridden accidentally ?

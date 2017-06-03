@@ -11,13 +11,15 @@
         therefore, we are saved by LOVE."
                                             -- Reinhold Niebuhr
 
-Thought of doing a word play here, mashing up the 3 statements
-of Reinhold Niebuhr,
+Thought of doing a word play here, mashing up the 3 statements, and its 3
+words, of Reinhold Niebuhr:
 
-Anything that is worth doing, ought to be true and beautiful.
-If indeed one finds truth and beauty, when found alone, still remains
-incomplete. So, GOD preached LOVE. For men to have FAITH on his
-preaching, He gave them HOPE ... But before Him, there was a beautiful
-She, who could beget the ultimate truth in return for faithful-love.
-She is still here, watching over the endless variations of
-faith, love and hope.
+.. code-block:: text
+
+    Anything that is worth doing, ought to be true and beautiful.
+    If indeed one finds truth and beauty, when found alone,
+    remains incomplete. So, GOD preached LOVE, and, for men to have
+    FAITH on his preaching, He gave them HOPE.
+    But before Him, there was a beautiful She, who could beget the
+    ultimate truth in return for faithful-love. She is still here,
+    watching over the endless variations of faith, love and hope.
