@@ -1,0 +1,24 @@
+<!--
+This file is subject to the terms and conditions defined in
+file 'LICENSE', which is part of this source code package.
+Copyright (c) 2011 R Pratap Chakravarthy
+-->
+
+@doctype html
+    
+<html>
+  <head>
+  <body>
+    Let us experiment with different ways of using attributes.
+    Note that attributes always follow `specifiers` and `styles`
+    <div title="hello world"> attribute value is provided as a string.
+    <div disabled="disabled"> attribute value is provided as an atom.
+    <div #specid .floatr.fgblue dummy spec disabled>
+      attribute value is provided as an atom, along with specifiers
+    <a> fine clause
+      
+    <div #spcid .floatr.fgblue dummy {background-color : crimson;}
+         disabled>
+      attribute value is provided as an atom, along with specifiers and styling
+    <a> hello world
+      

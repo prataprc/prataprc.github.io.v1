@@ -1,0 +1,10 @@
+## File name : eg1.ttl
+
+@doctype html
+
+<html>
+  <head>
+  <body>
+    <p> <span .black> hello <a "http://google.com"> world
+    <div><span .white><ins>world
+    <div><span .white> hello <ins>world

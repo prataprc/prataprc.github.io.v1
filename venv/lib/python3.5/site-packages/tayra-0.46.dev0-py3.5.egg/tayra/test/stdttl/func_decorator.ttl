@@ -1,0 +1,16 @@
+@from  tayra.decorators import * 
+
+@dec useragent( 'ff5' )
+@def func( a ) :
+  <div> hey firefox 5 ${a}
+
+@dec useragent( 'ch8' )
+@def func( a ) :
+  <div> hey chromium 8 ${a}
+
+@dec useragent()
+@def func( a ) :
+  <div> Hey everyone ${a}
+
+<html>
+  ${ func("hello world") }

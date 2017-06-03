@@ -1,0 +1,3 @@
+@body id="hello", cls="world", style='color: red;'
+
+<div #${id} .${cls} {${style}} >

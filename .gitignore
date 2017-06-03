@@ -3,5 +3,3 @@ parsetyrtab.py
 .vimsession
 *.swp
 *.pyc
-paenv/
-venv/

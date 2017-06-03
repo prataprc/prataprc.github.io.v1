@@ -1,0 +1,10 @@
+#!/Users/prataprc/myworld/devgit/prataprc.github.io/venv/bin/python
+# EASY-INSTALL-ENTRY-SCRIPT: 'tayra==0.46.dev0','console_scripts','tayra'
+__requires__ = 'tayra==0.46.dev0'
+import sys
+from pkg_resources import load_entry_point
+
+if __name__ == '__main__':
+    sys.exit(
+        load_entry_point('tayra==0.46.dev0', 'console_scripts', 'tayra')()
+    )

@@ -1,0 +1,44 @@
+@doctype html
+@include ./_head.ttl
+@include ./_header.ttl
+@include ./_footer.ttl
+@include ./_social.ttl
+    
+<html>
+  <head> ${ _head.body() }
+  <body>
+    <div #myblog-page>
+      <div #myblog-header> ${ _header.body() }
+      <div #myblog-container>
+        @@ fpath, metadata, htmltext = page.articles[0]
+        ${ article(fpath, htmltext) }
+      @if disqus :
+        <div #myblog-disqus>
+          ${ h.readfile( os.path.join('_social', 'disqus.html') ) }
+    <hr>
+    <div #myblog-footer> ${ _footer.body() }
+
+
+@def article(fpath, htmltext) :
+  <article>
+    <div .article-title> ${title}
+      <div .metaa>
+        @if author :
+          <span .author> by ${author};
+        @if createdon  or date :
+          <span .date> ${createdon or date}
+      @if summary :
+        <div .article-summary> ${summary}
+
+    <div .content> ${ htmltext }
+
+    <div .metaz>
+      @if last_modified :
+        <span .last_modified> last modified - ${last_modified};
+      @if show_email and email :
+        <a .email href="mailto:${email}"!> contact-author
+        ;
+    @if social_sharing :
+      <div #myblog-social>
+        ${ _social.body() }
+    

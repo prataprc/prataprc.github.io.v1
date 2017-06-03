@@ -1,0 +1,28 @@
+body {
+    width : 80%; margin : 0px auto;
+}
+div.header {
+    height : 92px;
+}
+div.header img {
+    float : right;
+}
+div.title {
+    font-size : xx-large;
+    color : brown;
+    margin-top : 10px;
+    float : left;
+}
+ul.debuglist {
+    list-style: none; float : left;
+    margin: 20px 0px 0px;
+    padding: 0px;
+    clear : left;
+}
+ul.debuglist li {
+    color : blue;
+    font-weight : bold;
+    cursor : pointer;
+    padding-right : 10px;
+}
+

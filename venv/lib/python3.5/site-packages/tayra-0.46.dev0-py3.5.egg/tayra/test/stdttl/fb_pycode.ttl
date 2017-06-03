@@ -1,0 +1,46 @@
+<!--
+This file is subject to the terms and conditions defined in
+file 'LICENSE', which is part of this source code package.
+Copyright (c) 2011 R Pratap Chakravarthy
+-->
+
+@doctype charset="utf-8"
+@import re
+
+:py:
+a = 'empty'
+def insideroot_butglobal():
+  return '<div> insideroot_butglobal </div>'
+:py:
+
+<global>
+  ${ a } ${ insideroot_butglobal() }
+  ${ b }
+
+<html>
+  @@b = 'hello'   
+  @@c = '10px'
+  <head #headid .cls1.${a.strip()} "title" {color:red;} lang="en" data="hello">
+  <body {margin : ${c}} >
+    :py:
+    b = '<div> insidebody </div>'
+    :py:
+    <h1 { color : red; border : 1px solid gray; }> 
+      I am the space station ${ "These "} seven cameras have a zoom range 
+    <p first second> of any 12x or more, ${20} and some of the wide-angle view 
+    <div> of good. They also have a
+      lot of image stabilization (either optical or mechanical), which is 
+      important for people who are with a powerful zoom lens. Some other        
+    <p #${b}> Sign my guestbook
+      <abbr>
+        ${ helloworld() }
+    ${ insideroot_butglobal() }
+
+@def helloworld( x=10, y=20, a='wer', b='ehl' ) :
+  <div>
+    :py:
+    a = '<div> inside function </div>'
+    :py:
+
+    ${ a }
+    ${ insideroot_butglobal() }
