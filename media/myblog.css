@@ -47,12 +47,12 @@ table {
 /* standard styling, not specific to any tag-element */
 body {
     font-family: "Lucida Console", Monaco, monospace;
-    font-size: 17px;
+    font-size: 15px;
     width : 960px;
     min-width : 640px;
     margin : 0px auto;
     background-color : white;
-    word-spacing: 3px;
+    word-spacing: 2px;
     line-height: 1.5em;
 }
 
@@ -118,11 +118,12 @@ div#myblog-page {                              /* Entire page */
 
 div#myblog-header {                            /* Header / navigation */
     font-weight : bold;
+    font-size: larger;
     border-bottom : 1px dashed gray;
     padding : 0px 20px;
 }
 div#myblog-header nav {
-    padding : 5px 15px;
+    padding : 5px 0px;
     color : gray;
 }
 div#myblog-header nav a {
@@ -258,8 +259,10 @@ div.rst-gallery img {
 
 /* Styling for rst `gist` directive */
 div.gist {
-    font-size: x-small;
     word-spacing: 0px;
+}
+.gist .blob-code-inner {
+    font-size: larger;
 }
 
 /* Styling for ``index`` ``contents`` */
