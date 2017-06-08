@@ -33,9 +33,9 @@ Articles
 Pub Houses
 ----------
 
-Reach out for social coding !
-
 * `gitter with goparsec`_
+
+Reach out for social coding !
 
 Collection of videos and slides
 -------------------------------
