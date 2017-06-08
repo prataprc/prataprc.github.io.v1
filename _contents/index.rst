@@ -1,5 +1,5 @@
 Articles
-========
+--------
 
 - `Parser combinator and Maybe rule <parser-combinator-maybe.html>`_.
 - `Sorting data <sorting-data.html>`_.
@@ -30,7 +30,16 @@ Articles
 - `Ideas are inter-connected <ideas-are-inter-connected.html>`_.
 - `Hello world <hello-world.html>`_.
 
+Pub Houses
+----------
+
+Reach out for social coding !
+
+* `gitter with goparsec`_
+
 Collection of videos and slides
-===============================
+-------------------------------
 
 - `Hang drum, a music instrument <hang-drum.html>`_.
+
+.. _gitter with goparsec: https://gitter.im/prataprc/goparsec?utm_source=share-link&utm_medium=link&utm_campaign=share-link

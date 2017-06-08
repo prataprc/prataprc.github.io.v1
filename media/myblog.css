@@ -53,7 +53,7 @@ body {
     margin : 0px auto;
     background-color : white;
     word-spacing: 2px;
-    line-height: 1.5em;
+    line-height: 1.7em;
 }
 
 h1, h2 {
@@ -173,6 +173,7 @@ div.metaz .last_modified {
 }
 div.content {                       /* article main content */
     margin: 0px 0px 10px 0px;
+    font-size: 17px;
 }
 div.metaz .email {                  /* author email-id */
 }
