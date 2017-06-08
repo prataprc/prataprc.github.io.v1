@@ -1,4 +1,4 @@
-:title: right wing computers
+:title: Right wing computers
 
 Saw this post_ and started musing on computing machines -
 

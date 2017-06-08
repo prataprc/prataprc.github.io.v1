@@ -1,4 +1,4 @@
-:title: circular package dependencies in python.
+:title: Circular package dependencies in python
 :author: prataprc
 
 I am developing `pluggdapps`, `tayra` and `tayrakit`, and releasing them

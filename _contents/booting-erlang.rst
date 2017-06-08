@@ -1,4 +1,4 @@
-:title: Overhead of booting an Erlang VM
+:title: Overhead of booting Erlang VM
 :author: prataprc
 
 Wanted to measure the overhead of booting an Erlang virtual machine, do

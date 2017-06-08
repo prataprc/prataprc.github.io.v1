@@ -1,4 +1,4 @@
-:title: faith, hope, and love
+:title: Faith, hope, and love
 
 .. code-block:: text
 

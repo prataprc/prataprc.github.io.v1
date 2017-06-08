@@ -1,4 +1,4 @@
-:title: Go beyond 8 colors, 256 colors are here to stay !
+:title: Terminal beyond 8 colors
 :author: prataprc
 
 

@@ -1,4 +1,4 @@
-:title: sorting data
+:title: Sorting data
 
 Sorting is a human perception !
 

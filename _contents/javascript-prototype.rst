@@ -1,4 +1,4 @@
-:title: Prototypal inheritance in Javascript
+:title: Prototype inheritance in Javascript
 :author: prataprc
 
 This post will discuss exclusively about Javascript's prototype inheritance.

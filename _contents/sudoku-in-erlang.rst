@@ -1,4 +1,4 @@
-:title: Sudoku on erlang
+:title: Sudoku, Erlang and concurrency
 :author: prataprc
 :createdon: Mon Aug 16, 2010
 

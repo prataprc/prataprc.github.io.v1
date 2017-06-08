@@ -1,4 +1,4 @@
-:title: Using Maybe combinator in goparsec tool
+:title: Parser combinator and maybe rule
 :author: prataprc
 
 Parser combinator is a technique to build top down parsing logic in any

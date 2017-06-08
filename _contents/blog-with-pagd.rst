@@ -1,4 +1,4 @@
-:title: Blog with pagd, github and your text-editor
+:title: Blog with pagd, github and favorite text-editor
 :author: prataprc
 
 First time I started blogging it was with blogspot_, which was too cumbersome

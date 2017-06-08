@@ -1,4 +1,4 @@
-:title: Caveats while programming with Javascript.
+:title: Caveats while programming in Javascript
 :author: prataprc
 
 Every language has exceptional situations to common rules, that were originally

@@ -111,41 +111,38 @@ tt {
 /* Sytling specific to blog articles */
 
 div#myblog-page {                              /* Entire page */
-    border-left : 1px dashed black;
-    border-right : 1px dashed black;
     padding : 10px 0px;
 }
 
 div#myblog-header {                            /* Header / navigation */
     font-weight : bold;
     font-size: larger;
-    border-bottom : 1px dashed gray;
-    padding : 0px 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid gray;
+    text-align: right;
+    text-transform: uppercase;
 }
 div#myblog-header nav {
     padding : 5px 0px;
     color : gray;
 }
 div#myblog-header nav a {
-    padding-right : 40px;
+    padding-left : 40px;
     text-decoration : none;
     color : gray;
 }
 
 div#myblog-container {                     /* container for blog article */
-    margin-top : 20px;
-    padding: 0px 20px;
+    margin-top : 25px;
 }
 article {                                   /* article */
     position: relative;
     padding-bottom: 32px;
 }
 div.article-title {                         /* article title */
-    margin : 0px -20px 20px -20px;
-    padding: 20px 20px;
+    margin : 0px 0px 40px 0px;
     font-weight : bold;
-    font-size : larger;
-    background : #EEE;
+    font-size : 25px;
 }
 div.article-summary {                       /* article summary */
     font-weight : normal;
@@ -162,7 +159,7 @@ div.metaa, div.metaz {              /* meta-data for article */
     line-height : 1.5em;
 }
 div.metaa {
-    margin: 5px 0px 0px 0px;
+    margin: 15px 0px 0px 0px;
 }
 div.metaz {
     padding: 5px 0px;

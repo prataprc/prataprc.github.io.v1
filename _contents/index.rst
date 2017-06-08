@@ -6,19 +6,19 @@ Articles
 - `Console jockey <console-jockey.html>`_.
 - `3 programmers <3-programmers.html>`_.
 - `Programming languages and error handling <error-handling.html>`_.
-- `Golang - variables in range loop golang <golang-variables-in-range-loop.html>`_.
+- `Golang - variables in range loop <golang-variables-in-range-loop.html>`_.
 - `Circular package dependencies in python <circular-package-dependencies.html>`_.
 - `Javascript in a nutshell <javascript.html>`_.
 - `Prototype inheritance in javascript <javascript-prototype.html>`_.
-- `Caveats in javascript <javascript-caveats.html>`_.
+- `Caveats while programming in javascript <javascript-caveats.html>`_.
 - `Pagd, custom directives for reStructuredText <pagd-rst-directives.html>`_.
 - `Blog with pagd, github and favorite text-editor <blog-with-pagd.html>`_.
-- `Customizing your blog site with pagd <pagd-customizing.html>`_.
-- `Social interfaces for your site, generated using pagd <pagd-social.html>`_.
-- `Integrating pagd with git / mercurial repository <pagd-repository-integration.html>`_.
+- `Customizing your blog using pagd <pagd-customizing.html>`_.
+- `Social interfaces within pagd <pagd-social.html>`_.
+- `Integrate pagd with git/mercurial repository <pagd-repository-integration.html>`_.
 - `Computing machines <compute-machines.html>`_.
-- `Booting erlang <booting-erlang.html>`_.
-- `Sudoku, erlang and concurrency <sudoku-in-erlang.html>`_.
+- `Overhead of booting Erlang VM <booting-erlang.html>`_.
+- `Sudoku, Erlang and concurrency <sudoku-in-erlang.html>`_.
 - `Sudoku, backtracking and pathological situation <sudoku-pathological.html>`_.
 - `C - spartan among languages <C-spartan-among-languages.html>`_.
 - `Git it <git-it.html>`_.

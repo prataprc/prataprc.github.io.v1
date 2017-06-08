@@ -1,4 +1,4 @@
-:title: golang - variables in range loop
+:title: Golang - variables in range loop
 :author: prataprc
 
 Golang provides an interesting construct to range over arrays and maps. For
