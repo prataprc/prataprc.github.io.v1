@@ -3,3 +3,4 @@ parsetyrtab.py
 .vimsession
 *.swp
 *.pyc
+*.ttl.py
