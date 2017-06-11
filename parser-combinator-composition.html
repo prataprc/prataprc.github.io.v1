@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html >
+  <head > <script  src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js">
+
+</script><!-- local media files -->
+<link  rel="stylesheet" type="text/css" href="media/myblog.css"/><link  rel="stylesheet" type="text/css" href="media/pygments.css"/><!-- Magnific Popup core CSS file -->
+<link  rel="stylesheet" type="text/css" href="media/magnific-popup/magnific-popup.css"/><!-- Magnific Popup core JS file -->
+<script  src="media/magnific-popup/jquery.magnific-popup.min.js">
+
+</script><title > Parsing by composing functions</title>
+
+
+  <style   type="text/css">
+  body {  }
+</style>
+  </head><body >
+    <div  id="myblog-page">
+      <div  id="myblog-header"> <nav >
+  <a  href="index.html">home</a><a  href="projects.html">projects</a><a  href="http://in.linkedin.com/in/prataprc">linkedin</a><a  href="https://github.com/prataprc">github</a></nav></div>
+      <div  id="myblog-container">
+        <article >
+    <div  class="article-title"> Parsing by composing functions
+      <div  class="metaa"></div></div>
+        <div  class="content"> <p>By far the easiest way to write parser is by matching input text
+as terminal nodes and then composing a tree of terminal and non-terminal
+nodes. Terminal nodes, the leaf nodes, actually match the input
+text, while Non-Terminal nodes are composed using Terminal nodes.</p>
+<p>If values can be composed together to create higher ordered values, as in
+Terminal nodes and Non-Terminal nodes, then, the same can be modeled with
+functions. That is, we define simple functions and compose them together to
+create a higher order function. The simple functions, called terminal
+parsers, match input text.</p>
+<p>I guess that is enough of theory, let us look at an example:</p>
+<div class="highlight"><pre><span></span>64.242.88.10 [07/Mar/2004:16:05:49] GET,/index.html,401,1234
+</pre></div>
+<p>Above line is pulled out of a log file. There is a format to this line,
+with following components: <tt class="docutils literal">(ip, timestamp, <span class="pre">comma-separated-values)</span></tt></p>
+<p><strong>parsing ip</strong></p>
+<p>Format of ip is: &lt;int&gt;&quot;.&quot;&lt;int&gt;&quot;.&quot;&lt;int&gt;&quot;.&quot;&lt;int&gt;, which can be parsed as:</p>
+<div class="highlight"><pre><span></span><span class="nx">ydelimit</span> <span class="p">=</span> <span class="nx">parsec</span><span class="p">.</span><span class="nx">Atom</span><span class="p">(</span><span class="s">&quot;.&quot;</span><span class="p">)</span>
+<span class="nx">yip</span> <span class="o">:=</span> <span class="nx">parsec</span><span class="p">.</span><span class="nx">And</span><span class="p">(</span>
+    <span class="kc">nil</span><span class="p">,</span>  <span class="c1">// Nodify</span>
+    <span class="nx">parsec</span><span class="p">.</span><span class="nx">Int</span><span class="p">(),</span>
+    <span class="nx">ydelimit</span><span class="p">,</span> <span class="nx">parsec</span><span class="p">.</span><span class="nx">Int</span><span class="p">(),</span>
+    <span class="nx">ydelimit</span><span class="p">,</span> <span class="nx">parsec</span><span class="p">.</span><span class="nx">Int</span><span class="p">(),</span>
+    <span class="nx">ydelimit</span><span class="p">,</span> <span class="nx">parsec</span><span class="p">.</span><span class="nx">Int</span><span class="p">(),</span>
+<span class="p">)</span>
+</pre></div>
+<ul class="simple">
+<li><tt class="docutils literal">parsec.Atom()</tt> will try to match the input text with <tt class="docutils literal">.</tt>, which is
+the argument passed to construct the Atom parser.</li>
+<li><tt class="docutils literal">parsec.Int()</tt> returns a parser that will match the input text for
+integer. It is same as constructing parser with
+<tt class="docutils literal"><span class="pre">parsec.Token(`-?[0-9]+`,</span> &quot;INT&quot;)</tt></li>
+<li><tt class="docutils literal">Atom</tt>, <tt class="docutils literal">Int</tt>, <tt class="docutils literal">Token</tt> are some of the standard parser constructors
+supplied by goparsec.</li>
+<li>Subsequently, we can combine the terminal parsers using <tt class="docutils literal">And</tt> combinator.</li>
+<li>The first argument, passed as <tt class="docutils literal">nil</tt> here, is for suppling a callback
+function. Arguments to <tt class="docutils literal">And</tt> combinator tells us that, it shall first
+try to match an integer, and then a <tt class="docutils literal">.</tt>, and then an integer, and then
+a <tt class="docutils literal">.</tt>, and then an integer, and then a <tt class="docutils literal">.</tt>, and then an integer.</li>
+<li>After every match, the cursor in the input text will move forward, but only
+if there is a match.</li>
+</ul>
+<p><strong>Nodify</strong></p>
+<p>What happens after all the parsers supplied to the And combinator succeed
+in matching the input text ?</p>
+<p>The first argument, called Nodify callback, if not nil, will be dispatched.
+The signature of Nodify is:</p>
+<div class="highlight"><pre><span></span><span class="kd">type</span> <span class="nx">Nodify</span> <span class="kd">func</span><span class="p">(</span><span class="nx">nodes</span> <span class="p">[]</span><span class="nx">ParsecNode</span><span class="p">)</span> <span class="nx">node</span> <span class="nx">ParsecNode</span>
+</pre></div>
+<p>The array <tt class="docutils literal">nodes</tt> carry a node item for each matching parser supplied to the
+And combinator. In this case, len(nodes) will be 7. Nodify callback is user
+supplied function and it is upto the user to decide what to do with nodes, and
+finally a node item returned. This node item, typed as ParsecNode, can be
+anything; it is just an alias for <tt class="docutils literal">interface{}</tt>.</p>
+<p>If our application is going to consume the <strong>ip</strong> as string, then we can use
+the Nodify callback to do some interesting stuff:</p>
+<div class="highlight"><pre><span></span><span class="nx">tostring</span> <span class="o">:=</span> <span class="kd">func</span><span class="p">(</span><span class="nx">nodes</span> <span class="p">[]</span><span class="nx">ParsecNode</span><span class="p">)</span> <span class="nx">node</span> <span class="nx">ParsecNode</span> <span class="p">{</span>
+    <span class="nx">s</span> <span class="o">:=</span> <span class="s">&quot;&quot;</span>
+    <span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">node</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">nodes</span> <span class="p">{</span>
+        <span class="nx">s</span> <span class="o">+=</span> <span class="nx">node</span><span class="p">.(</span><span class="o">*</span><span class="nx">Terminal</span><span class="p">).</span><span class="nx">Value</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">s</span>
+<span class="p">}</span>
+<span class="nx">yip</span> <span class="o">:=</span> <span class="nx">parsec</span><span class="p">.</span><span class="nx">And</span><span class="p">(</span>
+    <span class="nx">tostring</span><span class="p">,</span>
+    <span class="nx">parsec</span><span class="p">.</span><span class="nx">Int</span><span class="p">(),</span>
+    <span class="nx">ydelimit</span><span class="p">,</span> <span class="nx">parsec</span><span class="p">.</span><span class="nx">Int</span><span class="p">(),</span>
+    <span class="nx">ydelimit</span><span class="p">,</span> <span class="nx">parsec</span><span class="p">.</span><span class="nx">Int</span><span class="p">(),</span>
+    <span class="nx">ydelimit</span><span class="p">,</span> <span class="nx">parsec</span><span class="p">.</span><span class="nx">Int</span><span class="p">(),</span>
+<span class="p">)</span>
+</pre></div>
+<p>Here we are extracting the value of each terminal and concatinating it to
+create the full ip address and return the string as ParsecNode.</p>
+<p><strong>timestamp</strong></p>
+<p>For timestamp, we can't match the string as it is because other log lines,
+in the same file, will have different timestamp-values. But the timestamp
+has a pattern: <tt class="docutils literal"><span class="pre">\[[0-9]{2}/[a-zA-Z]{3}/[0-9]{4}:[0-9]{2}:[0-9]{2}:[0-9]{2}\]</span></tt></p>
+<div class="highlight"><pre><span></span><span class="nx">ytm</span> <span class="o">:=</span> <span class="nx">parsec</span><span class="p">.</span><span class="nx">Token</span><span class="p">(</span>
+    <span class="s">`\[[0-9]{2}/[a-zA-Z]{3}/[0-9]{4}:[0-9]{2}:[0-9]{2}:[0-9]{2}\]`</span><span class="p">,</span>
+    <span class="s">&quot;TIMESTAMP&quot;</span><span class="p">)</span>
+</pre></div>
+<p><tt class="docutils literal">ytm</tt> can parse any timestamp in the log file as long as it follows the same
+pattern.</p>
+<p><strong>comma-separated-values</strong></p>
+<p>Parsing comma separated values can be more complex, but that gives us the
+opportunity to learn more about parsec.</p>
+<div class="highlight"><pre><span></span><span class="nx">vector2scalar</span> <span class="o">:=</span> <span class="kd">func</span><span class="p">(</span><span class="nx">nodes</span> <span class="p">[]</span><span class="nx">parsec</span><span class="p">.</span><span class="nx">ParsecNode</span><span class="p">)</span> <span class="nx">parsec</span><span class="p">.</span><span class="nx">ParsecNode</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">notes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="p">}</span>
+<span class="nx">concat</span> <span class="o">:=</span> <span class="kd">func</span><span class="p">(</span><span class="nx">nodes</span> <span class="p">[]</span><span class="nx">parsec</span><span class="p">.</span><span class="nx">ParsecNode</span><span class="p">)</span> <span class="nx">parsec</span><span class="p">.</span><span class="nx">ParsecNode</span> <span class="p">{</span>
+    <span class="nx">s</span> <span class="o">:=</span> <span class="nx">nodes</span><span class="p">[</span><span class="mi">0</span><span class="p">].(</span><span class="kt">string</span><span class="p">)</span>
+    <span class="nx">s</span> <span class="p">=</span> <span class="nx">s</span><span class="p">[</span><span class="mi">1</span> <span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">return</span> <span class="nx">s</span>
+<span class="p">}</span>
+<span class="nx">ystr</span> <span class="o">:=</span> <span class="nx">parsec</span><span class="p">.</span><span class="nx">And</span><span class="p">(</span><span class="nx">concat</span><span class="p">,</span> <span class="nx">parsec</span><span class="p">.</span><span class="nx">String</span><span class="p">())</span>
+<span class="nx">yatom</span> <span class="o">:=</span> <span class="nx">parsec</span><span class="p">.</span><span class="nx">Token</span><span class="p">(</span><span class="s">&quot;[a-zA-Z][a-zA-Z0-9_\.-]+&quot;</span><span class="p">,</span> <span class="s">&quot;ATOM&quot;</span><span class="p">)</span>
+<span class="nx">yterm</span> <span class="o">:=</span> <span class="nx">parsec</span><span class="p">.</span><span class="nx">OrdChoice</span><span class="p">(</span><span class="nx">vector2scalar</span><span class="p">,</span> <span class="nx">ystr</span><span class="p">,</span> <span class="nx">yatom</span><span class="p">)</span>
+<span class="nx">ycomma</span> <span class="o">:=</span> <span class="nx">parsec</span><span class="p">.</span><span class="nx">Token</span><span class="p">(</span><span class="s">`,`</span><span class="p">,</span> <span class="s">&quot;FIELDSEP&quot;</span><span class="p">)</span>
+<span class="nx">ycsv</span> <span class="o">:=</span> <span class="nx">parsec</span><span class="p">.</span><span class="nx">Kleene</span><span class="p">(</span><span class="kc">nil</span><span class="p">,</span> <span class="nx">parsec</span><span class="p">.</span><span class="nx">Maybe</span><span class="p">(</span><span class="nx">maybenode</span><span class="p">,</span> <span class="nx">yterm</span><span class="p">),</span> <span class="nx">ycomma</span><span class="p">)</span>
+</pre></div>
+<p>Values can be one of the following:</p>
+<ul class="simple">
+<li>Double quoted string. Here, we can find a use case for Nodify with ystr,
+the Nodify callback prunes away the beginning quote, end quote and
+return the golang string as ParsecNode.</li>
+<li>An integer value,</li>
+<li>An atom of alpha numeric characters including special chars <tt class="docutils literal">_.-</tt>.
+Atom always start with lower case or upper case alphabet.</li>
+</ul>
+<p>In the above parsing logic, values are parsed as yterm. Since a term
+can be one of the value described above, we use OrdChoice.</p>
+<p><strong>Note that there is an ambiguity here</strong>, between second type of value,
+an Integer and third type of value, an Atom. In such cases, we should
+compose the parser in such a way that more specific parsers are tries
+before trying more generic parsers. Although OrdChoice parses one of
+the value as ParsecNode, it is returned as an array of []ParsecNode
+with arity one. This is to keep it consistent with rest of the
+combinators like And, Kleene, Many. To unwrap the single item in the
+array we are once again using a nodify callback.</p>
+<p>And finally we tie them up using the Kleene combinator. Kleene is used
+because we expect ZERO or more terms in the input. Combinators like
+Kleene and Many can take two parser, the first one parses
+the input for the actual value and the second one parses the separator
+token. In our case the separator token in a COMMA <tt class="docutils literal">,</tt>. Kleene will
+repeatedly apply the two parsers until they fail matching the input, at
+which point all o/p from the first parser will be collected in an
+array, of []ParsecNode, and dispatched to the nodify callback and/or
+returned back.</p>
+<p><strong>A note on Maybe:</strong> If input contains a string like
+<tt class="docutils literal">GET,index.html,,</tt>, where the term can be empty, we still want the first
+parser to succeed so the Kleene can continue matching the remaining string.
+If indeed the input contains an empty term then Maybe combinator that wraps
+the term will return ParsecNode as MissingNone. And the final []ParsecNode
+returned by Kleene will contain MissingNone for all missing terms.</p>
+<div class="highlight"><pre><span></span><span class="nx">text</span> <span class="p">=</span> <span class="s">`64.242.88.10 [07/Mar/2004:16:05:49] GET,&quot;/index.html&quot;,401,1234`</span>
+<span class="nx">y</span> <span class="o">:=</span> <span class="nx">parsec</span><span class="p">.</span><span class="nx">And</span><span class="p">(</span><span class="kc">nil</span><span class="p">,</span> <span class="nx">yip</span><span class="p">,</span> <span class="nx">ytm</span><span class="p">,</span> <span class="nx">ycsv</span><span class="p">)</span>
+<span class="nx">scanner</span> <span class="o">:=</span> <span class="nx">NewScanner</span><span class="p">([]</span><span class="nb">byte</span><span class="p">(</span><span class="nx">text</span><span class="p">))</span>
+<span class="nx">node</span><span class="p">,</span> <span class="nx">scanner</span> <span class="o">:=</span> <span class="nx">y</span><span class="p">(</span><span class="nx">scanner</span><span class="p">)</span>
+</pre></div>
+<p>So far we have only constructed parser functions, by composing simple
+parsers to create complex parser, using one of the Combinators like
+And, OrdChoice, Kleene, Many, Maybe. To actually parse the text we will
+have to use a scanner, that implement parsec.Scanner{} interface.
+Goparser provides a simple scanner constructed by calling <tt class="docutils literal">NewScanner</tt>.</p></div>
+
+    <div  class="nocomments">
+      Comments are disabled for this article, if there are any issues with
+      the content of this article feel free to raise an issue
+      <a  href="https://github.com/prataprc/prataprc.github.io/issues">here</a >.<//a>
+      </a>Or, click <b >open chat</b > in bottom right corner of this page.<//b></b>
+      <script > ((window.gitter = {}).chat = {}).options = { room: 'prataprc/basecamp' };
+      </script><script  defer="defer" src="https://sidecar.gitter.im/dist/sidecar.v1.js" async="async"></script ><//script>
+
+    </script></div><div  class="metaz"></div>
+      <div  id="myblog-social">
+        <ul >
+  
+    <li  class="twitter"> <a href="https://twitter.com/share" class="twitter-share-button"
+    data-via="prataprc">Tweet</a>
+<script>!function(d,s,id){var
+    js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document,
+'script', 'twitter-wjs');</script>
+
+</li><li  class="fb"> <div id="fb-root"></div>
+<script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+      fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+</script>
+<div class="fb-like" data-send="false" data-layout="button_count"
+data-width="450" data-show-faces="true"></div>
+
+
+</li><li  class="linkedin"> <script src="//platform.linkedin.com/in.js" type="text/javascript">
+     lang: en_US
+</script>
+<script type="IN/Share" data-counter="right"></script>
+
+</li><li  class="gplus"> <!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-size="small"></div>
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  (function() {
+       var po = document.createElement('script'); po.type = 'text/javascript';
+       po.async = true;
+       po.src = 'https://apis.google.com/js/plusone.js';
+       var s = document.getElementsByTagName('script')[0];
+       s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+</li></ul></div></article></div></div>
+    
+
+      <hr/><div  id="myblog-footer"> <div  id="myblog-copyright">
+  <span >&copy</span ><//span></span>
+  2013 Pratap Chakravarthy</div>
+<div  id="myblog-pagd"> generated using <a  href="http://pythonhosted.org/pagd/">pagd</a></div>
+<script  type="text/javascript">
+  // Snippet to load rst gallery if available.
+  $(document).ready( function() {
+    $('.rst-gallery').each( function(idx, element) {
+        $(element).magnificPopup({
+          delegate: 'a',
+          type: 'image',
+          gallery: {
+            enabled: true, // set to true to enable gallery
+            preload: [0,1], // load next item
+            navigateByImgClick: true,
+          }
+        });
+    });
+  });
+
+</script></div></body>
+
+
+</html>

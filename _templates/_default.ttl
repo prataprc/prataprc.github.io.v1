@@ -31,12 +31,19 @@
         <div .article-summary> ${summary}
 
     <div .content> ${ htmltext }
+    <div .nocomments>
+      Comments are disabled for this article, if there are any issues with
+      the content of this article feel free to raise an issue
+      <a href="https://github.com/prataprc/prataprc.github.io/issues">here</a>.
+      @if show_email and email :
+        Or, <a .email href="mailto:${email}"!> email-author</a>.
+      Or, click <b>open chat</b> in bottom right corner of this page.
+      <script> ((window.gitter = {}).chat = {}).options = { room: 'prataprc/basecamp' };
+      <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
 
     <div .metaz>
       @if last_modified :
         <span .last_modified> last modified - ${last_modified};
-      @if show_email and email :
-        <a .email href="mailto:${email}"!> contact-author
         ;
     @if social_sharing :
       <div #myblog-social>

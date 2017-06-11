@@ -1,6 +1,7 @@
 Articles
 --------
 
+- `Parsing by composing functions <parser-combinator-composition.html>`_.
 - `Parser combinator and Maybe rule <parser-combinator-maybe.html>`_.
 - `Sorting data <sorting-data.html>`_.
 - `Console jockey <console-jockey.html>`_.
@@ -30,12 +31,11 @@ Articles
 - `Ideas are inter-connected <ideas-are-inter-connected.html>`_.
 - `Hello world <hello-world.html>`_.
 
-Pub Houses
-----------
+Pub Houses, for social coding
+-----------------------------
 
 * `gitter with goparsec`_
 
-Reach out for social coding !
 
 Collection of videos and slides
 -------------------------------

@@ -295,3 +295,10 @@ a.toc-backref {
     text-decoration : none;
     color : black;
 }
+
+div.nocomments {
+    background: lavenderblush;
+    color: crimson;
+    padding: 2px;
+    border-radius: 10px;
+}
