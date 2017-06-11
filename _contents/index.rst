@@ -35,11 +35,12 @@ Pub Houses, for social coding
 -----------------------------
 
 * `gitter with goparsec`_
+* `gitter with ledger`_
 
-
-Collection of videos and slides
--------------------------------
+Collection of videos
+--------------------
 
 - `Hang drum, a music instrument <hang-drum.html>`_.
 
 .. _gitter with goparsec: https://gitter.im/prataprc/goparsec?utm_source=share-link&utm_medium=link&utm_campaign=share-link
+.. _gitter with ledger: https://gitter.im/tn47/goledger?utm_source=share-link&utm_medium=link&utm_campaign=share-link
