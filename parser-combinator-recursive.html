@@ -20,8 +20,10 @@
       <div  id="myblog-container">
         <article >
     <div  class="article-title"> Parser composition for recursive grammar
-      <div  class="metaa"></div></div>
-        <div  class="content"> <p>Input text, sometime, have recursive patterns. For example:</p>
+      <div  class="metaa">
+        <span  class="author"> by prataprc;</span>
+        <span  class="date"> Mon Jun 12, 2017</span></div></div>
+      <div  class="content"> <p>Input text, sometime, have recursive patterns. For example:</p>
 <div class="highlight"><pre><span></span><span class="mi">10</span> <span class="o">*</span> <span class="p">((</span><span class="mi">20</span> <span class="o">+</span> <span class="mi">30</span><span class="p">)</span> <span class="o">*</span> <span class="mi">40</span><span class="p">)</span>
 </pre></div>
 <p>Let us try to build a plain text calculator, where input in an expression of
@@ -46,8 +48,7 @@ addop -&gt; &quot;+&quot; |  &quot;-&quot;
 value -&gt; num | &quot;(&quot; expr &quot;)&quot;
 </pre></div>
 <p>Above grammar also defines <tt class="docutils literal">expr</tt> using <tt class="docutils literal">expr</tt> albiet indirectly. We can
-now proceed to construct our simple parsers that can parse called terminal
-tokens.</p>
+now proceed to construct our simple parsers that can parse terminal tokens.</p>
 <div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">openparan</span> <span class="p">=</span> <span class="nx">parsec</span><span class="p">.</span><span class="nx">Token</span><span class="p">(</span><span class="s">`\(`</span><span class="p">,</span> <span class="s">&quot;OPENPARAN&quot;</span><span class="p">)</span>
 <span class="kd">var</span> <span class="nx">closeparan</span> <span class="p">=</span> <span class="nx">parsec</span><span class="p">.</span><span class="nx">Token</span><span class="p">(</span><span class="s">`\)`</span><span class="p">,</span> <span class="s">&quot;CLOSEPARAN&quot;</span><span class="p">)</span>
 <span class="kd">var</span> <span class="nx">addop</span> <span class="p">=</span> <span class="nx">parsec</span><span class="p">.</span><span class="nx">Token</span><span class="p">(</span><span class="s">`\+`</span><span class="p">,</span> <span class="s">&quot;ADD&quot;</span><span class="p">)</span>
@@ -94,12 +95,13 @@ for that parser can happen later.</p>
       Comments are disabled for this article, if there are any issues with
       the content of this article feel free to raise an issue
       <a  href="https://github.com/prataprc/prataprc.github.io/issues">here</a >.<//a> 
-      </a>Or, click <b >open chat</b > in bottom right corner of this page.<//b></b>
+      </a>Or, <a  class="email" href="mailto:prataprc@gmail.com">email-author</a >.<//a></a>Or, click <b >open chat</b > in bottom right corner of this page.<//b></b>
       <script > ((window.gitter = {}).chat = {}).options = { room: 'prataprc/basecamp' };
       </script><script  defer="defer" src="https://sidecar.gitter.im/dist/sidecar.v1.js" async="async"></script ><//script>
 
-    </script></div><div  class="metaz"></div>
-      <div  id="myblog-social">
+    </script></div><div  class="metaz">
+      <span  class="last_modified"> last modified - Mon Jun 12, 2017;</span></div>
+    <div  id="myblog-social">
         <ul >
   
     <li  class="twitter"> <a href="https://twitter.com/share" class="twitter-share-button"
