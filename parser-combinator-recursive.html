@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html >
+  <head > <script  src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js">
+
+</script><!-- local media files -->
+<link  rel="stylesheet" type="text/css" href="media/myblog.css"/><link  rel="stylesheet" type="text/css" href="media/pygments.css"/><!-- Magnific Popup core CSS file -->
+<link  rel="stylesheet" type="text/css" href="media/magnific-popup/magnific-popup.css"/><!-- Magnific Popup core JS file -->
+<script  src="media/magnific-popup/jquery.magnific-popup.min.js">
+
+</script><title > Parser composition for recursive grammar</title>
+
+
+  <style   type="text/css">
+  body {  }
+</style>
+  </head><body >
+    <div  id="myblog-page">
+      <div  id="myblog-header"> <nav >
+  <a  href="index.html">home</a><a  href="projects.html">projects</a><a  href="http://in.linkedin.com/in/prataprc">linkedin</a><a  href="https://github.com/prataprc">github</a></nav></div>
+      <div  id="myblog-container">
+        <article >
+    <div  class="article-title"> Parser composition for recursive grammar
+      <div  class="metaa"></div></div>
+        <div  class="content"> <p>Input text, sometime, have recursive patterns. For example:</p>
+<div class="highlight"><pre><span></span><span class="mi">10</span> <span class="o">*</span> <span class="p">((</span><span class="mi">20</span> <span class="o">+</span> <span class="mi">30</span><span class="p">)</span> <span class="o">*</span> <span class="mi">40</span><span class="p">)</span>
+</pre></div>
+<p>Let us try to build a plain text calculator, where input in an expression of
+arithmetic operations on numbers. Operations include addition, subraction,
+multiplication and division, in which multiplication and division take higher
+precedence over addition and subraction.</p>
+<div class="highlight"><pre><span></span>expr:      term | expr &#39;-&#39; term | expr &#39;+&#39; term
+term:      factor | term &#39;*&#39; factor | term &#39;/&#39; factor
+factor:    NUMBER | &#39;(&#39; expr &#39;)&#39;
+</pre></div>
+<p>Above YACC grammar can parse the calculator text. Note that the grammar
+definition involves several recursive elements: like, <tt class="docutils literal">expr</tt> is defined
+using <tt class="docutils literal">expr</tt>. When we try to port this grammar to construct parser combinator
+we will end up with <strong>infinite recursion</strong> . Instead we can re-work the grammar
+in such a way that recursive definition of grammar, will quickly be resolved
+by presence or absence of a terminal token. Here is an example:</p>
+<div class="highlight"><pre><span></span>expr  -&gt; sum
+prod  -&gt; value (mulop value)*
+mulop -&gt; &quot;*&quot; |  &quot;/&quot;
+sum   -&gt; prod (addop prod)*
+addop -&gt; &quot;+&quot; |  &quot;-&quot;
+value -&gt; num | &quot;(&quot; expr &quot;)&quot;
+</pre></div>
+<p>Above grammar also defines <tt class="docutils literal">expr</tt> using <tt class="docutils literal">expr</tt> albiet indirectly. We can
+now proceed to construct our simple parsers that can parse called terminal
+tokens.</p>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">openparan</span> <span class="p">=</span> <span class="nx">parsec</span><span class="p">.</span><span class="nx">Token</span><span class="p">(</span><span class="s">`\(`</span><span class="p">,</span> <span class="s">&quot;OPENPARAN&quot;</span><span class="p">)</span>
+<span class="kd">var</span> <span class="nx">closeparan</span> <span class="p">=</span> <span class="nx">parsec</span><span class="p">.</span><span class="nx">Token</span><span class="p">(</span><span class="s">`\)`</span><span class="p">,</span> <span class="s">&quot;CLOSEPARAN&quot;</span><span class="p">)</span>
+<span class="kd">var</span> <span class="nx">addop</span> <span class="p">=</span> <span class="nx">parsec</span><span class="p">.</span><span class="nx">Token</span><span class="p">(</span><span class="s">`\+`</span><span class="p">,</span> <span class="s">&quot;ADD&quot;</span><span class="p">)</span>
+<span class="kd">var</span> <span class="nx">subop</span> <span class="p">=</span> <span class="nx">parsec</span><span class="p">.</span><span class="nx">Token</span><span class="p">(</span><span class="s">`-`</span><span class="p">,</span> <span class="s">&quot;SUB&quot;</span><span class="p">)</span>
+<span class="kd">var</span> <span class="nx">multop</span> <span class="p">=</span> <span class="nx">parsec</span><span class="p">.</span><span class="nx">Token</span><span class="p">(</span><span class="s">`\*`</span><span class="p">,</span> <span class="s">&quot;MULT&quot;</span><span class="p">)</span>
+<span class="kd">var</span> <span class="nx">divop</span> <span class="p">=</span> <span class="nx">parsec</span><span class="p">.</span><span class="nx">Token</span><span class="p">(</span><span class="s">`/`</span><span class="p">,</span> <span class="s">&quot;DIV&quot;</span><span class="p">)</span>
+</pre></div>
+<p>Let us do some trivial composition.</p>
+<div class="highlight"><pre><span></span><span class="c1">// addop -&gt; &quot;+&quot; |  &quot;-&quot;</span>
+<span class="kd">var</span> <span class="nx">sumOp</span> <span class="p">=</span> <span class="nx">parsec</span><span class="p">.</span><span class="nx">OrdChoice</span><span class="p">(</span><span class="nx">one2one</span><span class="p">,</span> <span class="nx">addop</span><span class="p">,</span> <span class="nx">subop</span><span class="p">)</span>
+<span class="c1">// mulop -&gt; &quot;*&quot; |  &quot;/&quot;</span>
+<span class="kd">var</span> <span class="nx">prodOp</span> <span class="p">=</span> <span class="nx">parsec</span><span class="p">.</span><span class="nx">OrdChoice</span><span class="p">(</span><span class="nx">one2one</span><span class="p">,</span> <span class="nx">multop</span><span class="p">,</span> <span class="nx">divop</span><span class="p">)</span>
+</pre></div>
+<p>Then comes a non-trivial composition, where three compositions <tt class="docutils literal">value</tt>,
+<tt class="docutils literal">sum</tt>, and <tt class="docutils literal">prod</tt> refer each other. To handle situation like this
+the standard combinators available in goparsec can compose with <tt class="docutils literal">Parser</tt>
+and/or <tt class="docutils literal">*Parser</tt>. This gives user the ability to forward declare
+a parser and use its reference for composition, while the actual definition
+for that parser can happen later.</p>
+<div class="highlight"><pre><span></span><span class="c1">// Forward declaration</span>
+<span class="kd">var</span> <span class="nx">prod</span><span class="p">,</span> <span class="nx">sum</span><span class="p">,</span> <span class="nx">value</span> <span class="nx">parsec</span><span class="p">.</span><span class="nx">Parser</span> <span class="c1">// circular rats</span>
+
+<span class="c1">// value -&gt; &quot;(&quot; expr &quot;)&quot;</span>
+<span class="kd">var</span> <span class="nx">groupExpr</span> <span class="p">=</span> <span class="nx">parsec</span><span class="p">.</span><span class="nx">And</span><span class="p">(</span><span class="nx">exprNode</span><span class="p">,</span> <span class="nx">openparan</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">sum</span><span class="p">,</span> <span class="nx">closeparan</span><span class="p">)</span>
+<span class="c1">// (addop prod)*</span>
+<span class="kd">var</span> <span class="nx">prodK</span> <span class="p">=</span> <span class="nx">parsec</span><span class="p">.</span><span class="nx">Kleene</span><span class="p">(</span><span class="kc">nil</span><span class="p">,</span> <span class="nx">parsec</span><span class="p">.</span><span class="nx">And</span><span class="p">(</span><span class="nx">many2many</span><span class="p">,</span> <span class="nx">sumOp</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">prod</span><span class="p">),</span> <span class="kc">nil</span><span class="p">)</span>
+<span class="c1">// (mulop value)*</span>
+<span class="kd">var</span> <span class="nx">valueK</span> <span class="p">=</span> <span class="nx">parsec</span><span class="p">.</span><span class="nx">Kleene</span><span class="p">(</span><span class="kc">nil</span><span class="p">,</span> <span class="nx">parsec</span><span class="p">.</span><span class="nx">And</span><span class="p">(</span><span class="nx">many2many</span><span class="p">,</span> <span class="nx">prodOp</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">value</span><span class="p">),</span> <span class="kc">nil</span><span class="p">)</span>
+</pre></div>
+<p>And finally we can tie them all together:</p>
+<div class="highlight"><pre><span></span><span class="c1">// Circular definitions come to life</span>
+
+<span class="c1">// sum -&gt; prod (addop prod)*</span>
+<span class="nx">sum</span> <span class="p">=</span> <span class="nx">parsec</span><span class="p">.</span><span class="nx">And</span><span class="p">(</span><span class="nx">sumNode</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">prod</span><span class="p">,</span> <span class="nx">prodK</span><span class="p">)</span>
+<span class="c1">// prod-&gt; value (mulop value)*</span>
+<span class="nx">prod</span> <span class="p">=</span> <span class="nx">parsec</span><span class="p">.</span><span class="nx">And</span><span class="p">(</span><span class="nx">prodNode</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">value</span><span class="p">,</span> <span class="nx">valueK</span><span class="p">)</span>
+<span class="c1">// value -&gt; num | &quot;(&quot; expr &quot;)&quot;</span>
+<span class="nx">value</span> <span class="p">=</span> <span class="nx">parsec</span><span class="p">.</span><span class="nx">OrdChoice</span><span class="p">(</span><span class="nx">exprValueNode</span><span class="p">,</span> <span class="nx">intWS</span><span class="p">(),</span> <span class="nx">groupExpr</span><span class="p">)</span>
+<span class="c1">// expr  -&gt; sum</span>
+<span class="nx">Y</span> <span class="p">=</span> <span class="nx">parsec</span><span class="p">.</span><span class="nx">OrdChoice</span><span class="p">(</span><span class="nx">one2one</span><span class="p">,</span> <span class="nx">sum</span><span class="p">)</span>
+</pre></div></div>
+
+    <div  class="nocomments">
+      Comments are disabled for this article, if there are any issues with
+      the content of this article feel free to raise an issue
+      <a  href="https://github.com/prataprc/prataprc.github.io/issues">here</a >.<//a> 
+      </a>Or, click <b >open chat</b > in bottom right corner of this page.<//b></b>
+      <script > ((window.gitter = {}).chat = {}).options = { room: 'prataprc/basecamp' };
+      </script><script  defer="defer" src="https://sidecar.gitter.im/dist/sidecar.v1.js" async="async"></script ><//script>
+
+    </script></div><div  class="metaz"></div>
+      <div  id="myblog-social">
+        <ul >
+  
+    <li  class="twitter"> <a href="https://twitter.com/share" class="twitter-share-button"
+    data-via="prataprc">Tweet</a>
+<script>!function(d,s,id){var
+    js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document,
+'script', 'twitter-wjs');</script>
+
+</li><li  class="fb"> <div id="fb-root"></div>
+<script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+      fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+</script>
+<div class="fb-like" data-send="false" data-layout="button_count"
+data-width="450" data-show-faces="true"></div>
+
+
+</li><li  class="linkedin"> <script src="//platform.linkedin.com/in.js" type="text/javascript">
+     lang: en_US
+</script>
+<script type="IN/Share" data-counter="right"></script>
+
+</li><li  class="gplus"> <!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-size="small"></div>
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  (function() {
+       var po = document.createElement('script'); po.type = 'text/javascript';
+       po.async = true;
+       po.src = 'https://apis.google.com/js/plusone.js';
+       var s = document.getElementsByTagName('script')[0];
+       s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+</li></ul></div></article></div></div>
+    
+
+      <hr/><div  id="myblog-footer"> <div  id="myblog-copyright">
+  <span >&copy</span ><//span></span>
+  2013 Pratap Chakravarthy</div>
+<div  id="myblog-pagd"> generated using <a  href="http://pythonhosted.org/pagd/">pagd</a></div>
+<script  type="text/javascript">
+  // Snippet to load rst gallery if available.
+  $(document).ready( function() {
+    $('.rst-gallery').each( function(idx, element) {
+        $(element).magnificPopup({
+          delegate: 'a',
+          type: 'image',
+          gallery: {
+            enabled: true, // set to true to enable gallery
+            preload: [0,1], // load next item
+            navigateByImgClick: true,
+          }
+        });
+    });
+  });
+
+</script></div></body>
+
+
+</html>

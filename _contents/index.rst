@@ -2,6 +2,7 @@ Articles
 --------
 
 - `Parsing by composing functions <parser-combinator-composition.html>`_.
+- `Parser composing for recursive grammar <parser-combinator-recursive.html>`_.
 - `Parser combinator and Maybe rule <parser-combinator-maybe.html>`_.
 - `Sorting data <sorting-data.html>`_.
 - `Console jockey <console-jockey.html>`_.

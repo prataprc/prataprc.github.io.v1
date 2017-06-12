@@ -127,7 +127,7 @@ opportunity to learn more about parsec.</p>
 <li>Double quoted string. Here, we can find a use case for Nodify with ystr,
 the Nodify callback prunes away the beginning quote, end quote and
 return the golang string as ParsecNode.</li>
-<li>An integer value,</li>
+<li>An integer value.</li>
 <li>An atom of alpha numeric characters including special chars <tt class="docutils literal">_.-</tt>.
 Atom always start with lower case or upper case alphabet.</li>
 </ul>
@@ -135,7 +135,7 @@ Atom always start with lower case or upper case alphabet.</li>
 can be one of the value described above, we use OrdChoice.</p>
 <p><strong>Note that there is an ambiguity here</strong>, between second type of value,
 an Integer and third type of value, an Atom. In such cases, we should
-compose the parser in such a way that more specific parsers are tries
+compose the parser in such a way that, more specific parsers are tried
 before trying more generic parsers. Although OrdChoice parses one of
 the value as ParsecNode, it is returned as an array of []ParsecNode
 with arity one. This is to keep it consistent with rest of the
@@ -170,14 +170,13 @@ Goparser provides a simple scanner constructed by calling <tt class="docutils li
     <div  class="nocomments">
       Comments are disabled for this article, if there are any issues with
       the content of this article feel free to raise an issue
-      <a  href="https://github.com/prataprc/prataprc.github.io/issues">here</a >.<//a>
+      <a  href="https://github.com/prataprc/prataprc.github.io/issues">here</a >.<//a> 
       </a>Or, <a  class="email" href="mailto:prataprc@gmail.com">email-author</a >.<//a></a>Or, click <b >open chat</b > in bottom right corner of this page.<//b></b>
       <script > ((window.gitter = {}).chat = {}).options = { room: 'prataprc/basecamp' };
       </script><script  defer="defer" src="https://sidecar.gitter.im/dist/sidecar.v1.js" async="async"></script ><//script>
 
     </script></div><div  class="metaz">
-      <span  class="last_modified"> last modified - Sun Jun 11, 2017;</span>
-        ;</div>
+      <span  class="last_modified"> last modified - Sun Jun 11, 2017;</span></div>
     <div  id="myblog-social">
         <ul >
   

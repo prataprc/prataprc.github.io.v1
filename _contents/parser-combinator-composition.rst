@@ -132,7 +132,7 @@ Values can be one of the following:
 * Double quoted string. Here, we can find a use case for Nodify with ystr,
   the Nodify callback prunes away the beginning quote, end quote and
   return the golang string as ParsecNode.
-* An integer value,
+* An integer value.
 * An atom of alpha numeric characters including special chars ``_.-``.
   Atom always start with lower case or upper case alphabet.
 
@@ -141,7 +141,7 @@ can be one of the value described above, we use OrdChoice.
 
 **Note that there is an ambiguity here**, between second type of value,
 an Integer and third type of value, an Atom. In such cases, we should
-compose the parser in such a way that more specific parsers are tries
+compose the parser in such a way that, more specific parsers are tried
 before trying more generic parsers. Although OrdChoice parses one of
 the value as ParsecNode, it is returned as an array of []ParsecNode
 with arity one. This is to keep it consistent with rest of the
