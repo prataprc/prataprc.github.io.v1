@@ -43,7 +43,7 @@ Format of ip is: <int>"."<int>"."<int>"."<int>, which can be parsed as:
 * ``Atom``, ``Int``, ``Token`` are some of the standard parser constructors
   supplied by goparsec.
 * Subsequently, we can combine the terminal parsers using ``And`` combinator.
-* The first argument, passed as ``nil`` here, is for suppling a callback
+* The first argument, passed as ``nil`` here, is for supplying a callback
   function. Arguments to ``And`` combinator tells us that, it shall first
   try to match an integer, and then a ``.``, and then an integer, and then
   a ``.``, and then an integer, and then a ``.``, and then an integer.
@@ -64,7 +64,7 @@ The signature of Nodify is:
 
 The array ``nodes`` carry a node item for each matching parser supplied to the
 And combinator. In this case, len(nodes) will be 7. Nodify callback is user
-supplied function and it is upto the user to decide what to do with nodes, and
+supplied function and it is up to the user to decide what to do with nodes, and
 finally a node item returned. This node item, typed as ParsecNode, can be
 anything; it is just an alias for ``interface{}``.
 
@@ -88,13 +88,13 @@ the Nodify callback to do some interesting stuff:
         ydelimit, parsec.Int(),
     )
 
-Here we are extracting the value of each terminal and concatinating it to
+Here we are extracting the value of each terminal and concatenating it to
 create the full ip address and return the string as ParsecNode.
 
 **timestamp**
 
-For timestamp, we can't match the string as it is because other log lines,
-in the same file, will have different timestamp-values. But the timestamp
+For time-stamp, we can't match the string as it is because other log lines,
+in the same file, will have different time-stamp values. But the time-stamp
 has a pattern: ``\[[0-9]{2}/[a-zA-Z]{3}/[0-9]{4}:[0-9]{2}:[0-9]{2}:[0-9]{2}\]``
 
 .. code-block:: go
@@ -103,8 +103,8 @@ has a pattern: ``\[[0-9]{2}/[a-zA-Z]{3}/[0-9]{4}:[0-9]{2}:[0-9]{2}:[0-9]{2}\]``
         `\[[0-9]{2}/[a-zA-Z]{3}/[0-9]{4}:[0-9]{2}:[0-9]{2}:[0-9]{2}\]`,
         "TIMESTAMP")
 
-``ytm`` can parse any timestamp in the log file as long as it follows the same
-pattern.
+``ytm`` can parse any time-stamp in the log file as long as it follows the
+same pattern.
 
 **comma-separated-values**
 

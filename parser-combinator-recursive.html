@@ -27,9 +27,9 @@
 <div class="highlight"><pre><span></span><span class="mi">10</span> <span class="o">*</span> <span class="p">((</span><span class="mi">20</span> <span class="o">+</span> <span class="mi">30</span><span class="p">)</span> <span class="o">*</span> <span class="mi">40</span><span class="p">)</span>
 </pre></div>
 <p>Let us try to build a plain text calculator, where input in an expression of
-arithmetic operations on numbers. Operations include addition, subraction,
+arithmetic operations on numbers. Operations include addition, subtraction,
 multiplication and division, in which multiplication and division take higher
-precedence over addition and subraction.</p>
+precedence over addition and subtraction.</p>
 <div class="highlight"><pre><span></span>expr:      term | expr &#39;-&#39; term | expr &#39;+&#39; term
 term:      factor | term &#39;*&#39; factor | term &#39;/&#39; factor
 factor:    NUMBER | &#39;(&#39; expr &#39;)&#39;
@@ -47,7 +47,7 @@ sum   -&gt; prod (addop prod)*
 addop -&gt; &quot;+&quot; |  &quot;-&quot;
 value -&gt; num | &quot;(&quot; expr &quot;)&quot;
 </pre></div>
-<p>Above grammar also defines <tt class="docutils literal">expr</tt> using <tt class="docutils literal">expr</tt> albiet indirectly. We can
+<p>Above grammar also defines <tt class="docutils literal">expr</tt> using <tt class="docutils literal">expr</tt> albeit indirectly. We can
 now proceed to construct our simple parsers that can parse terminal tokens.</p>
 <div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">openparan</span> <span class="p">=</span> <span class="nx">parsec</span><span class="p">.</span><span class="nx">Token</span><span class="p">(</span><span class="s">`\(`</span><span class="p">,</span> <span class="s">&quot;OPENPARAN&quot;</span><span class="p">)</span>
 <span class="kd">var</span> <span class="nx">closeparan</span> <span class="p">=</span> <span class="nx">parsec</span><span class="p">.</span><span class="nx">Token</span><span class="p">(</span><span class="s">`\)`</span><span class="p">,</span> <span class="s">&quot;CLOSEPARAN&quot;</span><span class="p">)</span>

@@ -7,9 +7,9 @@ Input text, sometime, have recursive patterns. For example:
     10 * ((20 + 30) * 40)
 
 Let us try to build a plain text calculator, where input in an expression of
-arithmetic operations on numbers. Operations include addition, subraction,
+arithmetic operations on numbers. Operations include addition, subtraction,
 multiplication and division, in which multiplication and division take higher
-precedence over addition and subraction.
+precedence over addition and subtraction.
 
 .. code-block:: yacc
 
@@ -33,7 +33,7 @@ by presence or absence of a terminal token. Here is an example:
     addop -> "+" |  "-"
     value -> num | "(" expr ")"
 
-Above grammar also defines ``expr`` using ``expr`` albiet indirectly. We can
+Above grammar also defines ``expr`` using ``expr`` albeit indirectly. We can
 now proceed to construct our simple parsers that can parse terminal tokens.
 
 .. code-block:: go
