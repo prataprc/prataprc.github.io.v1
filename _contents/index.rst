@@ -32,6 +32,12 @@ Articles
 - `Ideas are inter-connected <ideas-are-inter-connected.html>`_.
 - `Hello world <hello-world.html>`_.
 
+Slides
+------
+
+* `Basic logging, with batteries included <https://gitpitch.com/prataprc/golog/master?grs=github>`_.
+
+
 Pub Houses, for social coding
 -----------------------------
 
