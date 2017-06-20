@@ -7,7 +7,7 @@ Articles
 - `Sorting data <sorting-data.html>`_.
 - `Console jockey <console-jockey.html>`_.
 - `3 programmers <3-programmers.html>`_.
-- `Programming languages and error handling <error-handling.html>`_.
+- `Error handling in programming languages <error-handling.html>`_.
 - `Golang - variables in range loop <golang-variables-in-range-loop.html>`_.
 - `Circular package dependencies in python <circular-package-dependencies.html>`_.
 - `Javascript in a nutshell <javascript.html>`_.
@@ -36,6 +36,7 @@ Slides
 ------
 
 * `Basic logging, with batteries included <https://gitpitch.com/prataprc/golog/master?grs=github>`_.
+* `Gosettings for applications and libraries <https://gitpitch.com/prataprc/golog/master?grs=github>`_.
 
 
 Pub Houses, for social coding

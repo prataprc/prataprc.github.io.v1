@@ -12,7 +12,7 @@ it fast via pipe-lining, branch prediction et al..
 
 Btw, processor got faster while memory lagged behind.
 
-Cache, build with costly high speed SRAM, was added that would bridge
+Cache, built with costly high speed SRAM, was added that would bridge
 the gap between processor and memory.
 
 That brings us to how the fastest machines are built,

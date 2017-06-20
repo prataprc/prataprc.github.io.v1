@@ -1,4 +1,4 @@
-:title: Programming languages and error handling
+:title: Error handling in programming languages
 :author: prataprc
 
 **Golang** says, multi value returns or
