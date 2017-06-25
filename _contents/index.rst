@@ -35,8 +35,9 @@ Articles
 Slides
 ------
 
+* `Data formats for storage <https://gitpitch.com/prataprc/gson/master?grs=github>`_.
 * `Basic logging, with batteries included <https://gitpitch.com/prataprc/golog/master?grs=github>`_.
-* `Gosettings for applications and libraries <https://gitpitch.com/prataprc/golog/master?grs=github>`_.
+* `Gosettings for applications and libraries <https://gitpitch.com/prataprc/gosettings/master?grs=github>`_.
 
 
 Pub Houses, for social coding
