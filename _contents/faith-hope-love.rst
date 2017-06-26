@@ -11,8 +11,8 @@
         therefore, we are saved by LOVE."
                                             -- Reinhold Niebuhr
 
-Thought of doing a word play here, mashing up the 3 statements, and its 3
-words, of Reinhold Niebuhr:
+Thought of doing a word play here, mashing up the 3 words, and its 3
+statements, of Reinhold Niebuhr:
 
 .. code-block:: text
 
