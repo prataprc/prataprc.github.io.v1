@@ -2,7 +2,7 @@
 :author: unknown
 
 Came across this story on the Net, not sure about the original
-author, and the store goes like this,
+author, and the story goes like this,
 
 Three programmers were asked to cross a field and go to the house
 at the other side.
