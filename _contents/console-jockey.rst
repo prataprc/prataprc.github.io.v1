@@ -427,6 +427,43 @@ and add following exports in your bashrc or zshrc file.
     export STARDICT_DATA_DIR=$HOME/.stardict/dic
     export SDCV_HISTSIZE=10000
 
+To learn hardware info
+----------------------
+
+`lspci` will show you most of your hardware in a nice quick way. Some of the
+commonly used flags are:
+
+* `-v` and `-vv` varying levels of verbosity
+* `-k` argument is a good way to find out kernel driver used by a hardware
+  component.
+* `-nn` will let you simply know the hardware ID which is great for searching.
+
+
+It doesn't show USB hardware other than the USB busses.
+
+Here are three real world examples:
+Graphics:
+
+.. code-block:: bash
+
+    $ lspci -nnk | grep VGA -A1
+    $ lspci -nnk | grep net -A2
+
+* `lsusb` is like lspci but for USB devices.
+* `lshw` will give you a very comprehensive list of hardware and settings.
+
+.. code-block:: bash
+
+    $ sudo lshw | less
+    $ sudo lshw -c network
+
+For something graphical:
+
+.. code-block:: bash
+
+    sudo apt-get install hardinfo
+
+
 tools and applications
 ----------------------
 
